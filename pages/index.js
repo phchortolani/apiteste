@@ -6,7 +6,7 @@ export default function Home() {
 
 
     return (<div>
-        <p>Clique aqui para contar {count}</p>
+        <p>Olá {count}</p>
         <button type="button" onClick={() => setCount(count + 1)}>Contar</button>
     </div>)
 }
