@@ -1,12 +1,9 @@
-import { useState } from "react";
+import Home from "../components/Home";
 
-
-export default function Home() {
-    const [count, setCount] = useState(0);
-
+export default function Index() {
 
     return (<div>
-        <p>Olá {count}</p>
-        <button type="button" onClick={() => setCount(count + 1)}>Contar</button>
+        <Home />
+
     </div>)
 }
