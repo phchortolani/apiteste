@@ -5,7 +5,6 @@ export const styles = {
     center:{
         display: 'grid',
         placeContent: 'center',
-        minHeight: '100vh',
-        overflow: 'hidden'
+        minHeight: '100vh'
     }
 }
