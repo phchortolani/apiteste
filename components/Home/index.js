@@ -10,15 +10,17 @@ export default function Home() {
 
 
     function logar() {
-            axios.post('/api/login', {user: usuario, pass: senha});
+        axios.post('/api/inscrever', { user: usuario, pass: senha });
     }
 
-    return <div style={styles.center}>
+    return <div style={styles.cardlogin}>
         <label htmlFor="user">Usuário:</label>
         <input onInput={(value) => setUsuario(value.target.value)} id="user"></input>
         <label htmlFor="pass">Senha:</label>
         <input onInput={(value) => setSenha(value.target.value)} id="pass"></input>
         <button onClick={() => logar()}>Logar</button>
+
+        <a href="">Criar usuário</a>
     </div>
 
 }
