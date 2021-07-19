@@ -5,7 +5,6 @@ import url from 'url';
 
 
 async function connectToDataBase(uri) {
- 
 
     const client = await MongoClient.connect(uri, {
         useNewUrlParser: true,
