@@ -1,4 +1,3 @@
-import { timeStamp } from "console";
 import jwt from "jsonwebtoken";
 import { MongoClient } from 'mongodb';
 import url from 'url';
