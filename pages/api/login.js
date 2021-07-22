@@ -1,21 +1,9 @@
-import { MongoClient } from 'mongodb';
-import url from 'url';
+import jwt from "jsonwebtoken";
+import { connectToDataBase } from '../../config/mongodb';
 
 
-async function connectToDataBase(uri) {
 
-    const client = await MongoClient.connect(uri, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
-    const dbname = url.parse(uri).pathname.substr(1);
-    const db = client.db(dbname);
-
-
-    return db;
-}
-
-export default async (request, response) => {
+export default async (request, response, context) => {
     if (!request.body) {
         request.statusCode = 404;
         request.end('Error');
@@ -27,21 +15,13 @@ export default async (request, response) => {
 
     const db = await connectToDataBase(process.env.MONGODB_URI);
 
-    const dbuser = db.collection('usuarios').find({ usuario: user });
-
-    const cursor = db
-        .collection('usuarios')
-        .find({
-            usuario: user
-        })
-        .project({ usuario: 1, _id: 0 });
-
-
-    console.log(cursor);
+    const usuario = await db.collection('usuarios').findOne({ usuario: user, senha: encrypt(pass) });
 
 
     response.json({
-        usuario: dbuser
+        token: jwt.sign({
+            username: usuario.usuario
+        }, process.env.JWT_KEY)
     });
 
 
