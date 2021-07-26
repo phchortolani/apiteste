@@ -1,9 +1,11 @@
+import { Token } from '../../auth';
+import Login from '../Login/login'
+function Home() {
 
-
-
-export default function Home() {
-  
-    return (<div></div>)
+    if (!Token().isAuthenticated) return <Login />;
+    else return (<div>Home</div>);
 
 
 }
+
+export default Home;

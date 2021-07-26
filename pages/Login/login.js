@@ -1,21 +1,15 @@
-import { useState } from "react";
-import axios from "axios";
-import { setCookie } from "nookies";
-import { Token } from "../../auth";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function login() {
     const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
+    const { isAuthenticated } = useContext(AuthContext);
 
 
-    async function logar() {
-        var ret = await axios.post('/api/login', { user: usuario, pass: senha });
-        if (ret.data) {
-            setCookie(null, 'token', ret.data.token, { maxAge: 68 * 68 * 1, path: '/' });
-            console.log(Token());
-        }
+    async function handleSignIn() {
 
-
+        console.log(isAuthenticated);
     }
 
     return <div className="bg-white lg:w-4/12 md:6/12 rounded shadow-md w-10/12 m-auto my-10">
@@ -29,11 +23,8 @@ export default function login() {
                 <div className="my-5 text-sm">
                     <label htmlFor="password" className="block text-black">Senha</label>
                     <input onInput={(value) => setSenha(value.target.value)} type="password" id="password" className="rounded-sm px-4 py-3 mt-3 focus:outline-none bg-gray-100 w-full" placeholder="Senha" />
-                    <div className="flex justify-end mt-2 text-xs text-gray-600">
-                        <a href="../../pages/auth/forget_password.html hover:text-black">Esqueceu a senha?</a>
-                    </div>
                 </div>
-                <button onClick={() => logar()} type="button" className="block rounded text-center text-white bg-gray-800 p-3 duration-300 hover:bg-black w-full">Logar</button>
+                <button onClick={() => handleSignIn()} type="button" className="block rounded text-center text-white bg-gray-800 p-3 duration-300 hover:bg-black w-full">Logar</button>
             </form>
 
         </div>

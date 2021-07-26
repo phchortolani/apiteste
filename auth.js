@@ -3,7 +3,7 @@ import { parseCookies } from "nookies";
 export const Token = () => {
     let token;
     var cookies = parseCookies();
-    let Authenticated;
+    let Authenticated = false;
     if (cookies.token) {
         token = cookies.token;
         Authenticated = true;

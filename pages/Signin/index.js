@@ -1,5 +1,4 @@
 export default function Signin() {
-
     return <div>
         <label htmlFor="name">Nome Completo</label>
         <input id="name"></input>
