@@ -1,15 +1,13 @@
-import { useContext, useState } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../context/Auth2Context";
 
 export default function login() {
     const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
-    const { isAuthenticated } = useContext(AuthContext);
-
+    const { signIn } = useContext(AuthContext);
 
     async function handleSignIn() {
-
-        console.log(isAuthenticated);
+        await signIn(usuario,senha);
     }
 
     return <div className="bg-white lg:w-4/12 md:6/12 rounded shadow-md w-10/12 m-auto my-10">

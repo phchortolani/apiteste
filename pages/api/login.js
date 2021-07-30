@@ -21,8 +21,9 @@ export default async (request, response) => {
             token: jwt.sign({
                 username: usuario.usuario
             }, process.env.JWT_KEY),
-
-        });
+            login: usuario.usuario
+        }
+        );
     } else {
         response.send(null);
     }

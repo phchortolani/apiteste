@@ -1,11 +1,14 @@
-import { Token } from '../../auth';
-import Login from '../Login/login'
-function Home() {
+import { useContext } from 'react';
+import { AuthContext, AuthProvider } from '../../context/Auth2Context';
 
-    if (!Token().isAuthenticated) return <Login />;
-    else return (<div>Home</div>);
-
-
+export default function Home() {
+    const { login } = useContext(AuthContext);
+    return (
+        <AuthProvider>
+            <div>
+                Home - {login}
+            </div>
+        </AuthProvider>
+    )
+     
 }
-
-export default Home;
