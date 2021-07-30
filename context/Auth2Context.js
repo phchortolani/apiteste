@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios"
 import { setCookie, parseCookies } from "nookies";
 import Router from "next/router";
+import jwt from 'jsonwebtoken';
+
 
 export const AuthContext = React.createContext({});
 
@@ -11,9 +13,12 @@ export const AuthProvider = (props) => {
     const isAuthenticated = !!login;
 
     useEffect(() => {
+
         const { token } = parseCookies();
         if (token) {
-            setLogin(token.usuario + "Autenticado!");
+            var user = jwt.decode(token);
+            setLogin(user.username);
+            Router.push("./Home");
         }
     }, []);
 
@@ -23,7 +28,6 @@ export const AuthProvider = (props) => {
             setCookie(null, 'token', ret.data.token, { maxAge: 68 * 68 * 1, path: '/' });
         }
         setLogin(ret.data.login);
-
         Router.push("./Home");
     }
 
