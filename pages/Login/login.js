@@ -4,10 +4,17 @@ import { AuthContext } from "../../context/Auth2Context";
 export default function login() {
     const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
+    const [authError, setAuthError] = useState('');
     const { signIn } = useContext(AuthContext);
 
     async function handleSignIn() {
-        await signIn(usuario,senha);
+        setAuthError("");
+        if (usuario != "" && senha != "") {
+            setAuthError(await signIn(usuario, senha));
+        } else {
+            setAuthError("Insira o usuário e a senha.")
+        }
+
     }
 
     return <div className="bg-white lg:w-4/12 md:6/12 rounded shadow-md w-10/12 m-auto my-10">
@@ -24,7 +31,7 @@ export default function login() {
                 </div>
                 <button onClick={() => handleSignIn()} type="button" className="block rounded text-center text-white bg-gray-800 p-3 duration-300 hover:bg-black w-full">Logar</button>
             </form>
-
+            <p className="text-red-600">{authError}</p>
         </div>
     </div>
 
