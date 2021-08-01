@@ -1,7 +1,8 @@
+import { parseCookies } from 'nookies';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/Auth2Context';
 
-export default function Home() {
+export default function Dashbord() {
     const { login, signOut } = useContext(AuthContext);
     const [expandemenu, setExpandemenu] = useState("hidden");
 
@@ -132,3 +133,19 @@ export default function Home() {
     )
 
 }
+export async function getServerSideProps(ctx) {
+
+    const { token } = parseCookies(ctx);
+
+    if(!token){
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false
+            }
+        }
+    }
+    return {
+      props: {}, // will be passed to the page component as props
+    }
+  }

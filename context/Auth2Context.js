@@ -17,7 +17,9 @@ export const AuthProvider = (props) => {
         if (token) {
             var user = jwt.decode(token);
             setLogin(user.username);
-            Router.push("./Home");
+            if (Router.asPath == "/" ) {
+                Router.push("./Dashboard");
+            }
         } else {
             Router.push("./");
         }
@@ -31,7 +33,7 @@ export const AuthProvider = (props) => {
         setLogin(ret.data.login);
 
         if (ret.data.login) {
-            Router.push("./Home");
+            Router.push("./Dashboard");
         } else return "Usuário não encontrado.";
 
     }
