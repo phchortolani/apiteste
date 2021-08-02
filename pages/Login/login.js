@@ -23,6 +23,7 @@ export default function login() {
             <input onChange={(e) => setUsuario(e.target.value)} className="loginbtns" type="text" name="u" placeholder="Usuário" required="required" />
             <input onChange={(e) => setSenha(e.target.value)} className="loginbtns" type="password" name="p" placeholder="Senha" required="required" />
             <button onClick={() => handleSignIn()} type="button" className="btn btn-primary btn-block btn-large">Logar</button>
+            <p className="text-danger">{authError}</p>
         </form>
     </div>
     )

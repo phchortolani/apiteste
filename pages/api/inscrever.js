@@ -1,4 +1,3 @@
-import jwt from "jsonwebtoken";
 import { connectToDataBase } from '../../config/mongodb';
 
 export default async (request, response) => {
@@ -7,23 +6,17 @@ export default async (request, response) => {
         request.end('Error');
         return;
     }
-    const encrypt = require("md5");
-    const { user, pass } = request.body;
+    const { usuario } = request.body;
 
     const db = await connectToDataBase(process.env.MONGODB_URI);
 
     const collection = db.collection("usuarios");
 
-    await collection.insertOne({
-        usuario: user,
-        senha: encrypt(pass),
-        dataCriacao: new Date()
-    })
+    await collection.insertOne(usuario);
+
 
     response.json({
-        token: jwt.sign({
-            username: user
-        }, process.env.JWT_KEY)
+        result: true
     });
 
 
