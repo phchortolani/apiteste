@@ -1,134 +1,318 @@
 import { parseCookies } from 'nookies';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/Auth2Context';
+import Image from 'next/image';
+import logo from '../../src/assets/images/dmlogo.png';
 
 export default function Dashbord() {
     const { login, signOut } = useContext(AuthContext);
     const [expandemenu, setExpandemenu] = useState("hidden");
 
     return (
-
         <div>
-            <div>
-                <nav className="bg-gray-800">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="flex items-center justify-between h-16">
-                            <div className="flex items-center">
-                                <div className="flex-shrink-0"><img className="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow" />
-                                </div>
+            <div className="wrapper">
+                <div className="sidebar" data-color="orange">
+                    <div className="logo">
+                        <a style={{ filter: "invert(1)" }} className="simple-text logo-mini p-0">
+                            <Image height="100%" width="100%" src={logo} />
+                        </a>
+                        <a className="simple-text logo-normal">
+                            {login}
+                        </a>
+                    </div>
+                    <div className="sidebar-wrapper" id="sidebar-wrapper">
+                        <ul className="nav">
+                            <li className="active ">
+                                <a href="./dashboard.html">
+                                    <i className="now-ui-icons design_app"></i>
+                                    <p>Dashboard</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="./icons.html">
+                                    <i className="now-ui-icons education_atom"></i>
+                                    <p>Icons</p>
+                                </a>
+                            </li>
 
-                                <div className="hidden md:block">
-                                    <div className="ml-10 flex items-baseline space-x-4">
-                                        <a href="#" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                        </ul>
+                    </div>
+                </div>
+                <div className="main-panel" id="main-panel">
 
-                                        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
-
-                                        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-
-                                        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
-
-                                        <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="hidden md:block">
-                                <div className="ml-4 flex items-center md:ml-6">
-                                    <button className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                                        <span className="sr-only">View notifications</span>
-                                        <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                                        </svg>
+                    <nav className="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+                        <div className="container-fluid">
+                            <div className="navbar-wrapper">
+                                <div className="navbar-toggle">
+                                    <button type="button" className="navbar-toggler">
+                                        <span className="navbar-toggler-bar bar1"></span>
+                                        <span className="navbar-toggler-bar bar2"></span>
+                                        <span className="navbar-toggler-bar bar3"></span>
                                     </button>
-
-                                    <div className="ml-3 relative">
-                                        <div>
-                                            <button type="button" onClick={() => setExpandemenu(expandemenu == "hidden" ? "block" : "hidden")} className="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                                <span className="sr-only">Open user menu</span>
-                                                <img className="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-                                            </button>
+                                </div>
+                                <a className="navbar-brand">Psico</a>
+                            </div>
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-bar navbar-kebab"></span>
+                                <span className="navbar-toggler-bar navbar-kebab"></span>
+                                <span className="navbar-toggler-bar navbar-kebab"></span>
+                            </button>
+                            <div className="collapse navbar-collapse justify-content-end" id="navigation">
+                                <form>
+                                    <div className="input-group no-border">
+                                        <input type="text" className="form-control" placeholder="Search..." />
+                                        <div className="input-group-append">
+                                            <div className="input-group-text">
+                                                <i className="now-ui-icons ui-1_zoom-bold"></i>
+                                            </div>
                                         </div>
-
-                                        <div className={"origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none " + expandemenu} role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex="-1">
-                                            <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-0">Your Profile</a>
-
-                                            <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-1">Settings</a>
-
-                                            <a href="#" onClick={() => signOut()} className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Sign out</a>
+                                    </div>
+                                </form>
+                                <ul className="navbar-nav">
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#pablo">
+                                            <i className="now-ui-icons media-2_sound-wave"></i>
+                                            <p>
+                                                <span className="d-lg-none d-md-block">Stats</span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <div className="dropdown">
+                                            <a className="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Menu
+                                            </a>
+                                            <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
+                                                <li><a onClick={() => signOut()} className="dropdown-item" href="#">Sair</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="#pablo">
+                                            <i className="now-ui-icons users_single-02"></i>
+                                            <p>
+                                                <span className="d-lg-none d-md-block">Account</span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div className="panel-header panel-header-lg">
+                    </div>
+                    <div className="content">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="card  card-tasks">
+                                    <div className="card-header ">
+                                        <h5 className="card-category">Backend development</h5>
+                                        <h4 className="card-title">Tasks</h4>
+                                    </div>
+                                    <div className="card-body ">
+                                        <div className="table-full-width table-responsive">
+                                            <table className="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div className="form-check">
+                                                                <label className="form-check-label">
+                                                                    <input className="form-check-input" type="checkbox" />
+                                                                    <span className="form-check-sign"></span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td className="text-left">Sign contract for "What are conference organizers afraid of?"</td>
+                                                        <td className="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="" className="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
+                                                                <i className="now-ui-icons ui-2_settings-90"></i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" title="" className="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Remove">
+                                                                <i className="now-ui-icons ui-1_simple-remove"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div className="form-check">
+                                                                <label className="form-check-label">
+                                                                    <input className="form-check-input" type="checkbox" />
+                                                                    <span className="form-check-sign"></span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td className="text-left">Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                                                        <td className="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="" className="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
+                                                                <i className="now-ui-icons ui-2_settings-90"></i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" title="" className="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Remove">
+                                                                <i className="now-ui-icons ui-1_simple-remove"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div className="form-check">
+                                                                <label className="form-check-label">
+                                                                    <input className="form-check-input" type="checkbox" />
+                                                                    <span className="form-check-sign"></span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td className="text-left">Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                                        </td>
+                                                        <td className="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title="" className="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
+                                                                <i className="now-ui-icons ui-2_settings-90"></i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" title="" className="btn btn-danger btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Remove">
+                                                                <i className="now-ui-icons ui-1_simple-remove"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div className="card-footer ">
+                                        <hr />
+                                        <div className="stats">
+                                            <i className="now-ui-icons loader_refresh spin"></i> Updated 3 minutes ago
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="-mr-2 flex md:hidden">
-                                <button onClick={() => setExpandemenu(expandemenu == "hidden" ? "block" : "hidden")} type="button" className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                                    <span className="sr-only">Open main menu</span>
-                                    <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                                    </svg>
-                                    <svg className="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={"md:hidden " + expandemenu} id="mobile-menu">
-                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+                            <div className="col-md-6">
+                                <div className="card">
+                                    <div className="card-header">
+                                        <h5 className="card-category">All Persons List</h5>
+                                        <h4 className="card-title"> Employees Stats</h4>
+                                    </div>
+                                    <div className="card-body">
+                                        <div className="table-responsive">
+                                            <table className="table">
+                                                <thead className=" text-primary">
+                                                    <tr>
+                                                        <th>
+                                                            Name
+                                                        </th>
+                                                        <th>
+                                                            Country
+                                                        </th>
+                                                        <th>
+                                                            City
+                                                        </th>
+                                                        <th className="text-right">
+                                                            Salary
+                                                        </th>
+                                                    </tr>
 
-                            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
-
-                            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-
-                            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
-
-                            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reports</a>
-                        </div>
-                        <div className="pt-4 pb-3 border-t border-gray-700">
-                            <div className="flex items-center px-5">
-                                <div className="flex-shrink-0">
-                                    <img className="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            Dakota Rice
+                                                        </td>
+                                                        <td>
+                                                            Niger
+                                                        </td>
+                                                        <td>
+                                                            Oud-Turnhout
+                                                        </td>
+                                                        <td className="text-right">
+                                                            $36,738
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Minerva Hooper
+                                                        </td>
+                                                        <td>
+                                                            Curaçao
+                                                        </td>
+                                                        <td>
+                                                            Sinaai-Waas
+                                                        </td>
+                                                        <td className="text-right">
+                                                            $23,789
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Sage Rodriguez
+                                                        </td>
+                                                        <td>
+                                                            Netherlands
+                                                        </td>
+                                                        <td>
+                                                            Baileux
+                                                        </td>
+                                                        <td className="text-right">
+                                                            $56,142
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Doris Greene
+                                                        </td>
+                                                        <td>
+                                                            Malawi
+                                                        </td>
+                                                        <td>
+                                                            Feldkirchen in Kärnten
+                                                        </td>
+                                                        <td className="text-right">
+                                                            $63,542
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Mason Porter
+                                                        </td>
+                                                        <td>
+                                                            Chile
+                                                        </td>
+                                                        <td>
+                                                            Gloucester
+                                                        </td>
+                                                        <td className="text-right">
+                                                            $78,615
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="ml-3">
-                                    <div className="text-base font-medium leading-none text-white">{login}</div>
-                                    <div className="text-sm font-medium leading-none text-gray-400">tom@example.com</div>
-                                </div>
-                                <button className="ml-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                                    <span className="sr-only">View notifications</span>
-
-                                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div className="mt-3 px-2 space-y-1">
-                                <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Your Profile</a>
-
-                                <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Settings</a>
-
-                                <a href="#" onClick={() => signOut()} className="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Sign out</a>
                             </div>
                         </div>
                     </div>
-                </nav>
-
-                <header className="bg-white shadow">
-                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-3xl font-bold text-gray-900">
-                            Dashboard
-                        </h1>
-                    </div>
-                </header>
-                <main>
-                    <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-
-                        <div className="px-4 py-6 sm:px-0">
-                            <div className="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
+                    <footer className="footer">
+                        <div className=" container-fluid ">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.creative-tim.com">
+                                            Creative Tim
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://presentation.creative-tim.com">
+                                            About Us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://blog.creative-tim.com">
+                                            Blog
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
-
-                    </div>
-                </main>
+                    </footer>
+                </div>
             </div>
-
         </div>
     )
 
@@ -137,7 +321,7 @@ export async function getServerSideProps(ctx) {
 
     const { token } = parseCookies(ctx);
 
-    if(!token){
+    if (!token) {
         return {
             redirect: {
                 destination: '/',
@@ -146,6 +330,6 @@ export async function getServerSideProps(ctx) {
         }
     }
     return {
-      props: {}, // will be passed to the page component as props
+        props: {}, // will be passed to the page component as props
     }
-  }
+}
