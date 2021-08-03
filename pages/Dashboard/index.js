@@ -14,7 +14,7 @@ export default function Dashboard(props) {
     const [optionsopen, setOptionsOpen] = useState(false);
     return (
         <div className={"perfect-scrollbar-on " + (navopen ? "nav-open" : "")}>
-            <div className="wrapper">
+            <div className="wrapper" style={{overflowX: "hidden"}}>
                 <div className="sidebar" data-color="orange">
                     <div className="logo">
                         <a style={{ filter: "invert(1)" }} className="simple-text logo-mini p-0">
