@@ -9,9 +9,10 @@ import Inscrever from '../../src/components/Inscrever/inscrever';
 export default function Dashboard() {
     const { login, signOut } = useContext(AuthContext);
     const [componente, setComponente] = useState({ componente: <Dash />, desc: "Dash" });
-
+    const [navopen, setNavOpen] = useState(false);
+    const [optionsopen, setOptionsOpen] = useState(false);
     return (
-        <div>
+        <div className={"perfect-scrollbar-on " + (navopen ? "nav-open" : "")}>
             <div className="wrapper">
                 <div className="sidebar" data-color="orange">
                     <div className="logo">
@@ -25,13 +26,13 @@ export default function Dashboard() {
                     <div className="sidebar-wrapper" id="sidebar-wrapper">
                         <ul className="nav">
                             <li className={(componente.desc == "Dash" ? "active" : "")}>
-                                <a onClick={() => setComponente({componente: <Dash />, desc: "Dash"})}>
+                                <a onClick={() => setComponente({ componente: <Dash />, desc: "Dash" })}>
                                     <i className="now-ui-icons design_app"></i>
                                     <p>Dashboard</p>
                                 </a>
                             </li>
                             <li className={(componente.desc == "Inscrever" ? "active" : "")}>
-                                <a onClick={() => setComponente({componente: <Inscrever />, desc: "Inscrever"})}>
+                                <a onClick={() => setComponente({ componente: <Inscrever />, desc: "Inscrever" })}>
                                     <i className="now-ui-icons education_atom"></i>
                                     <p>Cadastrar Usuário</p>
                                 </a>
@@ -42,11 +43,11 @@ export default function Dashboard() {
                 </div>
                 <div className="main-panel" id="main-panel">
 
-                    <nav className="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+                    <nav className={"navbar navbar-expand-lg   bg-primary  navbar-absolute  " + (optionsopen ? "bg-white" : "navbar-transparent")}>
                         <div className="container-fluid">
                             <div className="navbar-wrapper">
                                 <div className="navbar-toggle">
-                                    <button type="button" className="navbar-toggler">
+                                    <button type="button" onClick={() => setNavOpen((navopen ? false : true))} className="navbar-toggler">
                                         <span className="navbar-toggler-bar bar1"></span>
                                         <span className="navbar-toggler-bar bar2"></span>
                                         <span className="navbar-toggler-bar bar3"></span>
@@ -54,12 +55,12 @@ export default function Dashboard() {
                                 </div>
                                 <a className="navbar-brand">Psico</a>
                             </div>
-                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                            <button className={"navbar-toggler " + (optionsopen ? "" : "collapsed")} onClick={() => setOptionsOpen((optionsopen ? false : true))} type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded={(optionsopen ? "true" : "false")} aria-label="Toggle navigation">
                                 <span className="navbar-toggler-bar navbar-kebab"></span>
                                 <span className="navbar-toggler-bar navbar-kebab"></span>
                                 <span className="navbar-toggler-bar navbar-kebab"></span>
                             </button>
-                            <div className="collapse navbar-collapse justify-content-end" id="navigation">
+                            <div className={"navbar-collapse justify-content-end collapse " + (optionsopen ? "show" : "")} id="navigation">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
                                         <div className="dropdown">

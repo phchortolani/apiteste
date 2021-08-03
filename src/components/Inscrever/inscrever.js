@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
+import { AuthContext } from "../../../context/Auth2Context";
 
 export default function Inscrever() {
     const [user, setUser] = useState({
@@ -12,6 +13,7 @@ export default function Inscrever() {
 
     });
     const [validatelist, setValidatelist] = useState([]);
+    const {isMobile} = useContext(AuthContext);
 
     const encrypt = require("md5");
 
@@ -34,7 +36,7 @@ export default function Inscrever() {
     }
 
     return (
-        <div className="container w-50 mt-2">
+        <div className={"container mt-2 " + (isMobile ? "w-100" : "w-50")}>
             <form>
                 <div className="mb-3">
                     <label htmlFor="usuario" className="form-label">Nome de Usuário</label>

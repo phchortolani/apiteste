@@ -9,15 +9,16 @@ export const AuthContext = React.createContext({});
 
 export const AuthProvider = (props) => {
     const [login, setLogin] = useState(undefined);
-
+    const [isMobile, setisMobile] = useState(false);
     const isAuthenticated = !!login;
 
     useEffect(() => {
         const { token } = parseCookies();
+        setisMobile(window.innerWidth <= 768);
         if (token) {
             var user = jwt.decode(token);
             setLogin(user.username);
-            if (Router.asPath == "/" ) {
+            if (Router.asPath == "/") {
                 Router.push("./Dashboard");
             }
         } else {
@@ -45,7 +46,7 @@ export const AuthProvider = (props) => {
     }
 
     return (
-        <AuthContext.Provider value={{ signIn, isAuthenticated, login, signOut }}>
+        <AuthContext.Provider value={{ signIn, isAuthenticated, login, signOut, isMobile }}>
             {props.children}
         </AuthContext.Provider>
     )
