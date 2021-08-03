@@ -47,7 +47,7 @@ export default function Dashboard(props) {
                         <div className="container-fluid">
                             <div className="navbar-wrapper">
                                 <div className={"navbar-toggle " + (navopen ? "toggled":"") }>
-                                    <button type="button" onClick={() => setNavOpen((navopen ? false : true))} className="navbar-toggler">
+                                    <button type="button" onClick={() => setNavOpen((navopen ? false : true))} className="navbar-toggler shadow-none">
                                         <span className="navbar-toggler-bar bar1"></span>
                                         <span className="navbar-toggler-bar bar2"></span>
                                         <span className="navbar-toggler-bar bar3"></span>
@@ -55,7 +55,7 @@ export default function Dashboard(props) {
                                 </div>
                                 <a className="navbar-brand">Psico - {props.token.tipo}</a>
                             </div>
-                            <button className={"navbar-toggler " + (optionsopen ? "" : "collapsed")} onClick={() => setOptionsOpen((optionsopen ? false : true))} type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded={(optionsopen ? "true" : "false")} aria-label="Toggle navigation">
+                            <button className={"navbar-toggler shadow-none " + (optionsopen ? "" : "collapsed")} onClick={() => setOptionsOpen((optionsopen ? false : true))} type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded={(optionsopen ? "true" : "false")} aria-label="Toggle navigation">
                                 <span className="navbar-toggler-bar navbar-kebab"></span>
                                 <span className="navbar-toggler-bar navbar-kebab"></span>
                                 <span className="navbar-toggler-bar navbar-kebab"></span>
