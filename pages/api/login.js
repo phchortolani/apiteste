@@ -1,7 +1,6 @@
 import jwt from "jsonwebtoken";
 import { connectToDataBase } from '../../config/mongodb';
 
-
 export default async (request, response) => {
     if (!request.body) {
         request.statusCode = 404;

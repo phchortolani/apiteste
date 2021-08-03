@@ -5,8 +5,9 @@ import Image from 'next/image';
 import logo from '../../src/assets/images/dmlogo.png';
 import Dash from '../../src/components/Dashboard/dash';
 import Inscrever from '../../src/components/Inscrever/inscrever';
+import jwt from "jsonwebtoken";
 
-export default function Dashboard() {
+export default function Dashboard(props) {
     const { login, signOut } = useContext(AuthContext);
     const [componente, setComponente] = useState({ componente: <Dash />, desc: "Dash" });
     const [navopen, setNavOpen] = useState(false);
@@ -31,13 +32,12 @@ export default function Dashboard() {
                                     <p>Dashboard</p>
                                 </a>
                             </li>
-                            <li className={(componente.desc == "Inscrever" ? "active" : "")}>
+                            {props.token.tipo == "administrador" ? <li className={(componente.desc == "Inscrever" ? "active" : "")}>
                                 <a onClick={() => setComponente({ componente: <Inscrever />, desc: "Inscrever" })}>
                                     <i className="now-ui-icons education_atom"></i>
-                                    <p>Cadastrar Usuário</p>
+                                    <p>Usuários</p>
                                 </a>
-                            </li>
-
+                            </li> : ""}
                         </ul>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ export default function Dashboard() {
                                         <span className="navbar-toggler-bar bar3"></span>
                                     </button>
                                 </div>
-                                <a className="navbar-brand">Psico</a>
+                                <a className="navbar-brand">Psico - {props.token.tipo}</a>
                             </div>
                             <button className={"navbar-toggler " + (optionsopen ? "" : "collapsed")} onClick={() => setOptionsOpen((optionsopen ? false : true))} type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded={(optionsopen ? "true" : "false")} aria-label="Toggle navigation">
                                 <span className="navbar-toggler-bar navbar-kebab"></span>
@@ -106,7 +106,9 @@ export async function getServerSideProps(ctx) {
             }
         }
     }
+
+    var decode = jwt.decode(token);
     return {
-        props: {}, // will be passed to the page component as props
+        props: { token: decode }, // will be passed to the page component as props
     }
 }

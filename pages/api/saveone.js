@@ -9,9 +9,9 @@ export default async (request, response) => {
 
                 const collection = db.collection(table);
 
-                await collection.insertOne(obj);
+                 await collection.insertOne(obj);
 
-                response.json({
+                response.send({
                     result: true
                 });
 

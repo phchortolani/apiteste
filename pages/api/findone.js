@@ -15,11 +15,13 @@ export default async (request, response) => {
         const retorno = await db.collection(table).findOne(obj);
 
         response.json({
-            result: retorno
+            result: retorno ? retorno : null
         })
     }
     else {
-        response.send(null);
+        response.json({
+            result: "Erro de obj ou table"
+        })
     }
 
 }

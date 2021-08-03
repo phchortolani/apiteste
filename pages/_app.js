@@ -6,6 +6,7 @@
 import "../css/customcss.css";
 import Head from "next/head";
 
+
 import { AuthProvider } from '../context/Auth2Context';
 
 

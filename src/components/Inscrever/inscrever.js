@@ -13,7 +13,8 @@ export default function Inscrever() {
 
     });
     const [validatelist, setValidatelist] = useState([]);
-    const {isMobile} = useContext(AuthContext);
+    const [validateerros, setValidateErros] = useState('');
+    const { isMobile } = useContext(AuthContext);
 
     const encrypt = require("md5");
 
@@ -27,10 +28,17 @@ export default function Inscrever() {
         setValidatelist(erroslist);
         setUser({ ...user, dataCriacao: new Date() });
 
-        if (erroslist.length == 0) {
-            var ret = await axios.post('/api/findone', { obj: { usuario: user.usuario }, table: "usuarios" });
-            console.log(ret.data);
-            await axios.post('/api/saveone', { obj: user, table: "usuarios" });
+        var ret = await axios.post('/api/findone', { obj: { usuario: user.usuario }, table: "usuarios" });
+
+        if (ret.data.result) {
+            setValidateErros(`O usuário ${ret.data.result.usuario} já existe.`);
+            setValidatelist('usuario');
+        } else {
+            if (erroslist.length == 0) {
+                await axios.post('/api/saveone', { obj: user, table: "usuarios" });
+            } else {
+                setValidateErros("Preencha todos os campos obrigatórios.")
+            }
         }
 
     }
@@ -64,7 +72,7 @@ export default function Inscrever() {
 
                 </div>
                 <button onClick={() => { CadastrarNovo() }} type="button" className="btn btn-primary">Cadastrar</button>
-                {validatelist.length > 0 ? <p className="text-danger">Preencha todos os campos obrigatórios.</p> : ""}
+                {validatelist.length > 0 ? <p className="text-danger">{validateerros}</p> : ""}
             </form>
         </div>
     )
