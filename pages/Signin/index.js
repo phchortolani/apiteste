@@ -1,4 +1,5 @@
 import { parseCookies } from 'nookies';
+
 export default function Signin() {
     return <div>
         Cadastrar Usuário

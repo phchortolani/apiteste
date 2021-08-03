@@ -19,7 +19,10 @@ export default async (request, response) => {
     if (usuario) {
         response.json({
             token: jwt.sign({
-                username: usuario.usuario
+                username: usuario.usuario,
+                id: usuario._id,
+                email: usuario.email,
+                tipo: usuario.tipo
             }, process.env.JWT_KEY),
             login: usuario.usuario
         }
