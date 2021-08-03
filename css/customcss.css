@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(45deg, #ffeb3b, #fb65655c);
+    background: #ebecf1;
     margin: 0;
     padding: 0;
 }
@@ -18,7 +18,7 @@ html {
 }
 
 .login h1 {
-    color: #fff;
+    color: #a1aaaa;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
     text-align: center;

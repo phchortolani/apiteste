@@ -46,7 +46,7 @@ export default function Dashboard(props) {
                     <nav className={"navbar navbar-expand-lg   bg-primary  navbar-absolute  " + (optionsopen ? "bg-white" : "navbar-transparent")}>
                         <div className="container-fluid">
                             <div className="navbar-wrapper">
-                                <div className="navbar-toggle">
+                                <div className={"navbar-toggle " + (navopen ? "toggled":"") }>
                                     <button type="button" onClick={() => setNavOpen((navopen ? false : true))} className="navbar-toggler">
                                         <span className="navbar-toggler-bar bar1"></span>
                                         <span className="navbar-toggler-bar bar2"></span>
