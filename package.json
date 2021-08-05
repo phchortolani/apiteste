@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "addgit": "git add -A git commit -a -m 'add' git push origin master"
+    "dev": "next dev"
   },
   "repository": {
     "type": "git",

@@ -3,19 +3,21 @@ import axios from "axios";
 import { AuthContext } from "../../../context/Auth2Context";
 
 export default function Inscrever() {
+    const { isMobile, login } = useContext(AuthContext);
+
     const [user, setUser] = useState({
         usuario: "",
         senha: "",
         dataCriacao: new Date(),
         nome: "",
         email: "",
-        tipo: "administrador"
+        tipo: "administrador",
+        criadoPor: login
 
     });
     const [validatelist, setValidatelist] = useState([]);
     const [validateerros, setValidateErros] = useState('');
-    const { isMobile } = useContext(AuthContext);
-
+   
     const encrypt = require("md5");
 
     async function CadastrarNovo() {
