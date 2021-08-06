@@ -19,6 +19,7 @@ html {
 
 .blur{
   filter: blur(2px);
+  overflow: hidden;
 }
 
 .login h1 {

@@ -42,7 +42,7 @@ export default function Dashboard(props) {
                         </ul>
                     </div>
                 </div>
-                <div onClick={() => setNavOpen((navopen ? false : ""))} className={"main-panel " + (navopen ? "blur" : "")} id="main-panel">
+                <div onClick={() => { navopen ? setNavOpen(false) : "" }} className={"main-panel " + (navopen ? "blur" : "")} id="main-panel">
 
                     <nav className={"navbar navbar-expand-lg   bg-primary  navbar-absolute  " + (optionsopen ? "bg-white" : "navbar-transparent")}>
                         <div className="container-fluid">
