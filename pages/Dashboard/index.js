@@ -12,9 +12,10 @@ export default function Dashboard(props) {
     const [componente, setComponente] = useState({ componente: <Dash />, desc: "Dash" });
     const [navopen, setNavOpen] = useState(false);
     const [optionsopen, setOptionsOpen] = useState(false);
+
     return (
         <div className={"perfect-scrollbar-on " + (navopen ? "nav-open" : "")}>
-            <div className="wrapper" style={{overflowX: "hidden"}}>
+            <div className="wrapper" style={{ overflowX: "hidden" }}>
                 <div className="sidebar" data-color="orange">
                     <div className="logo">
                         <a style={{ filter: "invert(1)" }} className="simple-text logo-mini p-0">
@@ -41,12 +42,12 @@ export default function Dashboard(props) {
                         </ul>
                     </div>
                 </div>
-                <div className="main-panel" id="main-panel">
+                <div className={"main-panel " + (navopen ? "blur" : "")} id="main-panel">
 
                     <nav className={"navbar navbar-expand-lg   bg-primary  navbar-absolute  " + (optionsopen ? "bg-white" : "navbar-transparent")}>
                         <div className="container-fluid">
                             <div className="navbar-wrapper">
-                                <div className={"navbar-toggle " + (navopen ? "toggled":"") }>
+                                <div className={"navbar-toggle " + (navopen ? "toggled" : "")}>
                                     <button type="button" onClick={() => setNavOpen((navopen ? false : true))} className="navbar-toggler shadow-none">
                                         <span className="navbar-toggler-bar bar1"></span>
                                         <span className="navbar-toggler-bar bar2"></span>

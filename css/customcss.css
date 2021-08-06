@@ -17,6 +17,10 @@ html {
     height: 300px;
 }
 
+.blur{
+  filter: blur(2px);
+}
+
 .login h1 {
     color: #a1aaaa;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
