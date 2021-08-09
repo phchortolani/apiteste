@@ -68,7 +68,7 @@ export default function Dashboard(props) {
                             <div className={"navbar-collapse justify-content-end collapse " + (optionsopen ? "show" : "")} id="navigation">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        {isMobile ? <div className="dropdown">
+                                        {!isMobile ? <div className="dropdown">
                                             <a className="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Menu
                                             </a>
