@@ -18,7 +18,7 @@ export default function login() {
     }
 
     return (<div className="login">
-        <h1>Login2</h1>
+        <h1>Login</h1>
         <form >
             <input onChange={(e) => setUsuario(e.target.value)} className="loginbtns" type="text" name="u" placeholder="Usuário" required="required" />
             <input onChange={(e) => setSenha(e.target.value)} className="loginbtns" type="password" name="p" placeholder="Senha" required="required" />
@@ -28,4 +28,23 @@ export default function login() {
     </div>
     )
 
+}
+
+export async function getServerSideProps(ctx) {
+
+    const { token } = parseCookies(ctx);
+
+    if (token) {
+        return {
+            redirect: {
+                destination: '/Dashboard',
+                permanent: false
+            }
+        }
+    }
+
+  
+    return {
+        props: { }, // will be passed to the page component as props
+    }
 }
