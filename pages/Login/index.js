@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/Auth2Context";
+import { parseCookies } from "nookies";
 
 export default function login() {
     const [usuario, setUsuario] = useState('');
