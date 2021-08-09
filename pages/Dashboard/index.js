@@ -75,7 +75,7 @@ export default function Dashboard(props) {
                                             <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
                                                 <li><a onClick={() => signOut()} className="dropdown-item" href="#">Sair</a></li>
                                             </ul>
-                                        </div> : <a onClick={() => signOut()} className="btn btn-sm btn-link shadow-none text-white text-decoration-none" href="#">Sair</a>}
+                                        </div> : <a onClick={() => signOut()} className="btn btn-sm btn-link shadow-none text-decoration-none" href="#">Sair</a>}
 
                                     </li>
                                 </ul>
