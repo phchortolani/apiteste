@@ -18,7 +18,7 @@ export default function login() {
     }
 
     return (<div className="login">
-        <h1>Login</h1>
+        <h1>Login2</h1>
         <form >
             <input onChange={(e) => setUsuario(e.target.value)} className="loginbtns" type="text" name="u" placeholder="Usuário" required="required" />
             <input onChange={(e) => setSenha(e.target.value)} className="loginbtns" type="password" name="p" placeholder="Senha" required="required" />
