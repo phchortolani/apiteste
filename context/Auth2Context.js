@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios"
+import axios from "axios";
 import { setCookie, parseCookies, destroyCookie } from "nookies";
 import Router from "next/router";
 import jwt from 'jsonwebtoken';

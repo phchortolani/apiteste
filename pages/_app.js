@@ -1,10 +1,10 @@
-// import App from 'next/app'
-// add bootstrap css 
 
-
-// own css files here
 import "../css/customcss.css";
 import Head from "next/head";
+
+import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 
 
 import { AuthProvider } from '../context/Auth2Context';

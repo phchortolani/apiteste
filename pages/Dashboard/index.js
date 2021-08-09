@@ -6,10 +6,12 @@ import logo from '../../src/assets/images/dmlogo.png';
 import Dash from '../../src/components/Dashboard/dash';
 import Inscrever from '../../src/components/Inscrever/inscrever';
 import jwt from "jsonwebtoken";
-import axios from 'axios';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAddressBook, faUsers } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function Dashboard(props) {
-    const { login, signOut } = useContext(AuthContext);
+    const { login, signOut , isMobile } = useContext(AuthContext);
     const [componente, setComponente] = useState({ componente: <Dash />, desc: "Dash" });
     const [navopen, setNavOpen] = useState(false);
     const [optionsopen, setOptionsOpen] = useState(false);
@@ -30,16 +32,17 @@ export default function Dashboard(props) {
                         <ul className="nav">
                             <li className={(componente.desc == "Dash" ? "active" : "")}>
                                 <a onClick={() => setComponente({ componente: <Dash />, desc: "Dash" })}>
-                                    <i className="now-ui-icons design_app"></i>
-                                    <p>Dashboard</p>
+                                    <span><FontAwesomeIcon icon={faAddressBook}></FontAwesomeIcon></span>
+                                    <span> Dashboard</span>
                                 </a>
                             </li>
-                            {props.token.tipo == "administrador" ? <li className={(componente.desc == "Inscrever" ? "active" : "")}>
-                                <a onClick={() => setComponente({ componente: <Inscrever />, desc: "Inscrever" })}>
-                                    <i className="now-ui-icons education_atom"></i>
-                                    <p>Usuários</p>
-                                </a>
-                            </li> : ""}
+                            {props.token.tipo == "administrador" ?
+                                <li className={(componente.desc == "Inscrever" ? "active" : "")}>
+                                    <a onClick={() => setComponente({ componente: <Inscrever />, desc: "Inscrever" })}>
+                                        <span><FontAwesomeIcon icon={faUsers}></FontAwesomeIcon></span>
+                                        <span> Usuários</span>
+                                    </a>
+                                </li> : ""}
                         </ul>
                     </div>
                 </div>
@@ -65,14 +68,15 @@ export default function Dashboard(props) {
                             <div className={"navbar-collapse justify-content-end collapse " + (optionsopen ? "show" : "")} id="navigation">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <div className="dropdown">
+                                        {isMobile ? <div className="dropdown">
                                             <a className="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Menu
                                             </a>
                                             <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="dropdownMenuLink">
                                                 <li><a onClick={() => signOut()} className="dropdown-item" href="#">Sair</a></li>
                                             </ul>
-                                        </div>
+                                        </div> : <a onClick={() => signOut()} className="btn btn-sm btn-link shadow-none text-white text-decoration-none" href="#">Sair</a>}
+
                                     </li>
                                 </ul>
                             </div>
