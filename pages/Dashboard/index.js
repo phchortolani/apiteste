@@ -6,6 +6,7 @@ import logo from '../../src/assets/images/dmlogo.png';
 import Dash from '../../src/components/Dashboard/dash';
 import Inscrever from '../../src/components/Inscrever/inscrever';
 import jwt from "jsonwebtoken";
+import axios from 'axios';
 
 export default function Dashboard(props) {
     const { login, signOut } = useContext(AuthContext);
