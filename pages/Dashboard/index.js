@@ -4,10 +4,11 @@ import { AuthContext } from '../../context/Auth2Context';
 import Image from 'next/image';
 import logo from '../../src/assets/images/dmlogo.png';
 import Dash from '../../src/components/Dashboard/dash';
+import Blog from '../../src/components/Blog/blog';
 import Inscrever from '../../src/components/Inscrever/inscrever';
 import jwt from "jsonwebtoken";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAddressBook, faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faAddressBook, faUsers,faRssSquare } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Dashboard(props) {
@@ -36,13 +37,21 @@ export default function Dashboard(props) {
                                     <span> Dashboard</span>
                                 </a>
                             </li>
-                            {props.token.tipo == "administrador" ?
+                            {props.token.tipo == "administrador" ? <>
                                 <li className={(componente.desc == "Inscrever" ? "active" : "")}>
                                     <a onClick={() => setComponente({ componente: <Inscrever />, desc: "Inscrever" })}>
                                         <span><FontAwesomeIcon icon={faUsers}></FontAwesomeIcon></span>
                                         <span> Usuários</span>
                                     </a>
-                                </li> : ""}
+                                </li> 
+                                <li className={(componente.desc == "Blog" ? "active" : "")}>
+                                    <a onClick={() => setComponente({ componente: <Blog />, desc: "Blog" })}>
+                                        <span><FontAwesomeIcon icon={faRssSquare}></FontAwesomeIcon></span>
+                                        <span> Blog</span>
+                                    </a>
+                                </li>
+                                </>: ""}
+
                         </ul>
                     </div>
                 </div>
