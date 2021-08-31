@@ -3940,7 +3940,7 @@ html {
   
   .sidebar .nav li.active>a,
   .off-canvas-sidebar .nav li.active>a {
-    background-color: #FFFFFF;
+    background-color: #9caba0;
     box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.1);
   }
   
@@ -4088,84 +4088,11 @@ html {
   .sidebar:after,
   .off-canvas-sidebar:after {
    
-    background: linear-gradient(#f0cbb8 0%, #f4a191 80%);
+    background: linear-gradient(#9caba0 0%, #7b8c81 80%); 
     z-index: 3;
   }
   
-  .sidebar[data-color="blue"]:after,
-  .off-canvas-sidebar[data-color="blue"]:after {
-    background: #2CA8FF;
-  }
   
-  .sidebar[data-color="blue"] .nav li.active>a:not([data-toggle="collapse"]),
-  .off-canvas-sidebar[data-color="blue"] .nav li.active>a:not([data-toggle="collapse"]) {
-    color: #2CA8FF;
-  }
-  
-  .sidebar[data-color="blue"] .nav li.active>a:not([data-toggle="collapse"]) i,
-  .off-canvas-sidebar[data-color="blue"] .nav li.active>a:not([data-toggle="collapse"]) i {
-    color: #2CA8FF;
-  }
-  
-  .sidebar[data-color="green"]:after,
-  .off-canvas-sidebar[data-color="green"]:after {
-    background: #18ce0f;
-  }
-  
-  .sidebar[data-color="green"] .nav li.active>a:not([data-toggle="collapse"]),
-  .off-canvas-sidebar[data-color="green"] .nav li.active>a:not([data-toggle="collapse"]) {
-    color: #18ce0f;
-  }
-  
-  .sidebar[data-color="green"] .nav li.active>a:not([data-toggle="collapse"]) i,
-  .off-canvas-sidebar[data-color="green"] .nav li.active>a:not([data-toggle="collapse"]) i {
-    color: #18ce0f;
-  }
-  
-  .sidebar[data-color="orange"]:after,
-  .off-canvas-sidebar[data-color="orange"]:after {
-    background: #f96332;
-  }
-  
-  .sidebar[data-color="orange"] .nav li.active>a:not([data-toggle="collapse"]),
-  .off-canvas-sidebar[data-color="orange"] .nav li.active>a:not([data-toggle="collapse"]) {
-    color: #f96332;
-  }
-  
-  .sidebar[data-color="orange"] .nav li.active>a:not([data-toggle="collapse"]) i,
-  .off-canvas-sidebar[data-color="orange"] .nav li.active>a:not([data-toggle="collapse"]) i {
-    color: #f96332;
-  }
-  
-  .sidebar[data-color="red"]:after,
-  .off-canvas-sidebar[data-color="red"]:after {
-    background: #FF3636;
-  }
-  
-  .sidebar[data-color="red"] .nav li.active>a:not([data-toggle="collapse"]),
-  .off-canvas-sidebar[data-color="red"] .nav li.active>a:not([data-toggle="collapse"]) {
-    color: #FF3636;
-  }
-  
-  .sidebar[data-color="red"] .nav li.active>a:not([data-toggle="collapse"]) i,
-  .off-canvas-sidebar[data-color="red"] .nav li.active>a:not([data-toggle="collapse"]) i {
-    color: #FF3636;
-  }
-  
-  .sidebar[data-color="yellow"]:after,
-  .off-canvas-sidebar[data-color="yellow"]:after {
-    background: #FFB236;
-  }
-  
-  .sidebar[data-color="yellow"] .nav li.active>a:not([data-toggle="collapse"]),
-  .off-canvas-sidebar[data-color="yellow"] .nav li.active>a:not([data-toggle="collapse"]) {
-    color: #FFB236;
-  }
-  
-  .sidebar[data-color="yellow"] .nav li.active>a:not([data-toggle="collapse"]) i,
-  .off-canvas-sidebar[data-color="yellow"] .nav li.active>a:not([data-toggle="collapse"]) i {
-    color: #FFB236;
-  }
   
   .visible-on-sidebar-regular {
     display: inline-block !important;
