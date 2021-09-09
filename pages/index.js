@@ -1,8 +1,17 @@
+import NavBar from '../src/components/Nav/navbar';
+//import { parseCookies } from "nookies";
+export default function Index() {
 
-import { parseCookies } from "nookies";
-export default function Index() {}
+    return (
+        <>
+            <NavBar />
 
-export async function getServerSideProps(ctx) {
+        </>
+
+    );
+}
+
+/*export async function getServerSideProps(ctx) {
 
   const { token } = parseCookies(ctx);
       return {
@@ -11,6 +20,6 @@ export async function getServerSideProps(ctx) {
               permanent: false
           }
       }
-  
 
-}
+
+}*/

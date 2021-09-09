@@ -18,12 +18,10 @@ export const AuthProvider = (props) => {
         if (token) {
             var user = jwt.decode(token);
             setLogin(user.username);
-            if (Router.asPath == "/") {
+            if (Router.asPath == "/login") {
                 Router.push("./Dashboard");
             }
-        } else {
-            Router.push("./");
-        }
+        } 
     }, []);
 
     async function signIn(user, pass) {
