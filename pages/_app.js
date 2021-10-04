@@ -1,7 +1,8 @@
 
-import "../css/customcss.css";
-import Head from "next/head";
 
+import Head from "next/head";
+import "../css/ColorAdmin.css";
+import "../css/customcss.css";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
@@ -28,7 +29,7 @@ function MyApp({ Component, pageProps }) {
                     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
                     crossOrigin="anonymous"></script>
             </Head>
-
+     
             <Component {...pageProps} />
         </AuthProvider>
     )

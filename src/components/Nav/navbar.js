@@ -3,22 +3,40 @@ import logo from '../../assets/images/dmlogo.png';
 
 export default function NavBar() {
 
-    return <div className="bg-white shadow-sm">
-        <header style={{borderColor:"#9caba0 !important"}} className="d-flex flex-wrap align-items-center border-3 justify-content-center justify-content-md-between border-bottom">
-            <a href="/" className="d-flex justify-content-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <Image height="50px" width="50px" className="rounded-0" src={logo} />
-            </a>
-            <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" className="nav-link px-4 link-secondary">Home</a></li>
-                <li><a href="#" className="nav-link px-4 link-secondary">Meu trabalho</a></li>
-                <li><a href="#" className="nav-link px-4 link-secondary">Blog</a></li>
+    return <div id="header" className="header navbar navbar-default navbar-expand-lg navbar-fixed-top navbar-sm">
 
-            </ul>
-            <div className="col-md-3 text-center">
-                <a href="https://wa.me/5511963483375?text=" target="_blank" type="button" className="btn btn-outline-primary me-2">Agendar consulta!</a>
-                <button type="button" onClick={() => { window.location.href = "/Login" }} className="btn btn-primary">Entrar</button>
+        <div className="container">
+
+            <a href="./" className="navbar-brand">
+                <Image src={logo}></Image>
+            </a>
+
+
+            <button type="button" className="navbar-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#header-navbar">
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+                <span className="icon-bar"></span>
+            </button>
+
+
+            <div className="collapse navbar-collapse" id="header-navbar">
+                <ul className="nav navbar-nav navbar-right">
+                    <li><a href="./">Home</a></li>
+
+                    { /*<li className="dropdown">
+                        <a href="#" data-bs-toggle="dropdown">POSTS <b className="caret"></b></a>
+                        <div className="dropdown-menu">
+                            <a className="dropdown-item" href="post_grid.html">Page with Grid View Blog Post</a>
+                            <a className="dropdown-item" href="post_without_sidebar.html">Page without Sidebar</a>
+                        </div>
+</li> */}
+                    <li><a href="./Blog">Blog</a></li>
+                    <li><a href="./Login">Entrar</a></li>
+                </ul>
             </div>
-        </header>
+
+        </div>
+
     </div>
 }
 
