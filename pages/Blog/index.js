@@ -2,7 +2,12 @@ import NavBar from "../../src/components/Nav/navbar";
 import { useState } from 'react';
 
 export async function getServerSideProps(context) {
-    var data = await fetch('http://localhost:3000/api/obterBlog')
+
+    const dev = process.env.NODE_ENV !== 'production';
+
+    const server = dev ? 'http://localhost:3000' : 'https://psidaramarques.com.br';
+
+    var data = await fetch(`${server}/api/obterBlog`)
         .then(async function (response) {
             return await response.json();
         })
