@@ -1,12 +1,11 @@
 import NavBar from "../../src/components/Nav/navbar";
 import axios from "axios";
-import { useContext, useState } from 'react';
-import { AuthContext } from '../../../apiteste/context/Auth2Context'
+import { useState } from 'react';
+
 
 
 export default function Blog() {
 
-    const { isMobile } = useContext(AuthContext);
     const [dados, setDados] = useState([]);
     const [firstRender, SetFirstRender] = useState(true);
 
