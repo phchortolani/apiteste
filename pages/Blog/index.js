@@ -1,23 +1,29 @@
 import NavBar from "../../src/components/Nav/navbar";
-import axios from "axios";
 import { useState } from 'react';
 
+export async function getServerSideProps(context) {
+    var data = await fetch('http://localhost:3000/api/obterBlog')
+        .then(async function (response) {
+            return await response.json();
+        })
+    return {
+        props: { dados: data },
+    }
+}
 
-
-export default function Blog() {
+export default function Blog(props) {
 
     const [dados, setDados] = useState([]);
     const [firstRender, SetFirstRender] = useState(true);
 
-    async function connectToApi() {
+    async function obterBlog() {
         SetFirstRender(false);
-        var response = await axios.post('/api/obterBlog');
-        if (response.data) {
-            setDados(response.data);
+        if (props.dados) {
+            setDados(props.dados);
         }
     }
 
-    if (firstRender) connectToApi();
+    if (firstRender) obterBlog();
 
     return (
         <div className="pace-done">
@@ -175,10 +181,9 @@ export default function Blog() {
                                         tags.forEach(element => {
                                             caption = caption.replace(element, "");
                                         });
+                                        caption = caption.replace(title, "");
                                     }
-
-                                    console.log(new Date(e.timestamp).toLocaleDateString());
-                                    return <li key={i}>
+                                    return <li key={i + e.id}>
                                         <div className="post-left-info">
                                             <div className="post-date">
                                                 <span className="day">{data[0]}</span>
@@ -198,23 +203,22 @@ export default function Blog() {
                                             </div>
                                             <div className="post-info">
                                                 <h4 className="post-title">
-                                                    <a href="post_detail.html">{title}</a>
+                                                    {title}
                                                 </h4>
                                                 <div className="post-by">
-                                                    Postado por <a href="#">{e.username}</a> {tags?.length > 0 ? tags.slice(0, 3).map((e) => {
+                                                    Postado por <a target="_blank" href={"https://www.instagram.com/" + e.username + "/"}>{e.username}</a> {tags?.length > 0 ? tags.slice(0, 3).map((e, i) => {
                                                         var tag = e ? e.replace("#", "") : "";
-                                                        return <> <span className="divider">|</span> <a href="#">{tag}</a> </>
+                                                        return <span key={"divider_" + i} > <span className="divider">|</span> <a href="#">{tag}</a> </span>
                                                     }) : ""}
                                                     {tags?.length > 3 ? <> <span className="divider">|</span> {"Mais " + (tags.length - 3) + " Categorias"} </> : ""}
                                                 </div>
-                                                <div className="post-desc">
+                                                <div className="post-desc" style={{ textAlign: "justify" }}>
                                                     {caption}
                                                 </div>
-                                            </div>{/* <div className="read-btn-container">
+                                            </div>
+                                            {/* <div className="read-btn-container">
                                                 <a href="post_detail.html" className="read-btn">Leia mais <i className="fa fa-angle-double-right"></i></a>
                                             </div> */}
-
-
                                         </div>
 
                                     </li>
@@ -261,7 +265,7 @@ export default function Blog() {
                             <div className="section-container">
                                 <h4 className="section-title"><span>Me siga</span></h4>
                                 <ul className="sidebar-social-list">
-                                    <li><a href="#"><i className="fab fa-instagram"></i>@psidaramarques</a></li>
+                                    <li><a target='_blank' href="https://www.instagram.com/psidaramarques/"><i className="fab fa-instagram"></i>@psidaramarques</a></li>
                                 </ul>
                             </div>
 
@@ -376,29 +380,6 @@ export default function Blog() {
                 </div>
 
             </div>
-
-
-            <div className="theme-panel">
-                <a href="#" data-click="theme-panel-expand" className="theme-collapse-btn"><i className="fa fa-cog"></i></a>
-                <div className="theme-panel-content">
-                    <ul className="theme-list clearfix">
-                        <li><a href="#" className="bg-red" data-theme="red" data-theme-file="../assets/css/blog/theme/red.min.css" data-click="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Red" data-original-title="" title="" data-bs-original-title="">&nbsp; </a></li>
-                        <li><a href="#" className="bg-pink" data-theme="pink" data-theme-file="../assets/css/blog/theme/pink.min.css" data-click="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Pink" data-original-title="" title="" data-bs-original-title="">&nbsp; </a></li>
-                        <li><a href="#" className="bg-orange" data-theme="orange" data-theme-file="../assets/css/blog/theme/orange.min.css" data-click="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Orange" data-original-title="" title="" data-bs-original-title="">&nbsp; </a></li>
-                        <li><a href="#" className="bg-yellow" data-theme="yellow" data-theme-file="../assets/css/blog/theme/yellow.min.css" data-click="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Yellow" data-original-title="" title="" data-bs-original-title="">&nbsp; </a></li>
-                        <li><a href="#" className="bg-lime" data-theme="lime" data-theme-file="../assets/css/blog/theme/lime.min.css" data-click="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Lime" data-original-title="" title="" data-bs-original-title="">&nbsp; </a></li>
-                        <li><a href="#" className="bg-green" data-theme="green" data-theme-file="../assets/css/blog/theme/green.min.css" data-click="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Green" data-original-title="" title="" data-bs-original-title="">&nbsp; </a></li>
-                        <li className="active"><a href="#" className="bg-teal" data-theme-file="" data-theme="default" data-click="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Default" data-original-title="" title="" data-bs-original-title="">&nbsp; </a></li>
-                        <li><a href="#" className="bg-aqua" data-theme="aqua" data-theme-file="../assets/css/blog/theme/aqua.min.css" data-click="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Aqua" data-original-title="" title="" data-bs-original-title="">&nbsp; </a></li>
-                        <li><a href="#" className="bg-blue" data-theme="blue" data-theme-file="../assets/css/blog/theme/blue.min.css" data-click="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Blue" data-original-title="" title="" data-bs-original-title="">&nbsp; </a></li>
-                        <li><a href="#" className="bg-purple" data-theme="purple" data-theme-file="../assets/css/blog/theme/purple.min.css" data-click="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Purple" data-original-title="" title="" data-bs-original-title="">&nbsp; </a></li>
-                        <li><a href="#" className="bg-indigo" data-theme="indigo" data-theme-file="../assets/css/blog/theme/indigo.min.css" data-click="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Indigo" data-original-title="" title="" data-bs-original-title="">&nbsp; </a></li>
-                        <li><a href="#" className="bg-black" data-theme="black" data-theme-file="../assets/css/blog/theme/black.min.css" data-click="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Black" data-original-title="" title="" data-bs-original-title="">&nbsp; </a></li>
-                    </ul>
-                </div>
-            </div>
-
-
 
 
         </div>
