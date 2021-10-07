@@ -1,5 +1,4 @@
 import React from "react";
-import Blog from "../Blog/blog";
 
 export default function Dash() {
     return (
@@ -12,7 +11,7 @@ export default function Dash() {
                             <h4 className="card-title">Blog</h4>
                         </div>
                         <div className="card-body ">
-                            <Blog />
+                      
                         </div>
                         <div className="card-footer ">
                             <hr />
