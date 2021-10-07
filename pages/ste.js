@@ -130,45 +130,7 @@ export default function Ste() {
                     <div className="content-bg" data-paroller="true" data-paroller-factor="0.5" data-paroller-factor-md="0.01" data-paroller-factor-xs="0.01"></div>
 
 
-                    <div className="container">
-
-                        <div className="row">
-
-                            <div className="col-lg-3 milestone-col">
-                                <div className="milestone">
-                                    <div className="number contentAnimated" data-animation="true" data-animation-type="number" data-final-number="1292">1,292</div>
-                                    <div className="title">Themes &amp; Template</div>
-                                </div>
-                            </div>
-
-
-                            <div className="col-lg-3 milestone-col">
-                                <div className="milestone">
-                                    <div className="number contentAnimated" data-animation="true" data-animation-type="number" data-final-number="9039">9,039</div>
-                                    <div className="title">Registered Members</div>
-                                </div>
-                            </div>
-
-
-                            <div className="col-lg-3 milestone-col">
-                                <div className="milestone">
-                                    <div className="number contentAnimated" data-animation="true" data-animation-type="number" data-final-number="89291">89,291</div>
-                                    <div className="title">Items Sold</div>
-                                </div>
-                            </div>
-
-
-                            <div className="col-lg-3 milestone-col">
-                                <div className="milestone">
-                                    <div className="number contentAnimated" data-animation="true" data-animation-type="number" data-final-number="129">129</div>
-                                    <div className="title">Theme Authors</div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
+             
                 </div>
 
 
@@ -258,20 +220,6 @@ export default function Ste() {
                     </div>
 
 
-                    <div className="container animate__fadeInLeft contentAnimated finishAnimated" data-animation="true" data-animation-type="animate__fadeInLeft">
-
-                        <div className="row">
-
-                            <div className="col-lg-12 quote">
-                                <i className="fa fa-quote-left"></i> Passion leads to design, design leads to performance, <br />
-                                performance leads to <span className="text-primary">success</span>!
-                                <i className="fa fa-quote-right"></i>
-                                <small>Sean Themes, Developer Teams in Malaysia</small>
-                            </div>
-
-                        </div>
-
-                    </div>
 
                 </div>
 
@@ -364,29 +312,6 @@ export default function Ste() {
                     <div className="content-bg" data-paroller-factor="0.5" data-paroller-factor-md="0.01" data-paroller-factor-xs="0.01">
                     </div>
 
-
-                    <div className="container animate__fadeInRight contentAnimated finishAnimated" data-animation="true" data-animation-type="animate__fadeInRight">
-
-                        <div className="row action-box">
-
-                            <div className="col-lg-9">
-                                <div className="icon-large text-primary">
-                                    <i className="fa fa-binoculars"></i>
-                                </div>
-                                <h3>CHECK OUT OUR ADMIN THEME!</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus faucibus magna eu lacinia eleifend.
-                                </p>
-                            </div>
-
-
-                            <div className="col-lg-3">
-                                <a href="#" className="btn btn-outline-white btn-theme btn-block">Live Preview</a>
-                            </div>
-
-                        </div>
-
-                    </div>
 
                 </div>
 
@@ -589,115 +514,12 @@ export default function Ste() {
                 </div>
 
 
-                <div id="pricing" className="content" data-scrollview="true">
-
-                    <div className="container">
-                        <h2 className="content-title">Our Price</h2>
-                        <p className="content-desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />
-                            sed bibendum turpis luctus eget
-                        </p>
-
-                        <ul className="pricing-table pricing-col-4">
-                            <li data-animation="true" data-animation-type="animate__fadeInUp" className="animate__fadeInUp contentAnimated finishAnimated">
-                                <div className="pricing-container">
-                                    <h3>Starter</h3>
-                                    <div className="price">
-                                        <div className="price-figure">
-                                            <span className="price-number">FREE</span>
-                                        </div>
-                                    </div>
-                                    <ul className="features">
-                                        <li>1GB Storage</li>
-                                        <li>2 Clients</li>
-                                        <li>5 Active Projects</li>
-                                        <li>5 Colors</li>
-                                        <li>Free Goodies</li>
-                                        <li>24/7 Email support</li>
-                                    </ul>
-                                    <div className="footer">
-                                        <a href="#" className="btn btn-inverse btn-theme btn-block">Buy Now</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li data-animation="true" data-animation-type="animate__fadeInUp" className="animate__fadeInUp contentAnimated finishAnimated">
-                                <div className="pricing-container">
-                                    <h3>Basic</h3>
-                                    <div className="price">
-                                        <div className="price-figure">
-                                            <span className="price-number">$9.99</span>
-                                            <span className="price-tenure">per month</span>
-                                        </div>
-                                    </div>
-                                    <ul className="features">
-                                        <li>2GB Storage</li>
-                                        <li>5 Clients</li>
-                                        <li>10 Active Projects</li>
-                                        <li>10 Colors</li>
-                                        <li>Free Goodies</li>
-                                        <li>24/7 Email support</li>
-                                    </ul>
-                                    <div className="footer">
-                                        <a href="#" className="btn btn-inverse btn-theme btn-block">Buy Now</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="highlight animate__fadeInUp contentAnimated finishAnimated" data-animation="true" data-animation-type="animate__fadeInUp">
-                                <div className="pricing-container">
-                                    <h3>Premium</h3>
-                                    <div className="price">
-                                        <div className="price-figure">
-                                            <span className="price-number">$19.99</span>
-                                            <span className="price-tenure">per month</span>
-                                        </div>
-                                    </div>
-                                    <ul className="features">
-                                        <li>5GB Storage</li>
-                                        <li>10 Clients</li>
-                                        <li>20 Active Projects</li>
-                                        <li>20 Colors</li>
-                                        <li>Free Goodies</li>
-                                        <li>24/7 Email support</li>
-                                    </ul>
-                                    <div className="footer">
-                                        <a href="#" className="btn btn-primary btn-theme btn-block">Buy Now</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li data-animation="true" data-animation-type="animate__fadeInUp" className="animate__fadeInUp contentAnimated finishAnimated">
-                                <div className="pricing-container">
-                                    <h3>Lifetime</h3>
-                                    <div className="price">
-                                        <div className="price-figure">
-                                            <span className="price-number">$999</span>
-                                        </div>
-                                    </div>
-                                    <ul className="features">
-                                        <li>Unlimited Storage</li>
-                                        <li>Unlimited Clients</li>
-                                        <li>Unlimited Projects</li>
-                                        <li>Unlimited Colors</li>
-                                        <li>Free Goodies</li>
-                                        <li>24/7 Email support</li>
-                                    </ul>
-                                    <div className="footer">
-                                        <a href="#" className="btn btn-inverse btn-theme btn-block">Buy Now</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-
-
                 <div id="contact" className="content bg-silver-lighter" data-scrollview="true">
 
                     <div className="container">
-                        <h2 className="content-title">Contact Us</h2>
+                        <h2 className="content-title">Entre em contato!</h2>
                         <p className="content-desc">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />
-                            sed bibendum turpis luctus eget
+                      Em caso de dúvidas do funcionamento da terapia, solicitações de 
                         </p>
 
                         <div className="row">

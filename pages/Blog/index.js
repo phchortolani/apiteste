@@ -1,11 +1,15 @@
 import NavBar from "../../src/components/Nav/navbar";
 import { useState } from 'react';
+import Carousel from "../../src/components/Blog/carousel";
+import ImgStatic from "../../src/components/Blog/imgstatica";
 
 export async function getServerSideProps(context) {
 
     const dev = process.env.NODE_ENV !== 'production';
+    //context.req.connection.remoteAddress; ip de quem solicita
 
     const server = dev ? 'http://localhost:3000' : 'https://psidaramarques.com.br';
+
 
     var data = await fetch(`${server}/api/obterBlog`)
         .then(async function (response) {
@@ -56,86 +60,10 @@ export default function Blog(props) {
 
                         <div className="col-lg-9">
 
-                            <ul className="post-list"> {/*
-                            
-                             <li>
-
-                                    <div className="post-left-info">
-                                        <div className="post-date">
-                                            <span className="day">03</span>
-                                            <span className="month">SEPT</span>
-                                        </div>
-                                        <div className="post-likes">
-                                            <i className="fa fa-heart text-primary"></i>
-                                            <span className="number">520</span>
-                                        </div>
-                                    </div>
-
-
-                                    <div className="post-content">
-
-                                        <div className="post-image post-image-with-carousel">
-
-                                            <div id="carousel-post" className="carousel slide" data-ride="carousel">
-
-                                                <ol className="carousel-indicators">
-                                                    <li data-target="#carousel-post" data-slide-to="0" className="active"></li>
-                                                    <li data-target="#carousel-post" data-slide-to="1"></li>
-                                                    <li data-target="#carousel-post" data-slide-to="2"></li>
-                                                </ol>
-
-
-                                                <div className="carousel-inner">
-                                                    <div className="carousel-item active">
-                                                        <a href="post_detail.html"><img className="d-block w-100" src="https://t1.rg.ltmcdn.com/pt/images/9/4/3/bolo_comum_de_liquidificador_10349_600.jpg" alt="" /></a>
-                                                    </div>
-                                                    <div className="carousel-item">
-                                                        <a href="post_detail.html"><img className="d-block w-100" src="https://t1.rg.ltmcdn.com/pt/images/9/4/3/bolo_comum_de_liquidificador_10349_600.jpg" alt="" /></a>
-                                                    </div>
-                                                    <div className="carousel-item">
-                                                        <a href="post_detail.html"><img className="d-block w-100" src="https://t1.rg.ltmcdn.com/pt/images/9/4/3/bolo_comum_de_liquidificador_10349_600.jpg" alt="" /></a>
-                                                    </div>
-                                                </div>
-
-
-                                                <a className="carousel-control-prev" href="#carousel-post" role="button" data-slide="prev">
-                                                    <span className="fa fa-chevron-left" aria-hidden="true"></span>
-                                                </a>
-                                                <a className="carousel-control-next" href="#carousel-post" role="button" data-slide="next">
-                                                    <span className="fa fa-chevron-right" aria-hidden="true"></span>
-                                                </a>
-
-                                            </div>
-
-                                        </div>
-
-
-                                        <div className="post-info">
-                                            <h4 className="post-title">
-                                                <a href="post_detail.html">Bootstrap Carousel Blog Post</a>
-                                            </h4>
-                                            <div className="post-by">
-                                                Posted By <a href="#">admin</a> <span className="divider">|</span> <a href="#">Sports</a>, <a href="#">Mountain</a>, <a href="#">Bike</a> <span className="divider">|</span> 2 Comments
-                                            </div>
-                                            <div className="post-desc">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit dolor, elementum ut ligula ultricies,
-                                                aliquet eleifend risus. Vivamus ut auctor sapien. Morbi at nibh id lorem viverra commodo augue dui, in pellentesque odio tempor.
-                                                Etiam lobortis vel enim vitae facilisis. Suspendisse ac faucibus diam, non malesuada nisl. Maecenas vel aliquam eros, sit amet gravida lacus.
-                                                nteger dictum, nulla [...]
-                                            </div>
-                                        </div>
-
-
-                                        {<div className="read-btn-container">
-                                            <a href="post_detail.html">Leia mais <i className="fa fa-angle-double-right"></i></a>
-                                        </div>}
-
-</div>
-
-</li>
-                            */}
+                            <ul className="post-list">
 
                                 {dados.length > 0 ? dados.map((e, i) => {
+
                                     let caption = e.caption;
                                     const regextag = /\B(\#[a-zA-Z-ôâÃãõÇç]+\b)(?!;)/g;
                                     const regexTitle = /(.+)((\r?\n.+)*)/gm;
@@ -188,6 +116,11 @@ export default function Blog(props) {
                                         });
                                         caption = caption.replace(title, "");
                                     }
+                                    let post;
+                                    if (e.media_type == "CAROUSEL_ALBUM") post = <Carousel titulo={title} element={e} tags={tags} caption={caption}/>;
+                                    else post = <ImgStatic titulo={title} element={e} tags={tags} caption={caption} />;
+
+
                                     return <li key={i + e.id}>
                                         <div className="post-left-info">
                                             <div className="post-date">
@@ -199,33 +132,7 @@ export default function Blog(props) {
                                                 <span className="number">{data[2]}</span>
                                             </div>
                                         </div>
-
-
-                                        <div className="post-content">
-
-                                            <div className="post-image">
-                                                <a href="post_detail.html"><img className="d-block w-100" src={e.media_url} alt="" /></a>
-                                            </div>
-                                            <div className="post-info">
-                                                <h4 className="post-title">
-                                                    {title}
-                                                </h4>
-                                                <div className="post-by">
-                                                    Postado por <a target="_blank" href={"https://www.instagram.com/" + e.username + "/"}>{e.username}</a> {tags?.length > 0 ? tags.slice(0, 3).map((e, i) => {
-                                                        var tag = e ? e.replace("#", "") : "";
-                                                        return <span key={"divider_" + i} > <span className="divider">|</span> <a href="#">{tag}</a> </span>
-                                                    }) : ""}
-                                                    {tags?.length > 3 ? <> <span className="divider">|</span> {"Mais " + (tags.length - 3) + " Categorias"} </> : ""}
-                                                </div>
-                                                <div className="post-desc" style={{ textAlign: "justify" }}>
-                                                    {caption}
-                                                </div>
-                                            </div>
-                                            {/* <div className="read-btn-container">
-                                                <a href="post_detail.html" className="read-btn">Leia mais <i className="fa fa-angle-double-right"></i></a>
-                                            </div> */}
-                                        </div>
-
+                                        {post}
                                     </li>
 
                                 }) : ""}
