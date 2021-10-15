@@ -7,10 +7,9 @@ export default function NavBar() {
 
         <div className="container">
 
-            <a href="./" className="navbar-brand">
+            <a style={{ filter: "invert(1)" }} href="./" className="navbar-brand">
                 <Image src={logo}></Image>
             </a>
-
 
             <button type="button" className="navbar-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#header-navbar">
                 <span className="icon-bar"></span>

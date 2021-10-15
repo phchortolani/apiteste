@@ -2,7 +2,7 @@ import NavBar from "../../src/components/Nav/navbar";
 import { useState } from 'react';
 import Carousel from "../../src/components/Blog/carousel";
 import ImgStatic from "../../src/components/Blog/imgstatica";
-import {BlogCover} from "../../public/BlogCover.jpg";
+
 
 export async function getServerSideProps(context) {
 
@@ -124,8 +124,8 @@ export default function Blog(props) {
             <div id="page-title" className="page-title has-bg">
                 <div className="bg-cover blogCover" data-paroller="true" data-paroller-factor="0.5" data-paroller-factor-xs="0.2" ></div>
                 <div className="container">
-                    <h1>@psidaramarques</h1>
-                    <p></p>
+                   
+               
                 </div>
             </div>
 
@@ -168,7 +168,7 @@ export default function Blog(props) {
                                                 <span className="month">{mounth}</span>
                                             </div>
                                             <div className="post-likes">
-                                                <i className="fa fa-heart text-primary"></i>
+                                                <i className="text-primary"></i>
                                                 <span className="number">{data[2]}</span>
                                             </div>
                                         </div>
@@ -215,9 +215,9 @@ export default function Blog(props) {
 
 
                             <div className="section-container">
-                                <h4 className="section-title"><span>Me siga</span></h4>
+                                <h4 className="section-title m-0 p-0"><span>Me siga</span></h4>
                                 <ul className="sidebar-social-list">
-                                    <li><a target='_blank' href="https://www.instagram.com/psidaramarques/"><i className="fab fa-instagram"></i>@psidaramarques</a></li>
+                                    <li><a target='_blank' href="https://www.instagram.com/psidaramarques/"><i className="fab fa-instagram"></i> psidaramarques</a></li>
                                 </ul>
                             </div>
 

@@ -27,13 +27,13 @@ export default function Carousel(props) {
                             return <div key={e.id} id={e.id} className={"carousel-item " + (e.id == IdimgActive ? "active" : "")}>
                                            <a target="_blank" href={props.element.permalink}><img className="d-block w-100" src={e.media_url} alt="" /></a>
                                 <div style={{ color: "#d8c3ae" }} className="name"><span className="text-primary"></span>
-                                    {imgsChildrens.length == i + 1 ? <>Você viu tudo! <FontAwesomeIcon icon={faSmileBeam} /></> : <>Veja mais <FontAwesomeIcon icon={faHandPointRight} /></>}
+                                    {imgsChildrens.length == i + 1 ? <></> : <div className="d-none">Veja mais <i className="fa-angle-double-right fas"></i></div>}
                                 </div>
                             </div>
                         }) : ""}
 
                     </div>
-                    <ol className="carousel-indicators  m-b-0">
+                    <ol className="carousel-indicators d-flex my-1 m-b-3">
                         {imgsChildrens.map((e, i) => {
                             return <li key={i} data-bs-target={"#caroulselImgs_" + props.element.id} data-bs-slide-to={i} className={(i == 0 ? "active" : "")}></li>
                         })}

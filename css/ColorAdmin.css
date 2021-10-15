@@ -6303,7 +6303,7 @@ textarea.form-control-lg {
     margin-left: 3px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: #d8c3ae;
+    background-color: #2d353c;
     background-clip: padding-box;
     border: 0;
     border-top: 10px solid transparent;
@@ -11279,7 +11279,7 @@ a {
 }
 
 .header.navbar-default .navbar-toggle {
-    background: #dee2e6
+    background: #f0cbb8
 }
 
 .header.navbar-default .navbar-toggle .icon-bar {
@@ -12056,11 +12056,12 @@ a {
 
 .sidebar-social-list>li a {
     color: #2d353c;
-    padding: 0 10px
+    padding: 0 10px;
+    font-size: small;
 }
 
 .sidebar-social-list>li a:focus, .sidebar-social-list>li a:hover {
-    color: #00acac
+    color: #afc0ad
 }
 
 .theme-panel {
