@@ -57,7 +57,7 @@
 
 body {
     margin: 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "poppins", sans-serif;
     font-size: .875rem;
     font-weight: 400;
     line-height: 1.5;
@@ -5903,7 +5903,7 @@ textarea.form-control-lg {
     z-index: 1080;
     display: block;
     margin: 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "poppins", sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -6016,7 +6016,7 @@ textarea.form-control-lg {
     z-index: 1070;
     display: block;
     max-width: 276px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "poppins", sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -11142,9 +11142,9 @@ a {
     background: 0 0;
     padding: 15px;
     font-size: .875rem;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: .5px;
-    color: #2d353c;
+    color: white;
     text-decoration: none;
     display: block
 }
@@ -11157,7 +11157,7 @@ a {
 }
 
 .header .nav.navbar-nav>li>a:focus, .header .nav.navbar-nav>li>a:hover {
-    color: #00acac
+    color: #afc0ad
 }
 
 .header .nav.navbar-nav .dropdown-menu {
@@ -11274,9 +11274,8 @@ a {
 }
 
 .header.navbar-default {
-    background: #fff;
-    -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, .15);
-    box-shadow: 0 0 16px rgba(0, 0, 0, .15)
+    background: #f0cbb8;
+   
 }
 
 .header.navbar-default .navbar-toggle {
@@ -11290,7 +11289,9 @@ a {
 .header.navbar-inverse {
     background: #1c2025
 }
-
+.blogCover {
+    background-image: url('../public/BlogCover.jpg');
+}
 .header.navbar-inverse .brand-text, .header.navbar-inverse .nav.navbar-nav>li>a {
     color: #fff
 }
@@ -11371,7 +11372,7 @@ a {
 .page-title p {
     font-size: 1.3125rem;
     font-style: italic;
-    font-family: Times New Roman;
+    font-family: poppins;
     margin: 0;
     color: rgba(255, 255, 255, .8)
 }
@@ -11392,7 +11393,7 @@ a {
     right: 0;
     top: 0;
     bottom: 0;
-    background-position: center;
+    background-position: top;
     background-size: cover;
     background-repeat: no-repeat
 }
@@ -11404,7 +11405,8 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, .4)
+    background: linear-gradient(
+        47deg, #f0cbb8, #ffffff00);
 }
 
 .page-title.has-bg .bg-cover.bottom {

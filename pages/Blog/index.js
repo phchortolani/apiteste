@@ -2,6 +2,7 @@ import NavBar from "../../src/components/Nav/navbar";
 import { useState } from 'react';
 import Carousel from "../../src/components/Blog/carousel";
 import ImgStatic from "../../src/components/Blog/imgstatica";
+import {BlogCover} from "../../public/BlogCover.jpg";
 
 export async function getServerSideProps(context) {
 
@@ -25,16 +26,93 @@ export default function Blog(props) {
     const [dados, setDados] = useState([]);
     const [firstRender, SetFirstRender] = useState(true);
 
+    let perPage = 10;
+    let pagination = {
+        page: 1,
+        perPage,
+        totalPage: Math.ceil(dados.length / perPage)
+    }
+
+    const paginationControls = {
+        next() {
+            pagination.page++;
+            const lastPage = pagination.page > pagination.totalPage;
+            if (lastPage) {
+                pagination.page--;
+            }
+        },
+        prev() {
+            pagination.page--;
+          if(pagination.page < 1) pagination.page++;
+         },
+        goTo(page) { 
+            if(page < 1) page = 1;
+            pagination.page = page;
+            if(page > pagination.totalPage) {
+                pagination.page = totalPage
+            }
+        }
+    }
+
+
     async function obterBlog() {
+       
         SetFirstRender(false);
         if (props.dados) {
             setDados(props.dados);
         }
+      
+
     }
 
     if (firstRender) obterBlog();
 
+
+    function formatarMes(data) {
+        let mounth = "";
+        switch (data) {
+            case "01":
+                mounth = "JAN"
+                break;
+            case "02":
+                mounth = "FEV"
+                break;
+            case "03":
+                mounth = "MAR"
+                break;
+            case "04":
+                mounth = "ABR"
+                break;
+            case "05":
+                mounth = "MAI"
+                break;
+            case "06":
+                mounth = "JUN"
+                break;
+            case "07":
+                mounth = "JUL"
+                break;
+            case "08":
+                mounth = "AGO"
+                break;
+            case "09":
+                mounth = "SET"
+                break;
+            case "10":
+                mounth = "OUT"
+                break;
+            case "11":
+                mounth = "NOV"
+                break;
+            case "12":
+                mounth = "DEZ"
+                break;
+
+        }  return mounth;
+    }
+
     return (
+        
         <div className="pace-done">
             <div className="pace pace-inactive"><div className="pace-progress" data-progress-text="100%" data-progress="99" >
                 <div className="pace-progress-inner"></div>
@@ -44,7 +122,7 @@ export default function Blog(props) {
 
 
             <div id="page-title" className="page-title has-bg">
-                <div className="bg-cover" data-paroller="true" data-paroller-factor="0.5" data-paroller-factor-xs="0.2" ></div>
+                <div className="bg-cover blogCover" data-paroller="true" data-paroller-factor="0.5" data-paroller-factor-xs="0.2" ></div>
                 <div className="container">
                     <h1>@psidaramarques</h1>
                     <p></p>
@@ -52,13 +130,13 @@ export default function Blog(props) {
             </div>
 
 
-            <div id="content" className="content">
+            <div id="content" className="content p-0">
 
                 <div className="container">
 
                     <div className="row row-space-30">
 
-                        <div className="col-lg-9">
+                        <div className="col-lg-8">
 
                             <ul className="post-list">
 
@@ -70,45 +148,7 @@ export default function Blog(props) {
                                     let tags = caption.match(regextag);
                                     let title = caption.match(regexTitle)[0];
                                     let data = new Date(e.timestamp).toLocaleDateString().split("T")[0].split("/");
-                                    let mounth = "";
-                                    switch (data[1]) {
-                                        case "01":
-                                            mounth = "JAN"
-                                            break;
-                                        case "02":
-                                            mounth = "FEV"
-                                            break;
-                                        case "03":
-                                            mounth = "MAR"
-                                            break;
-                                        case "04":
-                                            mounth = "ABR"
-                                            break;
-                                        case "05":
-                                            mounth = "MAI"
-                                            break;
-                                        case "06":
-                                            mounth = "JUN"
-                                            break;
-                                        case "07":
-                                            mounth = "JUL"
-                                            break;
-                                        case "08":
-                                            mounth = "AGO"
-                                            break;
-                                        case "09":
-                                            mounth = "SET"
-                                            break;
-                                        case "10":
-                                            mounth = "OUT"
-                                            break;
-                                        case "11":
-                                            mounth = "NOV"
-                                            break;
-                                        case "12":
-                                            mounth = "DEZ"
-                                            break;
-                                    }
+                                    let mounth = formatarMes(data[1]);
 
                                     if (tags?.length > 0) {
                                         tags.forEach(element => {
@@ -117,7 +157,7 @@ export default function Blog(props) {
                                         caption = caption.replace(title, "");
                                     }
                                     let post;
-                                    if (e.media_type == "CAROUSEL_ALBUM") post = <Carousel titulo={title} element={e} tags={tags} caption={caption}/>;
+                                    if (e.media_type == "CAROUSEL_ALBUM") post = <Carousel titulo={title} element={e} tags={tags} caption={caption} />;
                                     else post = <ImgStatic titulo={title} element={e} tags={tags} caption={caption} />;
 
 
@@ -137,7 +177,7 @@ export default function Blog(props) {
 
                                 }) : ""}
                             </ul>
-                            {/*    <div className="section-container">
+                            {<div className="section-container">
                                 <div className="pagination-container">
                                     <ul className="pagination justify-content-center">
                                         <li className="page-item disabled"><a className="page-link" href="#">Prev</a></li>
@@ -149,12 +189,12 @@ export default function Blog(props) {
                                         <li className="page-item"><a className="page-link" href="#">Próx</a></li>
                                     </ul>
                                 </div>
-                            </div>*/}
+                            </div>}
 
                         </div>
 
 
-                        <div className="col-lg-3">
+                        <div className="col-lg-3 mt-4">
                             {/*          <div className="section-container">
                                 <div className="input-group sidebar-search">
                                     <input type="text" className="form-control" placeholder="Search Our Stories..." />

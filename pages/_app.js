@@ -15,7 +15,8 @@ function MyApp({ Component, pageProps }) {
     return (
         <AuthProvider>
             <Head>
-
+            <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Poppins" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" type="image/png" href="/dmlogolittle.png" />
                 <title>Dara Marques Psicóloga</title>

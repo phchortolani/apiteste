@@ -13,7 +13,7 @@ export default function ImgStatic(props) {
                         var tag = e ? e.replace("#", "") : "";
                         return <span key={"divider_" + i} > <span className="divider">|</span> <a href="#">{tag}</a> </span>
                     }) : ""}
-                    {props.tags?.length > 3 ? <> <span className="divider">|</span> {"Mais " + (props.tags.length - 3) + " Categorias"} </> : ""}
+                    {props.tags?.length > 3 ? <> <span className="divider">|</span> <span style={{cursor:"help"}} title={props.tags.slice(3,props.tags.length )}>{"Mais " + (props.tags.length - 3) + " Categorias"}</span>  </> : ""}
                 </div>
                 <div className="post-desc" style={{ textAlign: "justify" }}>
                     {props.caption}

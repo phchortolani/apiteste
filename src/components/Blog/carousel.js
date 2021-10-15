@@ -25,7 +25,7 @@ export default function Carousel(props) {
                     <div className="carousel-inner text-center">
                         {imgsChildrens.length > 0 ? imgsChildrens.map((e, i) => {
                             return <div key={e.id} id={e.id} className={"carousel-item " + (e.id == IdimgActive ? "active" : "")}>
-                                <img className="d-block w-100" src={e.media_url} alt="" />
+                                           <a target="_blank" href={props.element.permalink}><img className="d-block w-100" src={e.media_url} alt="" /></a>
                                 <div style={{ color: "#d8c3ae" }} className="name"><span className="text-primary"></span>
                                     {imgsChildrens.length == i + 1 ? <>Você viu tudo! <FontAwesomeIcon icon={faSmileBeam} /></> : <>Veja mais <FontAwesomeIcon icon={faHandPointRight} /></>}
                                 </div>
@@ -50,7 +50,7 @@ export default function Carousel(props) {
                         var tag = e ? e.replace("#", "") : "";
                         return <span key={"divider_" + i} > <span className="divider">|</span> <a href="#">{tag}</a> </span>
                     }) : ""}
-                    {props.tags?.length > 3 ? <> <span className="divider">|</span> {"Mais " + (props.tags.length - 3) + " Categorias"} </> : ""}
+                    {props.tags?.length > 3 ? <> <span className="divider">|</span> <span style={{cursor:"help"}}  title={props.tags.slice(3,props.tags.length )}>{"Mais " + (props.tags.length - 3) + " Categorias"}</span> </> : ""}
                 </div>
                 <div className="post-desc" style={{ textAlign: "justify" }}>
                     {props.caption}

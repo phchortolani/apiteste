@@ -2064,7 +2064,7 @@ html {
   body {
     color: #2c2c2c;
     font-size: 14px;
-    font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    font-family: "poppins", "Helvetica Neue", Arial, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: white;
@@ -3096,10 +3096,7 @@ html {
     padding-left: 65px;
   }
   
-  img {
-    max-width: 100%;
-    border-radius: 0.1875rem;
-  }
+
   
   .img-raised {
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
