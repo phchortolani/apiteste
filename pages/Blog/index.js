@@ -111,7 +111,7 @@ export default function Blog(props) {
 
         }  return mounth;
     }
-
+let linkogimage = 'https://instagram.fcgh17-1.fna.fbcdn.net/v/t51.2885-19/s150x150/241732459_1024109128438290_8032125203714092338_n.jpg?_nc_ht=instagram.fcgh17-1.fna.fbcdn.net&_nc_ohc=82KVMydvAt0AX-awbL_&edm=ALbqBD0BAAAA&ccb=7-4&oh=8c46fbda995d46ada8901f0191429e93&oe=617640D8&_nc_sid=9a90d6';
     return (
 
 
@@ -128,7 +128,7 @@ export default function Blog(props) {
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Blog | Psicóloga Dara Marques - Ansiedade" />
                 <meta property="og:description" content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!" />
-                <meta property="og:image" content="https://psidaramarques.com.br/_next/static/media/BlogCover.bfedecc7d67318b7492a5e77d797874c.jpg" />
+                <meta property="og:image" content={linkogimage} />
 
             </Head>
             <div className="pace pace-inactive"><div className="pace-progress" data-progress-text="100%" data-progress="99" >
