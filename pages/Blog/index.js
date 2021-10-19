@@ -4,6 +4,7 @@ import Carousel from "../../src/components/Blog/carousel";
 import ImgStatic from "../../src/components/Blog/imgstatica";
 import Head from 'next/head';
 
+
 export async function getServerSideProps(context) {
 
     const dev = process.env.NODE_ENV !== 'production';
@@ -124,12 +125,13 @@ export default function Blog(props) {
                 />
                 <meta property="og:image" content="/BlogCover.jpg" />
                 <meta property="og:image:secure_url" content="/BlogCover.jpg" />
-                <meta name="twitter:image" content="/BlogCover.jpg" />
-                <meta name="twitter:image:src" content="/BlogCover.jpg" />
+                <meta name="twitter:image" content="../../public/BlogCover.jpg" />
+                <meta name="twitter:image:src" content="../../public/BlogCover.jpg" />
                 <meta
                     property="og:description"
                     content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!"
                 />
+                
             </Head>
             <div className="pace pace-inactive"><div className="pace-progress" data-progress-text="100%" data-progress="99" >
                 <div className="pace-progress-inner"></div>
@@ -141,8 +143,6 @@ export default function Blog(props) {
             <div id="page-title" data-aos="fade-down" className="page-title has-bg">
                 <div className="bg-cover blogCover" data-paroller="true" data-paroller-factor="0.5" data-paroller-factor-xs="0.2" ></div>
                 <div className="container">
-
-
                 </div>
             </div>
 
