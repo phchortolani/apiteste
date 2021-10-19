@@ -1,6 +1,14 @@
+import Aos from "aos";
+import { useEffect } from "react";
 import NavBar from "../src/components/Nav/navbar";
+import 'aos/dist/aos.css';
 
 export default function Ste() {
+    useEffect(() => {
+        Aos.init({duration: 1500});
+
+    }, [])
+
     return (
         <>
             <div id="page-container" className="fade show">
@@ -15,7 +23,7 @@ export default function Ste() {
 
 
                     <div className="container home-content">
-                        <h1>Welcome to Color Admin</h1>
+                        <h1 data-aos="fade-up">Welcome to Color Admin</h1>
                         <h3>Multipurpose One Page Theme</h3>
                         <p>
                             We have created a multi-purpose theme that take the form of One-Page or Multi-Page Version.<br />
@@ -130,7 +138,7 @@ export default function Ste() {
                     <div className="content-bg" data-paroller="true" data-paroller-factor="0.5" data-paroller-factor-md="0.01" data-paroller-factor-xs="0.01"></div>
 
 
-             
+
                 </div>
 
 
@@ -519,7 +527,7 @@ export default function Ste() {
                     <div className="container">
                         <h2 className="content-title">Entre em contato!</h2>
                         <p className="content-desc">
-                      Em caso de dúvidas do funcionamento da terapia, solicitações de 
+                            Em caso de dúvidas do funcionamento da terapia, solicitações de
                         </p>
 
                         <div className="row">

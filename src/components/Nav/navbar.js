@@ -7,7 +7,7 @@ export default function NavBar() {
 
         <div className="container">
 
-            <a style={{ filter: "invert(1)" }} href="./" className="navbar-brand">
+            <a data-aos="zoom-in" style={{ filter: "invert(1)" }} href="./" className="navbar-brand">
                 <Image src={logo}></Image>
             </a>
 
@@ -20,7 +20,7 @@ export default function NavBar() {
 
             <div className="collapse navbar-collapse" id="header-navbar">
                 <ul className="nav navbar-nav navbar-right">
-                    <li><a href="./">Home</a></li>
+                    <li data-aos="zoom-in" ><a href="./">Home</a></li>
 
                     { /*<li className="dropdown">
                         <a href="#" data-bs-toggle="dropdown">POSTS <b className="caret"></b></a>
@@ -29,8 +29,8 @@ export default function NavBar() {
                             <a className="dropdown-item" href="post_without_sidebar.html">Page without Sidebar</a>
                         </div>
 </li> */}
-                    <li><a href="./Blog">Blog</a></li>
-                    <li><a href="./Login">Entrar</a></li>
+                    <li data-aos="zoom-in"><a href="./Blog">Blog</a></li>
+                    <li data-aos="zoom-in"><a href="./Login">Entrar</a></li>
                 </ul>
             </div>
 

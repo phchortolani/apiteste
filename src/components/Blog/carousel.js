@@ -17,7 +17,7 @@ export default function Carousel(props) {
 
     return (
 
-        <div key={props.element.id} className="post-content">
+        <div key={props.element.id} data-aos="fade-up" className="post-content">
             <div className="animate__fadeInUp contentAnimated finishAnimated " data-animation="true" data-animation-type="animate__fadeInUp">
                 <h2 className="content-title"></h2>
 
@@ -25,7 +25,7 @@ export default function Carousel(props) {
                     <div className="carousel-inner text-center">
                         {imgsChildrens.length > 0 ? imgsChildrens.map((e, i) => {
                             return <div key={e.id} id={e.id} className={"carousel-item " + (e.id == IdimgActive ? "active" : "")}>
-                                           <a target="_blank" href={props.element.permalink}><img className="d-block w-100" src={e.media_url} alt="" /></a>
+                                <a target="_blank" href={props.element.permalink}><img className="d-block w-100" src={e.media_url} alt="" /></a>
                                 <div style={{ color: "#d8c3ae" }} className="name"><span className="text-primary"></span>
                                     {imgsChildrens.length == i + 1 ? <></> : <div className="d-none">Veja mais <i className="fa-angle-double-right fas"></i></div>}
                                 </div>
@@ -41,7 +41,7 @@ export default function Carousel(props) {
                 </div>
 
             </div>
-            <div className="post-info">
+            <div className="post-info" data-aos="fade-up">
                 <h4 className="post-title">
                     {props.titulo}
                 </h4>
@@ -50,7 +50,7 @@ export default function Carousel(props) {
                         var tag = e ? e.replace("#", "") : "";
                         return <span key={"divider_" + i} > <span className="divider">|</span> <a href="#">{tag}</a> </span>
                     }) : ""}
-                    {props.tags?.length > 3 ? <> <span className="divider">|</span> <span style={{cursor:"help"}}  title={props.tags.slice(3,props.tags.length )}>{"Mais " + (props.tags.length - 3) + " Categorias"}</span> </> : ""}
+                    {props.tags?.length > 3 ? <> <span className="divider">|</span> <span style={{ cursor: "help" }} title={props.tags.slice(3, props.tags.length)}>{"Mais " + (props.tags.length - 3) + " Categorias"}</span> </> : ""}
                 </div>
                 <div className="post-desc" style={{ textAlign: "justify" }}>
                     {props.caption}

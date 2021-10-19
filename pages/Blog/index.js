@@ -121,7 +121,7 @@ export default function Blog(props) {
             <NavBar />
 
 
-            <div id="page-title" className="page-title has-bg">
+            <div id="page-title" data-aos="fade-down" className="page-title has-bg">
                 <div className="bg-cover blogCover" data-paroller="true" data-paroller-factor="0.5" data-paroller-factor-xs="0.2" ></div>
                 <div className="container">
                    
@@ -130,7 +130,7 @@ export default function Blog(props) {
             </div>
 
 
-            <div id="content" className="content p-0">
+            <div id="content" className="content">
 
                 <div className="container">
 
@@ -162,7 +162,7 @@ export default function Blog(props) {
 
 
                                     return <li key={i + e.id}>
-                                        <div className="post-left-info">
+                                        <div className="post-left-info" data-aos="fade-right">
                                             <div className="post-date">
                                                 <span className="day">{data[0]}</span>
                                                 <span className="month">{mounth}</span>
@@ -214,7 +214,7 @@ export default function Blog(props) {
                             </div> */}
 
 
-                            <div className="section-container">
+                            <div className="section-container" data-aos="fade-up">
                                 <h4 className="section-title m-0 p-0"><span>Me siga</span></h4>
                                 <ul className="sidebar-social-list">
                                     <li><a target='_blank' href="https://www.instagram.com/psidaramarques/"><i className="fab fa-instagram"></i> psidaramarques</a></li>
@@ -323,11 +323,7 @@ export default function Blog(props) {
                 <div className="container d-sm-flex">
                     <span className="copyright d-block">© {new Date().toLocaleDateString().split("/")[2]} psidaramarques</span>
                     <ul className="social-media-list mt-2 mt-sm-0 flex-1">
-                        <li><a href="#"><i className="fab fa-facebook"></i></a></li>
-                        <li><a href="#"><i className="fab fa-google-plus"></i></a></li>
-                        <li><a href="#"><i className="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i className="fa fa-rss"></i></a></li>
+                        <li><a href="https://instagram.com/psidaramarques" target="_blank"><i className="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
 
