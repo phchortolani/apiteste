@@ -118,20 +118,18 @@ export default function Blog(props) {
 
         <div className="pace-done">
             <Head>
-                <title>Blog | psidaramarques</title>
-                <meta
-                    name="description"
-                    content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!"
-                />
-                <meta property="og:image" content="/BlogCover.jpg" />
-                <meta property="og:image:secure_url" content="/BlogCover.jpg" />
-                <meta name="twitter:image" content="../../public/BlogCover.jpg" />
-                <meta name="twitter:image:src" content="../../public/BlogCover.jpg" />
-                <meta
-                    property="og:description"
-                    content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!"
-                />
-                
+                <title>Blog | Psi. Dara Marques</title>
+
+                <meta itemprop="name" content="Blog | Psicóloga Dara Marques - Ansiedade" />
+                <meta itemprop="description" content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!" />
+                <meta itemprop="image" content="https://psidaramarques.com.br/_next/static/media/BlogCover.bfedecc7d67318b7492a5e77d797874c.jpg" />
+
+                <meta property="og:url" content="https://psidaramarques.com.br/Blog" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Blog | Psicóloga Dara Marques - Ansiedade" />
+                <meta property="og:description" content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!" />
+                <meta property="og:image" content="https://psidaramarques.com.br/_next/static/media/BlogCover.bfedecc7d67318b7492a5e77d797874c.jpg" />
+
             </Head>
             <div className="pace pace-inactive"><div className="pace-progress" data-progress-text="100%" data-progress="99" >
                 <div className="pace-progress-inner"></div>
