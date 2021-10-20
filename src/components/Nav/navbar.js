@@ -1,5 +1,6 @@
 import Image from "next/image";
 import logo from '../../assets/images/dmlogo.png';
+import Link from 'next/link';
 
 export default function NavBar() {
 
@@ -20,7 +21,11 @@ export default function NavBar() {
 
             <div className="collapse navbar-collapse" id="header-navbar">
                 <ul className="nav navbar-nav navbar-right">
-                    <li data-aos="zoom-in" ><a href="./">Home</a></li>
+                    <li data-aos="zoom-in" >
+                        <Link href="/">
+                            <a>Home</a>
+                        </Link>
+                    </li>
 
                     { /*<li className="dropdown">
                         <a href="#" data-bs-toggle="dropdown">POSTS <b className="caret"></b></a>
@@ -29,8 +34,15 @@ export default function NavBar() {
                             <a className="dropdown-item" href="post_without_sidebar.html">Page without Sidebar</a>
                         </div>
 </li> */}
-                    <li data-aos="zoom-in"><a href="./Blog">Blog</a></li>
-                    <li data-aos="zoom-in"><a href="./Login">Entrar</a></li>
+                    <li data-aos="zoom-in">
+                        <Link href="/Blog">
+                            <a>Blog</a>
+                        </Link>
+                    </li>
+                    <li data-aos="zoom-in">
+                        <Link href="/Login">
+                            <a>Entrar</a>
+                        </Link></li>
                 </ul>
             </div>
 
