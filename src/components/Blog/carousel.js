@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHandPointRight, faSmileBeam } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 export default function Carousel(props) {
@@ -21,11 +19,13 @@ export default function Carousel(props) {
             <div className="animate__fadeInUp contentAnimated finishAnimated " data-animation="true" data-animation-type="animate__fadeInUp">
                 <h2 className="content-title"></h2>
 
-                <div className="carousel caroulselImgs slide" data-ride="carousel" id={"caroulselImgs_" + props.element.id}>
-                    <div className="carousel-inner text-center">
+                <div className="carousel caroulselImgs slide " data-ride="carousel" id={"caroulselImgs_" + props.element.id}>
+                    <div className="carousel-inner text-center shadow-lg">
                         {imgsChildrens.length > 0 ? imgsChildrens.map((e, i) => {
                             return <div key={e.id} id={e.id} className={"carousel-item " + (e.id == IdimgActive ? "active" : "")}>
-                                <a target="_blank" href={props.element.permalink}><img className="d-block w-100" src={e.media_url} alt="" /></a>
+                                <a target="_blank"  href={props.element.permalink}>
+                                    <img className="d-block w-100" src={e.media_url} alt="" />
+                                </a>
                                 <div style={{ color: "#d8c3ae" }} className="name"><span className="text-primary"></span>
                                     {imgsChildrens.length == i + 1 ? <></> : <div className="d-none">Veja mais <i className="fa-angle-double-right fas"></i></div>}
                                 </div>
@@ -41,7 +41,7 @@ export default function Carousel(props) {
                 </div>
 
             </div>
-            <div className="post-info" data-aos="fade-up">
+            <div className="post-info mt-30px" data-aos="fade-up">
                 <h4 className="post-title">
                     {props.titulo}
                 </h4>

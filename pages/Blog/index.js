@@ -194,12 +194,13 @@ export default function Blog(props) {
                             {<div className="section-container">
                                 <div className="pagination-container">
                                     <ul className="pagination justify-content-center">
-                                        <li className="page-item disabled"><a className="page-link" href="#">Prev</a></li>
+                                  
+                                        <li className="page-item disabled"><a className="page-link" href="#">Ante</a></li>
                                         <li className="page-item active"><a className="page-link" href="#">1</a></li>
                                         <li className="page-item"><a className="page-link" href="#">2</a></li>
                                         <li className="page-item"><a className="page-link" href="#">3</a></li>
                                         <li className="page-item"><span className="text">...</span></li>
-                                        <li className="page-item"><a className="page-link" href="#">1797</a></li>
+                                        <li className="page-item"><a className="page-link" href="#">{pagination.totalPage}</a></li>
                                         <li className="page-item"><a className="page-link" href="#">Próx</a></li>
                                     </ul>
                                 </div>
@@ -329,8 +330,6 @@ export default function Blog(props) {
 
             </div>
 */}
-
-
 
             <div id="footer-copyright" className="footer-copyright">
 
