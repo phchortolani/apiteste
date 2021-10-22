@@ -175,8 +175,8 @@ export default function Blog(props) {
                                     else post = <ImgStatic titulo={title} element={e} tags={tags} caption={caption} />;
 
 
-                                    return <li key={i + e.id}>
-                                        <div className="post-left-info" data-aos="fade-right">
+                                    return <li className="p-md-5 pt-md-0 pb-md-0" key={i + e.id}>
+                                        <div className="post-left-info " data-aos="fade-right">
                                             <div className="post-date">
                                                 <span className="day">{data[0]}</span>
                                                 <span className="month">{mounth}</span>

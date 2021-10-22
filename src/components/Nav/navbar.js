@@ -1,6 +1,8 @@
 import Image from "next/image";
-import logo from '../../assets/images/dmlogo.png';
+
 import Link from 'next/link';
+import svglogo from '../../../public/logoDara.svg';
+
 
 export default function NavBar() {
 
@@ -9,7 +11,7 @@ export default function NavBar() {
         <div className="container">
 
             <a data-aos="zoom-in" style={{ filter: "invert(1)" }} href="./" className="navbar-brand">
-                <Image src={logo}></Image>
+               <img src={svglogo}></img>  
             </a>
 
             <button type="button" className="navbar-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#header-navbar">

@@ -11283,7 +11283,7 @@ a {
 }
 
 .header.navbar-default .navbar-toggle .icon-bar {
-    background: #6c757d
+    background: white;
 }
 
 .header.navbar-inverse {
@@ -11379,7 +11379,7 @@ a {
 
 .page-title+.content {
     margin-top: 0;
-    padding-top: 60px
+    padding-top: 20px
 }
 
 .page-title.has-bg {
@@ -11648,7 +11648,7 @@ a {
 
 .post-by {
     display: block;
-    font-size: .8125rem;
+    font-size: 0.7rem;
     line-height: 1.8;
     color: #6c757d;
     margin-bottom: 15px
@@ -11927,7 +11927,6 @@ a {
 }
 
 .post-title {
-    margin: 0 0 5px;
     font-size: 1.5rem;
     line-height: 1.5;
     font-weight: 600;

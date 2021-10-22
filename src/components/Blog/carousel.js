@@ -41,7 +41,7 @@ export default function Carousel(props) {
                 </div>
 
             </div>
-            <div className="post-info mt-30px" data-aos="fade-up">
+            <div className="post-info" data-aos="fade-up">
                 <h4 className="post-title">
                     {props.titulo}
                 </h4>
