@@ -123,13 +123,13 @@ export default function Blog(props) {
 
                 <meta itemprop="name" content="Blog | Psicóloga Dara Marques - Ansiedade" />
                 <meta itemprop="description" content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!" />
-                <meta itemprop="image" content="./../../public/ogimage.jpg" />
+                <meta itemprop="image" content="/ogimage.jpg" />
 
                 <meta property="og:url" content="https://psidaramarques.com.br/Blog" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Blog | Como lidar com a ansiedade?" />
                 <meta property="og:description" content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!" />
-                <meta property="og:image" content="./../../public/ogimage.jpg" />
+                <meta property="og:image" content="/ogimage.jpg" />
 
             </Head>
             <div className="pace pace-inactive"><div className="pace-progress" data-progress-text="100%" data-progress="99" >
