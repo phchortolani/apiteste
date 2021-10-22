@@ -6,6 +6,8 @@ import Head from 'next/head';
 
 
 
+
+
 export async function getServerSideProps(context) {
 
     const dev = process.env.NODE_ENV !== 'production';
@@ -112,9 +114,8 @@ export default function Blog(props) {
 
         }  return mounth;
     }
-
+const ogimage = 'https://scontent.cdninstagram.com/v/t51.29350-15/245021037_261759715853180_1041340040552307482_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=rBECYMIykEsAX86ARdn&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=efe68f4ff700e246a2b05a3b1ff79fce&oe=6178037B';
     return (
-
 
 
         <div className="pace-done">
@@ -123,13 +124,13 @@ export default function Blog(props) {
 
                 <meta itemprop="name" content="Blog | Psicóloga Dara Marques - Ansiedade" />
                 <meta itemprop="description" content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!" />
-                <meta itemprop="image" content="ogimage.jpg" />
+                <meta itemprop="image" content={ogimage} />
 
                 <meta property="og:url" content="https://psidaramarques.com.br/Blog" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Blog | Como lidar com a ansiedade?" />
                 <meta property="og:description" content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!" />
-                <meta property="og:image" content="ogimage.jpg" />
+                <meta property="og:image" content={ogimage} />
 
             </Head>
             <div className="pace pace-inactive"><div className="pace-progress" data-progress-text="100%" data-progress="99" >
@@ -144,7 +145,6 @@ export default function Blog(props) {
                 <div className="container">
                 </div>
             </div>
-
 
             <div id="content" className="content">
 
@@ -195,7 +195,7 @@ export default function Blog(props) {
                             {<div className="section-container">
                                 <div className="pagination-container">
                                     <ul className="pagination justify-content-center">
-                                  
+
                                         <li className="page-item disabled"><a className="page-link" href="#">Ante</a></li>
                                         <li className="page-item active"><a className="page-link" href="#">1</a></li>
                                         <li className="page-item"><a className="page-link" href="#">2</a></li>
