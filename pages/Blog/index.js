@@ -8,7 +8,7 @@ import Head from 'next/head';
 
 
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 
     const dev = process.env.NODE_ENV !== 'production';
     //context.req.connection.remoteAddress; ip de quem solicita
@@ -22,6 +22,7 @@ export async function getServerSideProps(context) {
         })
     return {
         props: { dados: data },
+        revalidate: 60 * 60
     }
 }
 
@@ -117,7 +118,6 @@ export default function Blog(props) {
 const ogimage = 'https://scontent.cdninstagram.com/v/t51.29350-15/245021037_261759715853180_1041340040552307482_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=rBECYMIykEsAX86ARdn&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=efe68f4ff700e246a2b05a3b1ff79fce&oe=6178037B';
     return (
 
-
         <div className="pace-done">
             <Head>
                 <title>Blog | Psi. Dara Marques</title>
@@ -138,7 +138,6 @@ const ogimage = 'https://scontent.cdninstagram.com/v/t51.29350-15/245021037_2617
             </div>
                 <div className="pace-activity"></div></div>
             <NavBar />
-
 
             <div id="page-title" data-aos="fade-down" className="page-title has-bg">
                 <div className="bg-cover blogCover" data-paroller="true" data-paroller-factor="0.5" data-paroller-factor-xs="0.2" ></div>
