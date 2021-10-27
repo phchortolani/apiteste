@@ -1,20 +1,15 @@
 import NavBar from "../../src/components/Nav/navbar";
 import { useState } from 'react';
-import Carousel from "../../src/components/Blog/carousel";
-import ImgStatic from "../../src/components/Blog/imgstatica";
 import Head from 'next/head';
+import Postagens from "../../src/components/Blog/Postagens";
 
-
-
-
+let firstRender = true;
 
 export async function getStaticProps(context) {
 
     const dev = process.env.NODE_ENV !== 'production';
     //context.req.connection.remoteAddress; ip de quem solicita
-
     const server = dev ? 'http://localhost:3000' : 'https://psidaramarques.com.br';
-
 
     var data = await fetch(`${server}/api/obterBlog`)
         .then(async function (response) {
@@ -29,109 +24,102 @@ export async function getStaticProps(context) {
 export default function Blog(props) {
 
     const [dados, setDados] = useState([]);
-    const [firstRender, SetFirstRender] = useState(true);
 
-    let perPage = 10;
-    let pagination = {
+    let postporpagina = 5;
+
+    const [pagination, SetPagination] = useState({
         page: 1,
-        perPage,
-        totalPage: Math.ceil(dados.length / perPage)
-    }
+        perPage: postporpagina,
+        totalPage: Math.ceil(props.dados?.length / postporpagina)
+    });
 
     const paginationControls = {
         next() {
             pagination.page++;
-            const lastPage = pagination.page > pagination.totalPage;
-            if (lastPage) {
+            if (pagination.page > pagination.totalPage) {
                 pagination.page--;
             }
+            list.update();
         },
         prev() {
             pagination.page--;
             if (pagination.page < 1) pagination.page++;
+            list.update();
         },
         goTo(page) {
+            if (page == pagination.page) return;
             if (page < 1) page = 1;
             pagination.page = page;
             if (page > pagination.totalPage) {
-                pagination.page = totalPage
+                pagination.page = pagination.totalPage
             }
+            list.update();
+        }
+    }
+
+    const list = {
+        update() {
+            let page = pagination.page - 1;
+            let start = page * pagination.perPage;
+            let end = start + pagination.perPage;
+            const posts = props.dados?.slice(start, end);
+            setDados(posts);
+        }
+    }
+    const buttons = {
+        create() {
+            const { maxEsquerda, maxDireita } = buttons.calculateMaxVisible();
+            let result = [];
+            for (let page = maxEsquerda; page <= maxDireita; page++) {
+                result.push(<li key={page} className={"page-item  " + (pagination.page == page ? "active " : "")}><a href="#" onClick={() => paginationControls.goTo(page)} className="page-link">{page}</a></li>);
+            }
+            return result;
+        },
+        calculateMaxVisible() {
+            let maxEsquerda = (pagination.page - Math.floor(5 / 2));
+            let maxDireita = (pagination.page + Math.floor(5 / 2));
+            if (maxEsquerda < 1) {
+                maxEsquerda = 1;
+                maxDireita = pagination.totalPage > 5 ? 5 : pagination.totalPage;
+            }
+            if (maxDireita > pagination.totalPage) {
+                maxEsquerda = pagination.totalPage - 4;
+                maxDireita = pagination.totalPage;
+                if (maxEsquerda < 1) maxEsquerda = 1;
+            }
+
+            return { maxEsquerda, maxDireita };
         }
     }
 
 
-    async function obterBlog() {
+    const UltimasLi = <>
+        <li className="page-item">
+            <span className="text">...</span></li><li className="page-item">
+            <a onClick={() => paginationControls.goTo(pagination.totalPage)} className="page-link">{pagination.totalPage}</a>
+        </li>
+    </>
 
-        SetFirstRender(false);
-        if (props.dados) {
-            setDados(props.dados);
-        }
-
-
+    if (firstRender) {
+        firstRender = false;
+        list.update();
     }
 
-    if (firstRender) obterBlog();
 
-
-    function formatarMes(data) {
-        let mounth = "";
-        switch (data) {
-            case "01":
-                mounth = "JAN"
-                break;
-            case "02":
-                mounth = "FEV"
-                break;
-            case "03":
-                mounth = "MAR"
-                break;
-            case "04":
-                mounth = "ABR"
-                break;
-            case "05":
-                mounth = "MAI"
-                break;
-            case "06":
-                mounth = "JUN"
-                break;
-            case "07":
-                mounth = "JUL"
-                break;
-            case "08":
-                mounth = "AGO"
-                break;
-            case "09":
-                mounth = "SET"
-                break;
-            case "10":
-                mounth = "OUT"
-                break;
-            case "11":
-                mounth = "NOV"
-                break;
-            case "12":
-                mounth = "DEZ"
-                break;
-
-        }  return mounth;
-    }
-const ogimage = 'https://scontent.cdninstagram.com/v/t51.29350-15/245021037_261759715853180_1041340040552307482_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=rBECYMIykEsAX86ARdn&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=efe68f4ff700e246a2b05a3b1ff79fce&oe=6178037B';
+    const ogimage = 'https://scontent.cdninstagram.com/v/t51.29350-15/245021037_261759715853180_1041340040552307482_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=rBECYMIykEsAX86ARdn&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=efe68f4ff700e246a2b05a3b1ff79fce&oe=6178037B';
     return (
 
         <div className="pace-done">
             <Head>
-                <title>Blog | Psi. Dara Marques</title>
-
-                <meta itemprop="name" content="Blog | Psicóloga Dara Marques - Ansiedade" />
-                <meta itemprop="description" content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!" />
-                <meta itemprop="image" content={ogimage} />
-
+                <title>Blog | Dara Marques - Psicóloga clínica</title>
+                <meta itemProp="name" content="Blog | Psicóloga Dara Marques - Ansiedade" />
+                <meta itemProp="description" content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!" />
+                <meta itemProp="image" content={ogimage} />
                 <meta property="og:url" content="https://psidaramarques.com.br/Blog" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Blog | Como lidar com a ansiedade?" />
                 <meta property="og:description" content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!" />
                 <meta property="og:image" content={ogimage} />
-
             </Head>
             <div className="pace pace-inactive"><div className="pace-progress" data-progress-text="100%" data-progress="99" >
                 <div className="pace-progress-inner"></div>
@@ -152,59 +140,20 @@ const ogimage = 'https://scontent.cdninstagram.com/v/t51.29350-15/245021037_2617
                     <div className="row row-space-30">
 
                         <div className="col-lg-8">
+                            <span data-aos="fade-left" className="d-block ms-md-5 ps-lg-2 text-light-600">Pagina: {pagination.page} de {pagination.totalPage}</span>
 
-                            <ul className="post-list">
-                                {dados.length > 0 ? dados.map((e, i) => {
+                            <Postagens dados={dados} />
 
-                                    let caption = e.caption;
-                                    const regextag = /\B(\#[a-zA-Z-ôâÃãõÇç]+\b)(?!;)/g;
-                                    const regexTitle = /(.+)((\r?\n.+)*)/gm;
-                                    let tags = caption.match(regextag);
-                                    let title = caption.match(regexTitle)[0];
-                                    let data = new Date(e.timestamp).toLocaleDateString().split("T")[0].split("/");
-                                    let mounth = formatarMes(data[1]);
-
-                                    if (tags?.length > 0) {
-                                        tags.forEach(element => {
-                                            caption = caption.replace(element, "");
-                                        });
-                                        caption = caption.replace(title, "");
-                                    }
-                                    let post;
-                                    if (e.media_type == "CAROUSEL_ALBUM") post = <Carousel titulo={title} element={e} tags={tags} caption={caption} />;
-                                    else post = <ImgStatic titulo={title} element={e} tags={tags} caption={caption} />;
-
-
-                                    return <li className="p-md-5 pt-md-0 pb-md-0" key={i + e.id}>
-                                        <div className="post-left-info " data-aos="fade-right">
-                                            <div className="post-date">
-                                                <span className="day">{data[0]}</span>
-                                                <span className="month">{mounth}</span>
-                                            </div>
-                                            <div className="post-likes">
-                                                <i className="text-primary"></i>
-                                                <span className="number">{data[2]}</span>
-                                            </div>
-                                        </div>
-                                        {post}
-                                    </li>
-
-                                }) : ""}
-                            </ul>
-                            {<div className="section-container">
+                            <div className="section-container">
                                 <div className="pagination-container">
                                     <ul className="pagination justify-content-center">
-
-                                        <li className="page-item disabled"><a className="page-link" href="#">Ante</a></li>
-                                        <li className="page-item active"><a className="page-link" href="#">1</a></li>
-                                        <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                        <li className="page-item"><span className="text">...</span></li>
-                                        <li className="page-item"><a className="page-link" href="#">{pagination.totalPage}</a></li>
-                                        <li className="page-item"><a className="page-link" href="#">Próx</a></li>
+                                        <li className={"page-item " + (pagination.page == 1 ? "disabled" : "")}><a onClick={() => paginationControls.prev()} className="page-link" >Ante</a></li>
+                                        {buttons.create()}
+                                        {pagination.totalPage > 5 ? UltimasLi : ""}
+                                        {pagination.totalPage > 1 ? <li className={"page-item " + (pagination.page == pagination.totalPage ? "disabled" : "")}><a onClick={() => paginationControls.next()} className="page-link">Próx</a></li> : ""}
                                     </ul>
                                 </div>
-                            </div>}
+                            </div>
 
                         </div>
 
@@ -244,92 +193,6 @@ const ogimage = 'https://scontent.cdninstagram.com/v/t51.29350-15/245021037_2617
 
             </div>
 
-
-
-            {/*
-  <div id="footer" className="footer">
- <div className="container">
-
-                    <div className="row">
-
-                        <div className="col-md-3 col-6">
-
-                            <div className="section-container">
-                                <h4 className="footer-title">Categorias</h4>
-                                <ul className="categories">
-                                    <li><a href="#">Sports</a></li>
-                                    <li><a href="#">Outdoor Sports</a></li>
-                                    <li><a href="#">Indoor Sports</a></li>
-                                    <li><a href="#">Video Shooting</a></li>
-                                    <li><a href="#">Drone</a></li>
-                                    <li><a href="#">Uncategorized</a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-
-                        <div className="col-md-3 col-6">
-
-                            <div className="section-container">
-                                <h4 className="footer-title">Archives</h4>
-                                <ul className="archives">
-                                    <li><a href="#">June 2018</a> <span className="total">(102)</span></li>
-                                    <li><a href="#">May 2018</a> <span className="total">(46)</span></li>
-                                    <li><a href="#">April 2018</a> <span className="total">(84)</span></li>
-                                    <li><a href="#">March 2018</a> <span className="total">(67)</span></li>
-                                    <li><a href="#">February 2018</a> <span className="total">(99)</span></li>
-                                    <li><a href="#">January 2018</a> <span className="total">(113)</span></li>
-                                    <li><a href="#">December 2017</a> <span className="total">(25)</span></li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-
-                        <div className="col-md-3 col-6">
-
-                            <div className="section-container">
-                                <h4 className="footer-title">Recent Posts</h4>
-                                <ul className="recent-post">
-                                    <li>
-                                        <h4>
-                                            <a href="#">Nam ut urna hendrerit</a>
-                                            <span className="time">February 22, 2018</span>
-                                        </h4>
-                                    </li>
-                                    <li>
-                                        <h4>
-                                            <a href="#">className aptent taciti sociosqu</a>
-                                            <span className="time">July 15, 2018</span>
-                                        </h4>
-                                    </li>
-                                    <li>
-                                        <h4>
-                                            <a href="#">Donec rhoncus arcu</a>
-                                            <span className="time">March 21, 2018</span>
-                                        </h4>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-
-                        <div className="col-md-3 col-6">
-                            <div className="section-container">
-                                <h4 className="footer-title">About Color Admin</h4>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-*/}
 
             <div id="footer-copyright" className="footer-copyright">
 

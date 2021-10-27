@@ -1,14 +1,8 @@
-import Aos from "aos";
-import { useEffect } from "react";
+
 import NavBar from "../src/components/Nav/navbar";
-import 'aos/dist/aos.css';
 
 export default function Ste() {
-    useEffect(() => {
-        Aos.init({duration: 1500});
-
-    }, [])
-
+   
     return (
         <>
             <div id="page-container" className="fade show">

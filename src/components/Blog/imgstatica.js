@@ -1,4 +1,3 @@
-import Image from 'next/image';
 export default function ImgStatic(props) {
     return (
         <div data-aos="fade-up" className="post-content">

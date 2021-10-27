@@ -4820,7 +4820,8 @@ textarea.form-control-lg {
 }
 
 .page-link {
-    padding: .375rem .75rem
+    padding: .375rem .75rem;
+    cursor: pointer;
 }
 
 .page-item:first-child .page-link {
