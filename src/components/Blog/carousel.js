@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AuthContext } from "../../../context/Auth2Context";
 
 export default function Carousel(props) {
 
     const [IdimgActive, setIdimgActive] = useState(0);
     const [firstRender, setfirstRender] = useState(true);
     const [imgsChildrens, setimgsChildrens] = useState(props.element.children.data);
+    let TagsAMostrar = 2;
 
+    const { isMobile } = useContext(AuthContext);
 
     if (firstRender) {
         setIdimgActive(props.element.children.data[0].id);
@@ -23,7 +26,7 @@ export default function Carousel(props) {
                     <div className="carousel-inner text-center shadow-lg">
                         {imgsChildrens.length > 0 ? imgsChildrens.map((e, i) => {
                             return <div key={e.id} id={e.id} className={"carousel-item " + (e.id == IdimgActive ? "active" : "")}>
-                                <a target="_blank"  href={props.element.permalink}>
+                                <a target="_blank" href={props.element.permalink}>
                                     <img className="d-block w-100" src={e.media_url} alt="" />
                                 </a>
                                 <div style={{ color: "#d8c3ae" }} className="name"><span className="text-primary"></span>
@@ -45,13 +48,14 @@ export default function Carousel(props) {
                 <h4 className="post-title">
                     {props.titulo}
                 </h4>
-                <div className="post-by">
-                    Postado por <a target="_blank" href={"https://www.instagram.com/" + props.element.username + "/"}>{props.element.username}</a> {props.tags?.length > 0 ? props.tags.slice(0, 3).map((e, i) => {
+                {!isMobile ? <div className="post-by">
+                    Por <a target="_blank" href={"https://www.instagram.com/" + props.element.username + "/"}>{props.element.username}</a> {props.tags?.length > 0 ? props.tags.slice(0, 3).map((e, i) => {
                         var tag = e ? e.replace("#", "") : "";
                         return <span key={"divider_" + i} > <span className="divider">|</span> <a href="#">{tag}</a> </span>
                     }) : ""}
-                    {props.tags?.length > 3 ? <> <span className="divider">|</span> <span style={{ cursor: "help" }} title={props.tags.slice(3, props.tags.length)}>{"Mais " + (props.tags.length - 3) + " Categorias"}</span> </> : ""}
-                </div>
+                    {props.tags?.length > TagsAMostrar ? <> <span className="divider">|</span> <span style={{ cursor: "help" }} title={props.tags.slice(TagsAMostrar, props.tags.length)}>{"Mais " + (props.tags.length - TagsAMostrar) + " Categorias"}</span> </> : ""}
+                </div> : ""}
+
                 <div className="post-desc" style={{ textAlign: "justify" }}>
                     {props.caption}
                 </div>

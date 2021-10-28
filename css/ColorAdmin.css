@@ -4808,8 +4808,8 @@ textarea.form-control-lg {
 .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #2d353c;
-    border-color: #2d353c
+    background-color: #f0cbb8;
+    border-color: #dee2e6
 }
 
 .page-item.disabled .page-link {
@@ -10999,12 +10999,12 @@ a {
 }
 
 .footer-copyright {
-    background: #1c2025;
+    background: #f0cbb8;
     padding: 20px 0;
     font-size: .8125rem;
     font-weight: 600;
     line-height: 1.8;
-    color: #6c757d;
+    color: #ffffff;
     position: relative;
     z-index: 1020
 }
