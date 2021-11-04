@@ -7,19 +7,26 @@ let firstRender = true;
 
 export async function getStaticProps(context) {
 
-    const dev = process.env.NODE_ENV !== 'production';
+    // const dev = process.env.NODE_ENV !== 'production';
     //context.req.connection.remoteAddress; ip de quem solicita
-    const server = dev ? 'http://localhost:3000' : 'https://psidaramarques.com.br';
+    //const server = dev ? 'http://localhost:3000' : 'https://psidaramarques.com.br';
 
-    var data = await fetch(`${server}/api/obterBlog`)
+    const url = "https://graph.instagram.com/me/media?access_token="
+        + process.env.INSTA_TOKEN +
+        "&fields=media_url,media_type,caption,permalink,timestamp,thumbnail_url,id,username,children{media_url}";
+
+    var data = await fetch(url)
         .then(async function (response) {
             return await response.json();
         });
 
-    return {
-        props: { dados: data },
-        revalidate: 60 * 60
+    if (data != null) {
+        return {
+            props: { dados: data ?? null },
+            revalidate: 60 * 60
+        }
     }
+
 }
 
 export default function Blog(props) {
@@ -31,7 +38,7 @@ export default function Blog(props) {
     const [pagination, SetPagination] = useState({
         page: 1,
         perPage: postporpagina,
-        totalPage: props.dados != null && props.dados != undefined ? Math.ceil(props.dados?.length / postporpagina) : 0
+        totalPage:  Math.ceil(props.dados?.data?.length / postporpagina) 
     });
 
     const paginationControls = {
@@ -58,13 +65,16 @@ export default function Blog(props) {
         }
     }
 
+
     const list = {
+     
         update() {
             let page = pagination.page - 1;
             let start = page * pagination.perPage;
             let end = start + pagination.perPage;
-            const posts = props.dados?.slice(start, end);
+            const posts = props.dados.data?.slice(start, end);
             setDados(posts);
+
         }
     }
     const buttons = {
