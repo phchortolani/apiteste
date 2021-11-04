@@ -11,7 +11,7 @@ export default function NavBar() {
         <div className="container">
 
             <a data-aos="zoom-in" style={{ filter: "invert(1)" }} href="./" className="navbar-brand">
-               <img src={svglogo}></img>  
+                <img src={svglogo}></img>
             </a>
 
             <button type="button" className="navbar-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#header-navbar">
@@ -37,14 +37,11 @@ export default function NavBar() {
                         </div>
 </li> */}
                     <li data-aos="zoom-in">
-                        <Link href="/Blog">
-                            <a>Blog</a>
-                        </Link>
+                        <a href="/Blog">Blog</a>
                     </li>
                     <li data-aos="zoom-in">
-                        <Link href="/Login">
-                            <a>Entrar</a>
-                        </Link></li>
+                        <a href="/Login">Entrar</a>
+                    </li>
                 </ul>
             </div>
 
