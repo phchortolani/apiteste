@@ -116,8 +116,7 @@ export default function Blog(props) {
         list.update();
     }
 
-
-    const ogimage = 'https://scontent.cdninstagram.com/v/t51.29350-15/245021037_261759715853180_1041340040552307482_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=rBECYMIykEsAX86ARdn&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=efe68f4ff700e246a2b05a3b1ff79fce&oe=6178037B';
+    const ogimage = props.dados.data[0].media_url;
     return (
 
         <div className="pace-done">

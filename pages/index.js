@@ -2,13 +2,7 @@ import NavBar from '../src/components/Nav/navbar';
 //import { parseCookies } from "nookies";
 export default function Index() {
 
-    return (
-        <>
-            <NavBar />
-
-        </>
-
-    );
+    return <NavBar />;
 }
 
 /*export async function getServerSideProps(ctx) {
