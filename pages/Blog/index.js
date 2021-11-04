@@ -14,10 +14,11 @@ export async function getStaticProps(context) {
     var data = await fetch(`${server}/api/obterBlog`)
         .then(async function (response) {
             return await response.json();
-        })
+        });
+
     return {
         props: { dados: data },
-        revalidate: 60*30
+        revalidate: 60 * 60
     }
 }
 
@@ -30,7 +31,7 @@ export default function Blog(props) {
     const [pagination, SetPagination] = useState({
         page: 1,
         perPage: postporpagina,
-        totalPage: Math.ceil(props.dados?.length / postporpagina)
+        totalPage: props.dados != null && props.dados != undefined ? Math.ceil(props.dados?.length / postporpagina) : 0
     });
 
     const paginationControls = {

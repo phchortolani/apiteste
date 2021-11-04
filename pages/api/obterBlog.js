@@ -9,7 +9,10 @@ export default async (request, response) => {
             return await response.json();
         })
 
-    if (chamada.data) {
+        
+
+    if (chamada.data != null && chamada.data != undefined) {
+        console.log("chamada != null");
         response.json(chamada.data);
     }
 
