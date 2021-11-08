@@ -2833,9 +2833,6 @@ textarea.form-control-lg {
     }
 }
 
-.btn:hover {
-    color: #333
-}
 
 .btn-check:focus+.btn, .btn:focus {
     outline: 0;
@@ -5037,7 +5034,7 @@ textarea.form-control-lg {
     color: #fff;
     text-align: center;
     white-space: nowrap;
-    background-color: #348fe2;
+    background-color: #f0cbb8;
     transition: width .6s ease
 }
 
@@ -16797,7 +16794,7 @@ a {
 }
 
 .bg-theme {
-    background-color: #00acac!important
+    background-color: #f0cbb8!important
 }
 
 .text-theme {

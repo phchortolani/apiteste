@@ -385,36 +385,9 @@ html {
     padding: 11px 22px;
     cursor: pointer;
     background-color: #888;
-    color: #FFFFFF;
   }
   
-  .btn:hover,
-  .btn:focus,
-  .btn:not(:disabled):not(.disabled):active,
-  .btn:not(:disabled):not(.disabled).active,
-  .btn:not(:disabled):not(.disabled):active:focus,
-  .btn:not(:disabled):not(.disabled).active:focus,
-  .btn:active:hover,
-  .btn.active:hover,
-  .show>.btn.dropdownCustom-toggle,
-  .show>.btn.dropdownCustom-toggle:focus,
-  .show>.btn.dropdownCustom-toggle:hover,
-  .navbar .navbar-nav>a.btn:hover,
-  .navbar .navbar-nav>a.btn:focus,
-  .navbar .navbar-nav>a.btn:not(:disabled):not(.disabled):active,
-  .navbar .navbar-nav>a.btn:not(:disabled):not(.disabled).active,
-  .navbar .navbar-nav>a.btn:not(:disabled):not(.disabled):active:focus,
-  .navbar .navbar-nav>a.btn:not(:disabled):not(.disabled).active:focus,
-  .navbar .navbar-nav>a.btn:active:hover,
-  .navbar .navbar-nav>a.btn.active:hover,
-  .show>.navbar .navbar-nav>a.btn.dropdownCustom-toggle,
-  .show>.navbar .navbar-nav>a.btn.dropdownCustom-toggle:focus,
-  .show>.navbar .navbar-nav>a.btn.dropdownCustom-toggle:hover {
-    background-color: #979797;
-    color: #FFFFFF;
-    box-shadow: none;
-    border-color: #979797;
-  }
+  
   
   .btn:not([data-action]):not([class*="btn-outline-"]):hover,
   .navbar .navbar-nav>a.btn:not([data-action]):not([class*="btn-outline-"]):hover {
@@ -1034,19 +1007,7 @@ html {
     color: #979797 !important;
   }
   
-  .btn-neutral.active,
-  .btn-neutral:active,
-  .btn-neutral:active:focus,
-  .btn-neutral:active:hover,
-  .btn-neutral.active:focus,
-  .btn-neutral.active:hover,
-  .show>.btn-neutral.dropdownCustom-toggle,
-  .show>.btn-neutral.dropdownCustom-toggle:focus,
-  .show>.btn-neutral.dropdownCustom-toggle:hover {
-    background-color: #FFFFFF;
-    color: #fa7a50 !important;
-    box-shadow: none;
-  }
+
   
   .btn-neutral:hover,
   .btn-neutral:focus {
@@ -1098,22 +1059,7 @@ html {
     border-color: #18ce0f;
   }
   
-  .btn-outline-success:hover,
-  .btn-outline-success:focus,
-  .btn-outline-success:not(:disabled):not(.disabled):active,
-  .btn-outline-success:not(:disabled):not(.disabled).active,
-  .btn-outline-success:not(:disabled):not(.disabled):active:focus,
-  .btn-outline-success:not(:disabled):not(.disabled).active:focus,
-  .btn-outline-success:active:hover,
-  .btn-outline-success.active:hover,
-  .show>.btn-outline-success.dropdownCustom-toggle,
-  .show>.btn-outline-success.dropdownCustom-toggle:focus,
-  .show>.btn-outline-success.dropdownCustom-toggle:hover {
-    background-color: transparent;
-    color: #1beb11;
-    border-color: #1beb11;
-    box-shadow: none;
-  }
+  
   
   .btn-outline-info {
     color: #2CA8FF;
@@ -1142,44 +1088,13 @@ html {
     border-color: #FFB236;
   }
   
-  .btn-outline-warning:hover,
-  .btn-outline-warning:focus,
-  .btn-outline-warning:not(:disabled):not(.disabled):active,
-  .btn-outline-warning:not(:disabled):not(.disabled).active,
-  .btn-outline-warning:not(:disabled):not(.disabled):active:focus,
-  .btn-outline-warning:not(:disabled):not(.disabled).active:focus,
-  .btn-outline-warning:active:hover,
-  .btn-outline-warning.active:hover,
-  .show>.btn-outline-warning.dropdownCustom-toggle,
-  .show>.btn-outline-warning.dropdownCustom-toggle:focus,
-  .show>.btn-outline-warning.dropdownCustom-toggle:hover {
-    background-color: transparent;
-    color: #ffbe55;
-    border-color: #ffbe55;
-    box-shadow: none;
-  }
   
   .btn-outline-danger {
     color: #FF3636;
     border-color: #FF3636;
   }
   
-  .btn-outline-danger:hover,
-  .btn-outline-danger:focus,
-  .btn-outline-danger:not(:disabled):not(.disabled):active,
-  .btn-outline-danger:not(:disabled):not(.disabled).active,
-  .btn-outline-danger:not(:disabled):not(.disabled):active:focus,
-  .btn-outline-danger:not(:disabled):not(.disabled).active:focus,
-  .btn-outline-danger:active:hover,
-  .btn-outline-danger.active:hover,
-  .show>.btn-outline-danger.dropdownCustom-toggle,
-  .show>.btn-outline-danger.dropdownCustom-toggle:focus,
-  .show>.btn-outline-danger.dropdownCustom-toggle:hover {
-    background-color: transparent;
-    color: #ff5555;
-    border-color: #ff5555;
-    box-shadow: none;
-  }
+  
   
   .btn-outline-default {
     color: #888;
@@ -4631,7 +4546,6 @@ html {
   .card label {
     font-size: 0.8571em;
     margin-bottom: 5px;
-    color: #9A9A9A;
   }
   
   .card .card-footer {
@@ -5947,4 +5861,9 @@ html {
 
 .link-secondary{
   color:#9caba0
+}
+
+#inventario{
+  height: 100%;
+  background-color: #f2d3c394;
 }
