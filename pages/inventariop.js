@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import NavBar from "../src/components/Nav/navbar";
 
 export default function Inventariop() {
@@ -43,7 +43,7 @@ export default function Inventariop() {
         }
     }
 
-  
+
     return (
         <>
             <NavBar />
@@ -59,13 +59,11 @@ export default function Inventariop() {
                                     <span className="progress-number">{porcentagem}%</span>
                                 </div>
                             </div> </div> : ""}
-
-
                             <hr />
                             {porcentagem == 100 ? <fieldset data-aos="fade-in">
                                 <i style={{ color: "#f0cbb8" }} className="fas fa-check-circle fa-4x"></i>
-                                <h4 className="p-3">Suas informações foram enviadas!</h4>
-
+                                <h4 className="p-3">Suas informações foram salvas!</h4>
+                                {QuestaoAtual > 0 ? <input type="button" name="revisar" className="btn btn-primary" value="Revisar" onClick={() => controles.Voltar()}/> : ""} 
                             </fieldset> : <div id="msform">
                                 <fieldset data-aos="fade-in">
                                     <div className="form-card">
