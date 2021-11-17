@@ -1,17 +1,13 @@
 import { useState } from "react";
 import NavBar from "../src/components/Nav/navbar";
+import {PerguntasPP} from './../src/InventarioFiles/PerguntasPP'
 
 export default function Inventariop() {
 
-    const Questoes = ["Meu trabalho precisa ser perfeito para que eu fique satisfeita.",
-        "Sou extremamente sensível aos comentários dos outros.",
-        "Geralmente digo às pessoas quando seu trabalho não está à altura dos meus padrões.",
-        "Sou bem organizada."
-    ];
     const [QuestaoAtual, setNumeroQuestao] = useState(0);
     const [Resultados, setResultados] = useState([]);
-
-    let porcentagem = (QuestaoAtual / Questoes.length * 100);
+    let Questoes = PerguntasPP();
+    let porcentagem = Math.floor(QuestaoAtual / Questoes.length * 100);
     if (porcentagem > 100) porcentagem = 100;
     else if (porcentagem < 0) porcentagem = 0;
 
@@ -63,16 +59,16 @@ export default function Inventariop() {
                             {porcentagem == 100 ? <fieldset data-aos="fade-in">
                                 <i style={{ color: "#f0cbb8" }} className="fas fa-check-circle fa-4x"></i>
                                 <h4 className="p-3">Suas informações foram salvas!</h4>
-                                {QuestaoAtual > 0 ? <input type="button" name="revisar" className="btn btn-primary" value="Revisar" onClick={() => controles.Voltar()}/> : ""} 
+                                {QuestaoAtual > 0 ? <input type="button" name="revisar" className="btn btn-primary" value="Revisar" onClick={() => controles.Voltar()} /> : ""}
                             </fieldset> : <div id="msform">
                                 <fieldset data-aos="fade-in">
                                     <div className="form-card">
                                         <h6 className="fs-title">"{Questoes[QuestaoAtual]}"</h6>
                                         <br />
                                         <input type="radio" className="btn-check" onClick={() => { controles.setRespostaAtual(1) }} name="options" id="option1" autoComplete="off" readOnly checked={controles.VerificaCheck(1)} />
-                                        <label className="btn btn-outline-danger d-grid" htmlFor="option1">Discordo Plenamente</label>
+                                        <label className="btn btn-outline-danger d-grid" htmlFor="option1">Discordo plenamente</label>
                                         <input type="radio" className="btn-check" onClick={() => { controles.setRespostaAtual(2) }} name="options" id="option2" autoComplete="off" readOnly checked={controles.VerificaCheck(2)} />
-                                        <label className="btn btn-outline-warning d-grid" htmlFor="option2">Discordo em Parte</label>
+                                        <label className="btn btn-outline-warning d-grid" htmlFor="option2">Discordo em parte</label>
                                         <input type="radio" className="btn-check" onClick={() => { controles.setRespostaAtual(3) }} name="options" id="option3" autoComplete="off" readOnly checked={controles.VerificaCheck(3)} />
                                         <label className="btn btn-outline-secondary d-grid" htmlFor="option3">Nem concordo nem discordo</label>
                                         <input type="radio" className="btn-check" onClick={() => { controles.setRespostaAtual(4) }} name="options" id="option4" autoComplete="off" readOnly checked={controles.VerificaCheck(4)} />
