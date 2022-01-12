@@ -9,8 +9,6 @@ export default async (request, response) => {
             return await response.json();
         })
 
-        
-
     if (chamada.data != null && chamada.data != undefined) {
  
         response.json(chamada.data);
