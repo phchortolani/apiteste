@@ -35,7 +35,7 @@ export default function Estoque() {
 
     return (
         <div className="text-center mt-5">
-            <p style={{color:'green'}}>Valor da mercadoria de venda (teste): R$ {valorMercadoriaVenda}</p>
+            <p style={{color:'green'}}>Valor da mercadoria de venda (test): R$ {valorMercadoriaVenda}</p>
             <p style={{color:'red'}}>Valor da mercadoria de Compra: R$ {valorMercadoriaCompra}</p>
             <p>Total de itens sapatos: {mercadoria}</p>
             <p>Caixa: R${caixa.toFixed(2)}</p>
