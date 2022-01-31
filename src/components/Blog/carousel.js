@@ -23,7 +23,7 @@ export default function Carousel(props) {
                 <h2 className="content-title"></h2>
 
                 <div className="carousel caroulselImgs slide " data-ride="carousel" id={"caroulselImgs_" + props.element.id}>
-                    <div className="carousel-inner text-center shadow-lg">
+                    <div className="carousel-inner text-center shadow-sm">
                         {imgsChildrens.length > 0 ? imgsChildrens.map((e, i) => {
                             return <div key={e.id} id={e.id} className={"carousel-item " + (e.id == IdimgActive ? "active" : "")}>
                                 <a target="_blank" href={props.element.permalink}>

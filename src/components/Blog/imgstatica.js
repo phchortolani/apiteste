@@ -10,7 +10,7 @@ export default function ImgStatic(props) {
         <div data-aos="fade-up" className="post-content">
             <div className="post-image">
                 <a target="_blank" href={props.element.permalink}>
-                    <img className="d-block w-100 shadow-lg" src={props.element.media_url} alt="" />
+                    <img className="d-block w-100 shadow-sm" src={props.element.media_url} alt="" />
                 </a>
             </div>
             <div className="post-info" data-aos="fade-up">

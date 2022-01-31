@@ -4805,7 +4805,7 @@ textarea.form-control-lg {
 .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #f0cbb8;
+    background-color: #b3807d;
     border-color: #dee2e6
 }
 
@@ -5034,7 +5034,7 @@ textarea.form-control-lg {
     color: #fff;
     text-align: center;
     white-space: nowrap;
-    background-color: #f0cbb8;
+    background-color: #b3807d;
     transition: width .6s ease
 }
 
@@ -10996,7 +10996,7 @@ a {
 }
 
 .footer-copyright {
-    background: #f0cbb8;
+    background: #b3807d;
     padding: 20px 0;
     font-size: .8125rem;
     font-weight: 600;
@@ -11155,7 +11155,9 @@ a {
 }
 
 .header .nav.navbar-nav>li>a:focus, .header .nav.navbar-nav>li>a:hover {
-    color: #afc0ad
+    color: #000000;
+    font-weight: bold;
+
 }
 
 .header .nav.navbar-nav .dropdown-menu {
@@ -11272,12 +11274,12 @@ a {
 }
 
 .header.navbar-default {
-    background: #f0cbb8;
+    background: #b3807d;
    
 }
 
 .header.navbar-default .navbar-toggle {
-    background: #f0cbb8
+    background: #b3807d
 }
 
 .header.navbar-default .navbar-toggle .icon-bar {
@@ -11404,7 +11406,7 @@ a {
     right: 0;
     bottom: 0;
     background: linear-gradient(
-        47deg, #f0cbb8, #ffffff00);
+        47deg, #ddc4c0 , #ffffff00);
 }
 
 .page-title.has-bg .bg-cover.bottom {
@@ -16794,7 +16796,7 @@ a {
 }
 
 .bg-theme {
-    background-color: #f0cbb8!important
+    background-color: #b3807d!important
 }
 
 .text-theme {

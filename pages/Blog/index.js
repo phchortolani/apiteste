@@ -23,7 +23,7 @@ export async function getStaticProps(context) {
     if (data != null) {
         return {
             props: { dados: data ?? null },
-            revalidate: 60 * 60
+            revalidate: 60
         }
     }
 

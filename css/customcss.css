@@ -564,7 +564,7 @@ html {
   }
   
   .btn-primary {
-    background-color: #9caba0;
+    background-color: #b3807d ;
     color: #FFFFFF;
   }
   
@@ -579,10 +579,10 @@ html {
   .show>.btn-primary.dropdownCustom-toggle,
   .show>.btn-primary.dropdownCustom-toggle:focus,
   .show>.btn-primary.dropdownCustom-toggle:hover {
-    background-color: #7b8c81;
-    color: #FFFFFF;
+    background-color: #ddc4c0;
+    color: #000000;
     box-shadow: none;
-    border-color: #7b8c81;
+    border-color: #ddc4c0;
   }
   
   .btn-primary:not([data-action]):not([class*="btn-outline-"]):hover {
@@ -1902,7 +1902,7 @@ html {
   .text-primary,
   a.text-primary:focus,
   a.text-primary:hover {
-    color: #9caba0 !important;
+    color: #b3807d  !important;
   }
   
   .text-info,
@@ -2215,7 +2215,6 @@ html {
     padding-bottom: 0.625rem;
     min-height: 53px;
     margin-bottom: 20px;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
   }
   
   .navbar a {
@@ -5866,4 +5865,23 @@ html {
 #inventario{
   height: 100%;
   background-color: #f2d3c394;
+}
+
+.containerSaibaMAis{
+display: grid;
+place-content: center;
+height: 100vh;
+}
+
+.saibamaispic{
+  border-radius: 100%;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  border: solid 4px #b3807d;
+ 
+}
+
+.shrik{
+  font-family: "Shrikhand";
 }
