@@ -15,9 +15,9 @@ export default function SaibaMais() {
             </div>
 
 
-            <a href="https://api.whatsapp.com/send?phone=5511978493885" target="_blank" type="button" className="btn btn-primary btn-block btn-large w-100">Agende uma consulta</a>
+            <a href="https://api.whatsapp.com/send?phone=5511978493885" target="_blank" type="button" className="btn btn-primary btn-block btn-large w-100 fw-bolder">Agende uma consulta</a>
             {/*  <button type="button" className="btn btn-primary btn-block btn-large w-100">Ver site</button> */}
-            <a href="/Blog" type="button" className="btn btn-primary btn-block btn-large w-100">Blog</a>
+            <a href="/Blog" type="button" className="btn btn-primary btn-block btn-large w-100 fw-bolder">Blog</a>
 
 
         </div>
