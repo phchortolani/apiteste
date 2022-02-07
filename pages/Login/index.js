@@ -17,12 +17,17 @@ export default function login() {
         }
 
     }
+    let sizelogo = 100;
 
     return (<div className="login">
-        <h1>Login</h1>
+        <div className="">
+            <img width={sizelogo} height={sizelogo} src="/logoDara.svg" className="w-100"></img>
+        </div>
+        <hr></hr>
         <form >
             <input onChange={(e) => setUsuario(e.target.value)} className="loginbtns" type="text" name="u" placeholder="Usuário" required="required" />
             <input onChange={(e) => setSenha(e.target.value)} className="loginbtns" type="password" name="p" placeholder="Senha" required="required" />
+            <hr></hr>
             <button onClick={() => handleSignIn()} type="button" className="btn btn-primary btn-block btn-large w-100">Logar</button>
             <p className="text-danger">{authError}</p>
         </form>
@@ -44,8 +49,8 @@ export async function getServerSideProps(ctx) {
         }
     }
 
-  
+
     return {
-        props: { }, // will be passed to the page component as props
+        props: {}, // will be passed to the page component as props
     }
 }
