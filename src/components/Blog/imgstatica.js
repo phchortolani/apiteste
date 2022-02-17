@@ -6,6 +6,7 @@ export default function ImgStatic(props) {
 
     const { isMobile } = useContext(AuthContext);
 
+   
     return (
         <div data-aos="fade-up" className="post-content">
             <div className="post-image">

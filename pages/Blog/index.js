@@ -150,7 +150,7 @@ export default function Blog(props) {
                     <div className="row row-space-30">
 
                         <div className="col-lg-8">
-                            <span data-aos="fade-left" className="d-block ms-md-5 ps-lg-2 text-light-600">Pagina: {pagination.page} de {pagination.totalPage}</span>
+                         {/*    <span data-aos="fade-left" className="d-block ms-md-5 ps-lg-2 text-light-600">Pagina: {pagination.page} de {pagination.totalPage}</span> */}
 
                             <Postagens dados={dados} />
 
