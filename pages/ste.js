@@ -285,7 +285,7 @@ export default function Ste(props) {
                     <div className="container">
                         <h2 className="content-title">Conteúdos</h2>
                         <p className="text-center" >
-                            Caso tenha interesse de agendar uma consulta, escolha uma das opções abaixo.
+                            Caso tenha interesse de receber conteúdos sobre psicologia toda semana, me siga nas redes sociais e se inscreva na minha newsletter.
                         </p>
 
                         <div className="row">
