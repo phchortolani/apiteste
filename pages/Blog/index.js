@@ -38,7 +38,7 @@ export default function Blog(props) {
     const [pagination, SetPagination] = useState({
         page: 1,
         perPage: postporpagina,
-        totalPage:  Math.ceil(props.dados?.data?.length / postporpagina) 
+        totalPage: Math.ceil(props.dados?.data?.length / postporpagina)
     });
 
     const paginationControls = {
@@ -67,7 +67,7 @@ export default function Blog(props) {
 
 
     const list = {
-     
+
         update() {
             let page = pagination.page - 1;
             let start = page * pagination.perPage;
@@ -140,7 +140,8 @@ export default function Blog(props) {
             <div id="page-title" data-aos="fade-down" className="page-title has-bg">
                 <div className="bg-cover blogCover" data-paroller="true" data-paroller-factor="0.5" data-paroller-factor-xs="0.2" ></div>
                 <div className="container">
-                </div>
+                    {/*                     <h2 className="title">Construindo um dia a dia com mais maturidade</h2>
+ */}                </div>
             </div>
 
             <div id="content" className="content">
@@ -150,7 +151,7 @@ export default function Blog(props) {
                     <div className="row row-space-30">
 
                         <div className="col-lg-8">
-                         {/*    <span data-aos="fade-left" className="d-block ms-md-5 ps-lg-2 text-light-600">Pagina: {pagination.page} de {pagination.totalPage}</span> */}
+                            {/*    <span data-aos="fade-left" className="d-block ms-md-5 ps-lg-2 text-light-600">Pagina: {pagination.page} de {pagination.totalPage}</span> */}
 
                             <Postagens dados={dados} />
 
