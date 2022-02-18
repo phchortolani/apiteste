@@ -55,7 +55,7 @@ export default function Ste(props) {
                         <h1 data-aos="zoom-in-down" data-aos-duration="3000" >Dara Marques</h1>
                         <h3 data-aos="zoom-in-left" data-aos-duration="3000" data-aos-delay="1500"  >Construindo um dia a dia com mais maturidade!</h3>
 
-                        <button className="btn  btn-theme bg-aqua text-white" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> Autoagendamento</button>
+                        <button className="btn  btn-theme btn-primary" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> Autoagendamento</button>
 
                         <button className="btn btn-theme btn-success" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> <i className="fab fa-whatsapp fa-lg fa-fw"></i> Fale direto no WhatsApp</button>
 

@@ -634,7 +634,7 @@ html {
   }
   
   .btn-success {
-    background-color: #18ce0f;
+    background-color: #94A674;
     color: #FFFFFF;
   }
   
@@ -683,12 +683,12 @@ html {
   fieldset[disabled] .btn-success.focus,
   fieldset[disabled] .btn-success:active,
   fieldset[disabled] .btn-success.active {
-    background-color: #18ce0f;
-    border-color: #18ce0f;
+    background-color: #94A674;
+    border-color: #94A674;
   }
   
   .btn-success.btn-link {
-    color: #18ce0f;
+    color: #94A674;
   }
   
   .btn-success.btn-link:hover,
@@ -989,7 +989,7 @@ html {
   }
   
   .btn-neutral.btn-success {
-    color: #18ce0f;
+    color: #94A674;
   }
   
   .btn-neutral.btn-success:hover,
@@ -1058,8 +1058,8 @@ html {
   }
   
   .btn-outline-success {
-    color: #18ce0f;
-    border-color: #18ce0f;
+    color: #94A674;
+    border-color: #94A674;
   }
   
   
@@ -1377,7 +1377,7 @@ html {
     position: absolute;
     right: 20px;
     bottom: 10px;
-    color: #18ce0f;
+    color: #94A674;
     font-size: 11px;
   }
   
@@ -1403,7 +1403,7 @@ html {
   
   .has-success.form-check .form-check-label,
   .has-danger.form-check .form-check-label {
-    color: #18ce0f;
+    color: #94A674;
   }
   
   .has-danger:after {
@@ -1561,7 +1561,7 @@ html {
   
   .has-success .form-control-custom-feedback,
   .has-success .control-label {
-    color: #18ce0f;
+    color: #94A674;
   }
   
   .input-group-append .input-group-text,
@@ -1599,7 +1599,7 @@ html {
   
   .has-success .form-control-custom:focus+.input-group-append .input-group-text,
   .has-success .form-control-custom:focus+.input-group-prepend .input-group-text {
-    color: #18ce0f;
+    color: #94A674;
   }
   
   .input-group-append .input-group-text+.form-control-custom,
@@ -1917,7 +1917,7 @@ html {
   .text-success,
   a.text-success:focus,
   a.text-success:hover {
-    color: #18ce0f !important;
+    color: #94A674 !important;
   }
   
   .text-warning,
@@ -2491,7 +2491,7 @@ html {
   }
   
   .bg-success {
-    background-color: #18ce0f !important;
+    background-color: #94A674 !important;
   }
   
   .bg-danger {
@@ -4246,7 +4246,7 @@ html {
   }
   
   .fixed-plugin .badge-green {
-    background-color: #18ce0f;
+    background-color: #94A674;
   }
   
   .fixed-plugin .badge-orange {
@@ -4528,7 +4528,7 @@ html {
   }
   
   .card[data-background-color="green"] {
-    background-color: #18ce0f;
+    background-color: #94A674;
   }
   
   .card .image {
