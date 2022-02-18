@@ -18045,9 +18045,7 @@ body.page-navbar-fixed-top-sm {
     padding-top: 51px
 }
 
-p {
-    font-size: .8125rem
-}
+
 
 .nav {
     padding: 0
@@ -18080,7 +18078,6 @@ p {
 .content .content-desc {
     text-align   : center;
     margin-bottom: 60px;
-    color        : rgba(var(--app-component-color-rgb), .5)
 }
 
 @media (max-width:991.98px) {
@@ -22048,10 +22045,9 @@ p {
     top       : 40%;
     left      : 0;
     right     : 0;
-    color     : rgba(255, 255, 255, .5);
     margin-top: -120px;
     padding   : 0 15px;
-    text-align: center
+    text-align: left;
 }
 
 .home .home-content .h1,
@@ -31123,3 +31119,19 @@ p {
 .hide {
     display: none !important
 }
+
+body::-webkit-scrollbar {
+    width: 3px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #b3807d; 
+    width: 2px;       /* color of the tracking area */
+    z-index: 10;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #b3807d;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 2px solid #fff;  /* creates padding around scroll thumb */
+  }
