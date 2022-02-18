@@ -62,11 +62,11 @@ export default function Ste(props) {
 
                         {/* <a href="#" className="btn btn-theme btn-outline-white">Redes Sociais</a><br /> */}
                     </div>
-                    {/*  <img id="wave1" src={wave1} /> */}
+
                 </div>
 
 
-                <div id="about" className="content mt-0" data-scrollview="true">
+                <div id="about" className="content mt-0" data-scrollview="true" data-aos="fade-up">
 
                     <div className="container" data-animation="true" data-animation-type="animate__fadeInDown">
                         <h2 className="content-title">Sobre mim</h2>
@@ -74,7 +74,7 @@ export default function Ste(props) {
 
                         <div className="row">
 
-                            <div className="col-lg-6">
+                            <div className="col-lg-6" data-aos="zoom-in-right">
 
                                 <div className="about">
                                     <h3 className="mb-3"></h3>
@@ -88,22 +88,22 @@ export default function Ste(props) {
                             </div>
 
 
-                            <div className="col-lg-6">
+                            <div className="col-lg-6" data-aos="zoom-in-left">
                                 {/* <h3 className="mb-3">Minha Abordagem</h3> */}
-                                <div className="about-author mt-2" >
+                                <div className="about-author" >
                                     <div className="quote">
                                         <i className="fa fa-quote-left"></i>
-                                        <h6 className="text-gray-700">Mude como você se sente, mudando o modo como você pensa.</h6>
+                                        <h5 className="text-gray-700">Mude como você se sente, mudando o modo como você pensa.</h5>
                                         <i className="fa fa-quote-right"></i>
                                     </div>
                                     <div className="author">
                                         <div className="image">
                                             {/*               <img src="https://seantheme.com/color-admin/frontend/assets/img/bg/bg-home.jpg" alt="Sean Ngu" /> */}
                                         </div>
-                                        {/*  <div className="info">
+                                        <div className="info">
                                             Dara Marques
                                             <small>Psicóloga Clinica</small>
-                                        </div> */}
+                                        </div>
                                     </div>
                                 </div>
 
@@ -161,11 +161,10 @@ export default function Ste(props) {
                 </div>
 
 
-
-
-                <div id="service" className="content" data-scrollview="true">
+                <div id="service" className="content mt-0" data-scrollview="true">
 
                     <div className="container">
+
                         <h2 className="content-title">Vantagens do Atendimento On-line!</h2>
                         <p className="content-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />
@@ -265,8 +264,8 @@ export default function Ste(props) {
 
                                 if (i >= 8) return "";
 
-                                return <div key={i} className="col-lg-3 col-md-4">
-                                    <div className="work">
+                                return <div key={i} className="col-lg-3 col-md-4 ">
+                                    <div className="work card shadow">
                                         <div className="image">
                                             <a href={e.permalink}><img src={e.media_url} /></a>
                                         </div>

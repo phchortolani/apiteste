@@ -3643,14 +3643,14 @@ fieldset:disabled .btn {
 
 .btn-success:hover {
     color           : #000;
-    background-color: #26b8b8;
+    background-color: #94A674;
     border-color    : #1ab4b4
 }
 
 .btn-check:focus+.btn-success,
 .btn-success:focus {
     color           : #000;
-    background-color: #26b8b8;
+    background-color: #94A674;
     border-color    : #1ab4b4;
     box-shadow      : 0 0 0 .25rem rgba(0, 146, 146, .5)
 }
@@ -3661,7 +3661,7 @@ fieldset:disabled .btn {
 .btn-success:active,
 .show>.btn-success.dropdown-toggle {
     color           : #000;
-    background-color: #33bdbd;
+    background-color: #94A674;
     border-color    : #1ab4b4
 }
 
@@ -4318,14 +4318,14 @@ fieldset:disabled .btn {
 
 .btn-teal:hover {
     color           : #000;
-    background-color: #26b8b8;
+    background-color: #94A674;
     border-color    : #1ab4b4
 }
 
 .btn-check:focus+.btn-teal,
 .btn-teal:focus {
     color           : #000;
-    background-color: #26b8b8;
+    background-color: #94A674;
     border-color    : #1ab4b4;
     box-shadow      : 0 0 0 .25rem rgba(0, 146, 146, .5)
 }
@@ -4336,7 +4336,7 @@ fieldset:disabled .btn {
 .btn-teal:active,
 .show>.btn-teal.dropdown-toggle {
     color           : #000;
-    background-color: #33bdbd;
+    background-color: #94A674;
     border-color    : #1ab4b4
 }
 
@@ -10697,7 +10697,7 @@ fieldset:disabled .btn {
 
 .link-success:focus,
 .link-success:hover {
-    color: #33bdbd
+    color: #94A674
 }
 
 .link-info {
@@ -10832,7 +10832,7 @@ fieldset:disabled .btn {
 
 .link-teal:focus,
 .link-teal:hover {
-    color: #33bdbd
+    color: #94A674
 }
 
 .link-lime {
@@ -22413,8 +22413,7 @@ body.page-navbar-fixed-top-sm {
 }
 
 .service .info .desc {
-    font-size  : .8125rem;
-    color      : #6c757d;
+    font-size  : .900rem;
     line-height: 1.65
 }
 
@@ -31095,17 +31094,33 @@ body.page-navbar-fixed-top-sm {
 }
 
 body::-webkit-scrollbar {
-    width: 3px;               /* width of the entire scrollbar */
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: #b3807d; 
-    width: 2px;       /* color of the tracking area */
-    z-index: 10;
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: #b3807d;    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 2px solid #fff;  /* creates padding around scroll thumb */
-  }
+    width: 3px;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: #b3807d;
+    width     : 2px;
+    /* color of the tracking area */
+    z-index   : 10;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #b3807d;
+    /* color of the scroll thumb */
+    border-radius   : 20px;
+    /* roundness of the scroll thumb */
+    border          : 2px solid #fff;
+    /* creates padding around scroll thumb */
+}
+
+.about {
+    background: #b3807d;
+    color     : white !important;
+    padding: 50px;
+    border-radius: 5px;
+}
+
+#service{
+    background-color: #ddc4c0;
+}
