@@ -1,7 +1,6 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "../src/components/Nav/navbar";
-import wave1 from '../public/wave1.svg';
 
 export async function getStaticProps(context) {
 
@@ -30,24 +29,35 @@ export async function getStaticProps(context) {
 export default function Ste(props) {
 
     const [dados, setDados] = useState(props.dados?.data);
+    const [topScreen, setTopScreen] = useState(true);
+
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100 && topScreen) {
+                setTopScreen(false);
+            } else setTopScreen(true);
+
+        })
+    }, [])
+
+
 
     return (
         <>
-            <NavBar />
 
+            <NavBar topScreen={topScreen} />
             <div id="page-container" /* className="fade" */>
-                <div id="home" className="content has-bg home">
-                    <div className="content-bg" data-paroller="true" data-paroller-type="foreground" data-paroller-factor="-0.25">
+                <div id="home" className="content has-bg home gradientar" data-aos="fade-in">
+                    <div className="content-bg">
                     </div>
                     <div className="container home-content">
-                        <h1>Dara Marques</h1>
-                        <h3>Construindo um dia a dia com mais maturidade!</h3>
-                        <p>
+                        <h1 data-aos="zoom-in-down" data-aos-duration="3000" >Dara Marques</h1>
+                        <h3 data-aos="zoom-in-left" data-aos-duration="3000" data-aos-delay="1500"  >Construindo um dia a dia com mais maturidade!</h3>
 
-                        </p>
-                        <button className="btn  btn-theme bg-aqua text-white"> Autoagendamento</button>
+                        <button className="btn  btn-theme bg-aqua text-white" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> Autoagendamento</button>
 
-                        <button className="btn btn-theme btn-success"> <i className="fab fa-whatsapp fa-lg fa-fw"></i> Fale direto no WhatsApp</button>
+                        <button className="btn btn-theme btn-success" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> <i className="fab fa-whatsapp fa-lg fa-fw"></i> Fale direto no WhatsApp</button>
 
 
                         {/* <a href="#" className="btn btn-theme btn-outline-white">Redes Sociais</a><br /> */}
@@ -133,7 +143,7 @@ export default function Ste(props) {
                             <div className="col-6">
                                 <h2 className="content-title">
                                     Qual é o foco do meu trabalho? </h2>
-                                <p className="content-desc">
+                                <div className="content-desc">
                                     <p>
                                         Através dos atendimentos individuais, ajudo mulheres que buscam aprender a lidar com a ansiedade que normalmente está em torno do estresse, autocobrança, perfeccionismo, procrastinação, insegurança... e por ai vai!
                                     </p>
@@ -142,7 +152,7 @@ export default function Ste(props) {
                                         Ajuda a compreender que a ansiedade faz parte de nós,  que é possível viver com ela com mais leveza,  não a vendo como uma inimiga, entenderem melhor a si mesmas com a psicoterapia e a partir disso, ir fazendo mudanças saudáveis e duradouras. É gratificante vê-las se descobrindo, sabendo lidar de uma forma mais saudável com seus sentimentos, mudando hábitos de comportamento e tendo uma vida mais leve!
                                     </p>
 
-                                </p>
+                                </div>
                             </div>
                         </div>
 

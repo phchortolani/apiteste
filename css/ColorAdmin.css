@@ -13184,6 +13184,7 @@ a {
 
 }
 
+
 .header.navbar-default .navbar-toggle {
     background: #b3807d
 }
@@ -13238,7 +13239,8 @@ a {
 }
 
 .header.navbar-transparent {
-    background: 0 0
+    background: 0 0;
+    color     : white;
 }
 
 .header.navbar-transparent .brand-text,
@@ -13256,9 +13258,8 @@ a {
 }
 
 .header.navbar-transparent.navbar-sm {
-    background        : #fff;
-    -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, .15);
-    box-shadow        : 0 0 16px rgba(0, 0, 0, .15)
+    background: #fff;
+
 }
 
 .header.navbar-transparent.navbar-sm .brand-text,
@@ -23818,4 +23819,54 @@ a {
 #wave1 {
     height: 100vh;
     filter: drop-shadow(32px 21px 100px gray);
+}
+
+.gradientar {
+    background: linear-gradient(#b3807da6, #ffffff5e);
+    animation      : gradient 30s ease infinite alternate !important;
+    background-size: 300%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 50% 32%;
+        transition         : 3s ease;
+        background-size    : 110%;
+    }
+
+    25% {
+        background-position: 100% 25%;
+        background-size    : 110%;
+        transition         : 3s ease;
+    }
+
+    35% {
+        background-position: 100% 25%;
+        background-size    : 120%;
+        transition         : 3s ease;
+    }
+
+    50% {
+        background-position: 100% 25%;
+        background-size    : 150%;
+        transition         : 3s;
+    }
+
+    60% {
+        background-position: 80% 85%;
+        background-size    : 140%;
+        transition         : 3s ease;
+    }
+
+    80% {
+        background-position: 50% 45%;
+        background-size    : 120%;
+        transition         : 3s ease;
+    }
+
+    100% {
+        background-position: 100% 0%;
+        background-size    : 100%;
+        transition         : 3s ease;
+    }
 }

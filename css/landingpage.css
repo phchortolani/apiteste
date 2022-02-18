@@ -18420,32 +18420,6 @@ body.page-navbar-fixed-top-sm {
     color: var(--app-theme)
 }
 
-.header.navbar-default {
-    background: var(--app-component-bg);
-    box-shadow: 0 0 16px rgba(0, 0, 0, .15)
-}
-
-.header.navbar-default .brand-text {
-    color: var(--app-component-color)
-}
-
-.header.navbar-default .navbar-nav .nav-item .nav-link {
-    color: var(--app-component-color)
-}
-
-.header.navbar-default .navbar-nav .nav-item .nav-link.active,
-.header.navbar-default .navbar-nav .nav-item .nav-link:hover {
-    color: var(--app-theme)
-}
-
-.header.navbar-default .navbar-toggle {
-    border-color: transparent;
-    background  : var(--bs-light)
-}
-
-.header.navbar-default .navbar-toggle .icon-bar {
-    background: rgba(var(--app-component-color-rgb), .5)
-}
 
 @media (max-width:767.98px) {}
 
@@ -22042,7 +22016,7 @@ body.page-navbar-fixed-top-sm {
 .home .home-content {
     z-index   : 1020;
     position  : absolute;
-    top       : 40%;
+    top       : 50%;
     left      : 0;
     right     : 0;
     margin-top: -120px;

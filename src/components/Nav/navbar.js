@@ -3,10 +3,9 @@ import Image from "next/image";
 import Link from 'next/link';
 import svglogo from '../../../public/logoDara.svg';
 
+export default function NavBar(props) {
 
-export default function NavBar() {
-
-    return <div id="header" className="header navbar navbar-default navbar-expand-lg navbar-fixed-top navbar-sm">
+    return <div id="header" className={"header navbar navbar-default navbar-expand-lg navbar-fixed-top navbar-sm " + (props.topScreen ? "navbar-transparent" : "" ) }>
 
         <div className="container">
 
@@ -25,7 +24,7 @@ export default function NavBar() {
                 <ul className="nav navbar-nav navbar-right">
                     <li data-aos="zoom-in" >
                         <Link href="/">
-                            <a>Home</a>
+                            <a className="text-white">Home</a>
                         </Link>
                     </li>
 
@@ -37,10 +36,10 @@ export default function NavBar() {
                         </div>
 </li> */}
                     <li data-aos="zoom-in">
-                        <a href="/Blog">Blog</a>
+                        <a  className="text-white" href="/Blog">Blog</a>
                     </li>
                     <li data-aos="zoom-in">
-                        <a href="/Login">Entrar</a>
+                        <a className="text-white" href="/Login">Entrar</a>
                     </li>
                 </ul>
             </div>
