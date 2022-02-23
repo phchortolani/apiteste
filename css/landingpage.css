@@ -18060,7 +18060,9 @@ body.page-navbar-fixed-top-sm {
     position      : relative;
     margin-bottom : 30px;
     padding-bottom: 15px;
-    margin-top    : 0
+    margin-top    : 0;
+    color         : #b3807d;
+    font-weight   : 600;
 }
 
 .content .content-title:after {
@@ -18068,7 +18070,7 @@ body.page-navbar-fixed-top-sm {
     display    : block;
     position   : absolute;
     width      : 40px;
-    background : var(--app-component-color);
+    background : #b3807d;
     height     : 2px;
     bottom     : 0;
     left       : 50%;
@@ -18076,7 +18078,7 @@ body.page-navbar-fixed-top-sm {
 }
 
 .content .content-desc {
-    text-align   : center;
+    text-align   : justify;
     margin-bottom: 60px;
 }
 
@@ -22392,13 +22394,14 @@ body.page-navbar-fixed-top-sm {
 .service .icon {
     width        : 50px;
     height       : 50px;
-    background   : #242a30;
+    background   : #b3807d;
     color        : #fff;
     text-align   : center;
     line-height  : 50px;
     font-size    : 1.2rem;
     border-radius: 30px
 }
+
 
 .service .icon+.info {
     padding-left: 20px
@@ -22409,7 +22412,8 @@ body.page-navbar-fixed-top-sm {
 }
 
 .service .info .title {
-    margin: 0 0 8px
+    margin: 0 0 8px;
+    color : #b3807d;
 }
 
 .service .info .desc {
@@ -31115,12 +31119,60 @@ body::-webkit-scrollbar-thumb {
 }
 
 .about {
-    background: #b3807d;
-    color     : white !important;
-    padding: 50px;
+    background   : #b3807d;
+    color        : white !important;
+    padding      : 50px;
     border-radius: 5px;
 }
 
-#service{
+#about {
+    background-color: white;
+}
+
+.flowersBackGround {
+    background-image: url('../public/flowersback.png');
+
+}
+
+.content .bg {
+    position        : absolute;
+    z-index         : -1;
+    top             : 0;
+    bottom          : 0;
+    left            : 0;
+    right           : 0;
+    background-image: url('../public/flowersback.png');
+    opacity         : .5;
+    width           : 100%;
+    height          : 100%;
+}
+
+
+
+#service {}
+
+.sobre-text {
+    text-align      : justify;
+    background      : #d7edff;
+    box-shadow      : 0 3px 6px 0 rgb(0 0 0 / 16%);
+    padding         : 24px 20px 50px;
+    border-radius   : 8px;
+    position        : relative;
+    overflow        : hidden;
+    background-color: #fff;
+
+}
+
+#team {
     background-color: #ddc4c0;
+}
+
+
+.bg-background-land {
+    background-color: #ffff !important;
+}
+
+#contact {
+    background: #d0b3b5;
+    color     : white;
 }
