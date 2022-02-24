@@ -1,7 +1,7 @@
 import { SMTPClient } from 'emailjs';
 import { connectToDataBase } from '../../config/mongodb';
 
-export default function Sendemail(req, res) {
+export default async function Sendemail(req, res) {
 
     const { email } = req.body;
 
@@ -25,14 +25,22 @@ export default function Sendemail(req, res) {
         });
 
         try {
-            client.send(
-                {
-                    text: `Olá!, Este e-mail: ${email} quer receber conteúdos toda a semana sobre psicologia.`,
-                    from: process.env.MAIL,
-                    to: "phchortolani@gmail.com",
-                    subject: 'Solicitação de Newsletter!!',
-                }
-            )
+
+            const message = await client.sendAsync({
+                text: `Olá!, Este e-mail: ${email} quer receber conteúdos toda a semana sobre psicologia.`,
+                from: process.env.MAIL,
+                to: "phchortolani@gmail.com,psi.daramarques@gmail.com",
+                subject: 'Solicitação de Newsletter!!'
+            });
+
+            /*     client.send(
+                    {
+                        text: `Olá!, Este e-mail: ${email} quer receber conteúdos toda a semana sobre psicologia.`,
+                        from: process.env.MAIL,
+                        to: "phchortolani@gmail.com,psi.daramarques@gmail.com",
+                        subject: 'Solicitação de Newsletter!!',
+                    }
+                ) */
         }
         catch (e) {
             res.status(400).end(JSON.stringify({ message: "Error" }))
