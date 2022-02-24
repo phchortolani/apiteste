@@ -49,14 +49,14 @@ export default function Ste(props) {
         <>
 
         <Head>
-                <meta itemProp="name" content="Site | Psicóloga Dara Marques - Ansiedade" />
+                <meta itemProp="name" content="Site | Psicóloga Dara Marques" />
                 <meta itemProp="description" content="Construindo um dia a dia com mais maturidade!" />
-                <meta itemProp="image" content="./ogimage.jpg" />
-                <meta property="og:url" content="https://psidaramarques.com.br" />
+                <meta itemProp="image" content="./ogimg.png" />
+                <meta property="og:url" content="https://psidaramarques.com.br/" />
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Site | Venha me conhecer!" />
+                <meta property="og:title" content="Psicologia efetiva através da Terapia Cognitivo Comportamental, agende uma consulta! " />
                 <meta property="og:description" content="Construindo um dia a dia com mais maturidade!" />
-                <meta property="og:image" content="./ogimage.jpg" />
+                <meta property="og:image" content="./ogimg.png" />
         </Head>
 
             <NavBar topScreen={topScreen} />
