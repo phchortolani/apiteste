@@ -53,11 +53,11 @@ export default function Ste(props) {
                     </div>
                     <div className="container home-content">
                         <h1 data-aos="zoom-in-down" data-aos-duration="3000" >Dara Marques</h1>
-                        <h3 data-aos="zoom-in-left" data-aos-duration="3000" data-aos-delay="1500"  >Construindo um dia a dia com mais maturidade!</h3>
+                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500"  >Construindo um dia a dia com mais maturidade!</h3>
 
                         {/*    <button className="btn  btn-theme btn-primary" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> Autoagendamento</button> */}
 
-                        <button className="btn btn-theme btn-success" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> <i className="fab fa-whatsapp fa-lg fa-fw"></i> Agende direto pelo WhatsApp</button>
+                        <a href="https://api.whatsapp.com/send?phone=5511978493885" target="_blank" className="btn btn-theme btn-success" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> <i className="fab fa-whatsapp fa-lg fa-fw"></i> Agende direto pelo WhatsApp</a>
 
 
                         {/* <a href="#" className="btn btn-theme btn-outline-white">Redes Sociais</a><br /> */}
@@ -73,7 +73,7 @@ export default function Ste(props) {
 
                         <div className="row">
 
-                            <div className="col-lg-6" data-aos="zoom-in-right">
+                            <div className="col-lg-6" data-aos="zoom-in-up">
 
                                 <div className="about">
                                     <h3 className="mb-3"></h3>
@@ -87,7 +87,7 @@ export default function Ste(props) {
                             </div>
 
 
-                            <div className="col-lg-6" data-aos="zoom-in-left">
+                            <div className="col-lg-6" data-aos="zoom-in-up">
                                 {/* <h3 className="mb-3">Minha Abordagem</h3> */}
                                 <div className="about-author" >
                                     <div className="quote">
@@ -123,19 +123,22 @@ export default function Ste(props) {
                                 <div className="sobre-text h-100">
                                     <h2 className="content-title">
                                         Especialidades </h2>
-                                    <p className="content-desc">
-                                        <p>
-                                            - Psicoterapia Individual através da Terapia Cognitivo Comportamental
-                                        </p>
-                                        <p>
-                                            - Dara Macedo Marques Hortolani - CRP: 06/164999
-                                        </p>
+                                    <div className="content-desc">
+                                        <ul>
+                                            <li>
+                                            Psicoterapia Individual através da Terapia Cognitivo Comportamental
+                                            </li>
+                                            <li>
+                                            Dara Macedo Marques Hortolani - <b>CRP: 06/164999</b>
+                                            </li>
+                                        </ul>
+                                   
 
-                                    </p>
+                                    </div>
                                 </div>
 
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-6 mb-2">
 
                                 <div className="sobre-text h-100">
                                     <h2 className="content-title">
@@ -165,7 +168,7 @@ export default function Ste(props) {
                     <div className="container">
 
                         <h2 className="content-title">Vantagens do Atendimento On-line!</h2>
-                       {/*  <p className="content-desc">
+                        {/*  <p className="content-desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur eros dolor,<br />
                             sed bibendum turpis luctus eget
                         </p> */}
@@ -174,7 +177,7 @@ export default function Ste(props) {
 
                             <div className="col-lg-4 col-md-6">
                                 <div className="service">
-                                    <div className="icon" data-animation="true" data-animation-type="animate__bounceIn"><i className="fa fa-cog"></i></div>
+                                    <div className="icon" data-animation="true" data-animation-type="animate__bounceIn"><i className="fa fa-mind-share"></i></div>
                                     <div className="info">
                                         <h4 className="title">Praticidade</h4>
                                         <p className="desc">Facilidade para conseguir encontrar um psicólogo que você se identifica e que percebe que pode te ajudar no seu problema.</p>
@@ -185,7 +188,7 @@ export default function Ste(props) {
 
                             <div className="col-lg-4 col-md-6">
                                 <div className="service">
-                                    <div className="icon" data-animation="true" data-animation-type="animate__bounceIn"><i className="fa fa-paint-brush"></i></div>
+                                    <div className="icon" data-animation="true" data-animation-type="animate__bounceIn"><i className="fa fa-home-lg"></i></div>
                                     <div className="info">
                                         <h4 className="title">Comodidade</h4>
                                         <p className="desc">Você pode fazer na sua casa ou em qualquer lugar que você se sinta confortável, sem precisar gastar dinheiro com gasolina, transporte público e ter que enfrentar o trânsito.</p>
@@ -196,7 +199,7 @@ export default function Ste(props) {
 
                             <div className="col-lg-4 col-md-6">
                                 <div className="service">
-                                    <div className="icon" data-animation="true" data-animation-type="animate__bounceIn"><i className="fa fa-file"></i></div>
+                                    <div className="icon" data-animation="true" data-animation-type="animate__bounceIn"><i className="fa fa-user-shield"></i></div>
                                     <div className="info">
                                         <h4 className="title">Sigiloso</h4>
                                         <p className="desc">O sigilo acontece da mesma forma que um atendimento presencial, mas nesse caso é importante que o paciente auxilie estando num ambiente que se sente confortável e seguro para que as informações não sejam ouvidas por outras pessoas.</p>
@@ -207,7 +210,7 @@ export default function Ste(props) {
 
                             <div className="col-lg-4 col-md-6">
                                 <div className="service">
-                                    <div className="icon" data-animation="true" data-animation-type="animate__bounceIn"><i className="fa fa-code"></i></div>
+                                    <div className="icon" data-animation="true" data-animation-type="animate__bounceIn"><i className="fa fa-calendar-alt"></i></div>
                                     <div className="info">
                                         <h4 className="title">Horários flexíveis</h4>
                                         <p className="desc"> Por conta da praticidade tanto para os pacientes quanto para os psicólogos, os horários de agendamentos podem ser mais flexíveis.</p>
@@ -218,10 +221,10 @@ export default function Ste(props) {
 
                             <div className="col-lg-4 col-md-6">
                                 <div className="service">
-                                    <div className="icon" data-animation="true" data-animation-type="animate__bounceIn"><i className="fa fa-shopping-cart"></i></div>
+                                    <div className="icon" data-animation="true" data-animation-type="animate__bounceIn"><i className="fa fa-balance-scale"></i></div>
                                     <div className="info">
                                         <h4 className="title">Mesma Qualidade</h4>
-                                        <p className="desc"> A terapia funciona da mesma forma que uma terapia presencial e por isso qualquer demanda ou questão levada pelo paciente o serviço será prestado com qualidade;</p>
+                                        <p className="desc"> A terapia funciona da mesma forma que uma terapia presencial e por isso qualquer demanda ou questão levada pelo paciente o serviço será prestado com qualidade.</p>
                                     </div>
                                 </div>
                             </div>

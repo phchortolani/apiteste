@@ -31121,7 +31121,7 @@ body::-webkit-scrollbar-thumb {
 .about {
     background   : #b3807d;
     color        : white !important;
-    padding      : 50px;
+    padding      : 20px;
     border-radius: 5px;
 }
 
