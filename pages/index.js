@@ -39,7 +39,7 @@ export default function Ste(props) {
 
     async function registerNews() {
 
-        var existe = await axios.post('/api/findone', { obj: { email: email }, table: "newsletter" });
+        var existe = await axios.post('/api/findone', { obj: { email: email.toLowerCase() }, table: "newsletter" });
 
         if (existe.data.result) {
             alert("Email já cadastrado!")
