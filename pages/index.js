@@ -43,21 +43,21 @@ export default function Ste(props) {
         })
     }, [])
 
+    let ogimage = "https://scontent.cdninstagram.com/https://scontent.cdninstagram.com/v/t51.29350-15/274402002_665590744869027_9148663915898072871_n.webp?stp=dst-jpg&_nc_cat=107&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=TxfdKoFbhXsAX-2Hqmv&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-F_Taj8yr8CGWPWMTNyVW1z_dx_Q32pFjW05yZqE4HIg&oe=621C07A3/t51.29350-15/2…yr8CGWPWMTNyVW1z_dx_Q32pFjW05yZqE4HIg&oe=621C07A3";
 
 
     return (
         <>
-
-        <Head>
-                <meta itemProp="name" content="Site | Psicóloga Dara Marques" />
+            <Head>
+                <meta itemProp="name" content="Home | Psicóloga Dara Marques" />
                 <meta itemProp="description" content="Construindo um dia a dia com mais maturidade!" />
-                <meta itemProp="image:secure_url" content="./ogimg.png" />
+                <meta itemProp="image:secure_url" content={ogimage} />
                 <meta property="og:url" content="https://psidaramarques.com.br/" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Psicologia efetiva através da Terapia Cognitivo Comportamental, agende uma consulta! " />
                 <meta property="og:description" content="Construindo um dia a dia com mais maturidade!" />
-                <meta property="og:image:secure_url" content="./ogimg.png" />
-        </Head>
+                <meta property="og:image:secure_url" content={ogimage} />
+            </Head>
 
             <NavBar topScreen={topScreen} />
             <div id="page-container" className="bg-background-land" /* className="fade" */>
