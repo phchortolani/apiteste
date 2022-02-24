@@ -49,6 +49,17 @@ export default function Ste(props) {
     return (
         <>
 
+        <Head>
+                <meta itemProp="name" content="Site | Psicóloga Dara Marques - Ansiedade" />
+                <meta itemProp="description" content="Construindo um dia a dia com mais maturidade!" />
+                <meta itemProp="image" content="./ogimage.jpg" />
+                <meta property="og:url" content="https://psidaramarques.com.br" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Blog | Como lidar com a ansiedade?" />
+                <meta property="og:description" content="Construindo um dia a dia com mais maturidade!" />
+                <meta property="og:image" content="./ogimage.jpg" />
+        </Head>
+
             <NavBar topScreen={topScreen} />
             <div id="page-container" className="bg-background-land" /* className="fade" */>
                 <div id="home" className={"content has-bg home " + (isMobile ? "" : "gradientar")} data-aos={(!isMobile ? "fade-in" : "")}>
@@ -148,7 +159,6 @@ export default function Ste(props) {
 
                             </div>
                             <div className="col-md-6 mb-2">
-
                                 <div className="sobre-text h-100">
                                     <h2 className="content-title">
                                         Qual é o foco do meu trabalho? </h2>
