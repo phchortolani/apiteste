@@ -255,7 +255,7 @@ export default function Ste(props) {
 
                             <div className="col-lg-4 col-md-6">
                                 <div className="service">
-                                    <div className="icon" data-animation="true" data-animation-type="animate__bounceIn"><i className="fa fa-balance-scale"></i></div>
+                                    <div className="icon" data-animation="true" data-animation-type="animate__bounceIn"><i className="fa fa-check-double"></i></div>
                                     <div className="info">
                                         <h4 className="title">Mesma Qualidade</h4>
                                         <p className="desc"> A terapia funciona da mesma forma que uma terapia presencial e por isso qualquer demanda ou questão levada pelo paciente o serviço será prestado com qualidade.</p>
