@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import NavBar from "../src/components/Nav/navbar";
 import { AuthContext } from "../context/Auth2Context";
 import Head from 'next/head';
+import axios from "axios";
 
 export async function getStaticProps(context) {
 
@@ -32,7 +33,22 @@ export default function Ste(props) {
 
     const [dados, setDados] = useState(props.dados?.data);
     const [topScreen, setTopScreen] = useState(true);
+    const [email, setEmail] = useState("");
     const { isMobile } = useContext(AuthContext);
+
+
+    async function registerNews() {
+
+        var existe = await axios.post('/api/findone', { obj: { email: email }, table: "newsletter" });
+
+        if (existe.data.result) {
+            alert("Email já cadastrado!")
+        } else {
+            var ret = await axios.post('/api/sendemail', { email });
+            if (ret) alert("Email Cadastrado com sucesso!")
+        }
+
+    }
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -345,8 +361,8 @@ export default function Ste(props) {
                                         Receba conteúdos por e-mail toda semana!
                                     </p>
                                     <div className="text-center">
-                                        <input type="text" className="form-control" placeholder="Seu e-mail" />
-                                        <button type="submit" className="btn btn-theme btn-primary btn-block">Inscrever-se</button>
+                                        <input type="text" onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="Seu e-mail" />
+                                        <button type="button" onClick={() => registerNews()} className="btn btn-theme btn-primary btn-block">Inscrever-se</button>
                                     </div>
 
                                     <div className="row mb-3">
