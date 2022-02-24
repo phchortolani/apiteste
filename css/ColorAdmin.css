@@ -13267,11 +13267,11 @@ a {
 }
 
 .header.navbar-transparent.navbar-sm .navbar-toggle {
-    background: #dee2e6
+    background: #dee2e600
 }
 
 .header.navbar-transparent.navbar-sm .navbar-toggle .icon-bar {
-    background: #6c757d
+    background: #fff
 }
 
 .page-title {

@@ -1,6 +1,9 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import NavBar from "../src/components/Nav/navbar";
+import { AuthContext } from "../context/Auth2Context";
+
+
 
 export async function getStaticProps(context) {
 
@@ -30,7 +33,7 @@ export default function Ste(props) {
 
     const [dados, setDados] = useState(props.dados?.data);
     const [topScreen, setTopScreen] = useState(true);
-
+    const { isMobile } = useContext(AuthContext);
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -48,12 +51,12 @@ export default function Ste(props) {
 
             <NavBar topScreen={topScreen} />
             <div id="page-container" className="bg-background-land" /* className="fade" */>
-                <div id="home" className="content has-bg home gradientar" data-aos="fade-in">
+                <div id="home" className={"content has-bg home " + (isMobile ? "" : "gradientar")} data-aos={(!isMobile ? "fade-in" : "")}>
                     <div className="content-bg">
                     </div>
                     <div className="container home-content">
                         <h1 data-aos="zoom-in-down" data-aos-duration="3000" >Dara Marques</h1>
-                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500"  >Construindo um dia a dia com mais maturidade!</h3>
+                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Construindo um dia a dia com mais maturidade!</h3>
 
                         {/*    <button className="btn  btn-theme btn-primary" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> Autoagendamento</button> */}
 
@@ -68,7 +71,7 @@ export default function Ste(props) {
 
                 <div id="about" className="content" data-scrollview="true" data-aos="fade-up">
                     <div className="bg"></div>
-                    <div className="container" data-animation="true" data-animation-type="animate__fadeInDown">
+                    <div className={isMobile ? "" : "container"} data-animation="true" data-animation-type="animate__fadeInDown">
                         <h2 className="content-title">Sobre mim</h2>
 
                         <div className="row">
@@ -86,8 +89,7 @@ export default function Ste(props) {
                                 </div>
                             </div>
 
-
-                            <div className="col-lg-6" data-aos="zoom-in-up">
+                            {isMobile ? "" : <div className="col-lg-6" data-aos="zoom-in-up">
                                 {/* <h3 className="mb-3">Minha Abordagem</h3> */}
                                 <div className="about-author" >
                                     <div className="quote">
@@ -107,6 +109,7 @@ export default function Ste(props) {
                                 </div>
 
                             </div>
+                            }
 
 
                         </div>
@@ -117,7 +120,7 @@ export default function Ste(props) {
 
 
                 <div id="team" className="content" data-scrollview="true">
-                    <div className="container">
+                    <div className={isMobile ? "" : "container"}>
                         <div className="row">
                             <div className="col-md-6 mb-2">
                                 <div className="sobre-text h-100">
@@ -126,13 +129,19 @@ export default function Ste(props) {
                                     <div className="content-desc">
                                         <ul>
                                             <li>
-                                            Psicoterapia Individual através da Terapia Cognitivo Comportamental
+                                                Psicoterapia Individual através da Terapia Cognitivo Comportamental
+                                            </li>
+
+                                            <li>
+                                                Atualmente, a TCC é a abordagem com mais evidências científicas e é utilizada para tratar diversos transtornos mentais.
+
+                                                Seu principal objetivo é identificar padrões de comportamentos, pensamentos e crenças que estão na origem do problema.
                                             </li>
                                             <li>
-                                            Dara Macedo Marques Hortolani - <b>CRP: 06/164999</b>
+                                                Dara Macedo Marques Hortolani - <b>CRP: 06/164999</b>
                                             </li>
                                         </ul>
-                                   
+
 
                                     </div>
                                 </div>
@@ -165,7 +174,7 @@ export default function Ste(props) {
 
                 <div id="service" className="content" data-scrollview="true">
                     <div className="bg"></div>
-                    <div className="container">
+                    <div className={isMobile ? "" : "container"}>
 
                         <h2 className="content-title">Vantagens do Atendimento On-line!</h2>
                         {/*  <p className="content-desc">
@@ -251,9 +260,9 @@ export default function Ste(props) {
 
                 <div id="work" className="content" data-scrollview="true">
 
-                    <div className="container" data-animation="true" data-animation-type="animate__fadeInDown">
+                    <div className={isMobile ? "" : "container"} data-animation="true" data-animation-type="animate__fadeInDown">
                         <h2 className="content-title">Últimos Posts</h2>
-                        <p className="content-desc">
+                        <p className="content-desc text-center">
                             Veja abaixo alguns posts em que mostro como levar uma vida mais leve!
                         </p>
 
@@ -293,7 +302,7 @@ export default function Ste(props) {
 
                 <div id="contact" className="content" data-scrollview="true">
 
-                    <div className="container">
+                    <div className={isMobile ? "" : "container"}>
                         <h2 className="content-title text-white">Conteúdos</h2>
                         <p className="text-center" >
                             Caso tenha interesse de receber conteúdos sobre psicologia toda semana, me siga nas redes sociais e se inscreva na minha newsletter.
@@ -349,7 +358,7 @@ export default function Ste(props) {
 
 
                 {/*   <div id="footer" className="footer">
-                    <div className="container">
+                    <div className={isMobile ? "" : "container"}>
                         <div className="footer-brand">
                             <img height={70} style={{filter: "color(""/)"}} width={70} src="./logoDara.svg"/>
                         </div>

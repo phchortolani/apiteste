@@ -18337,7 +18337,8 @@ body.page-navbar-fixed-top-sm {
 
 @media (max-width:767.98px) {
     .header.navbar-transparent .navbar-collapse {
-        background: #fff
+        background: #b1a1a16e;
+        backdrop-filter: blur(3px);
     }
 
     .header.navbar-transparent .navbar-collapse .navbar-nav .nav-item .nav-link {
@@ -31155,7 +31156,7 @@ body::-webkit-scrollbar-thumb {
     text-align      : justify;
     background      : #d7edff;
     box-shadow      : 0 3px 6px 0 rgb(0 0 0 / 16%);
-    padding         : 24px 20px 50px;
+    padding         : 24px 24px 0px;
     border-radius   : 8px;
     position        : relative;
     overflow        : hidden;
