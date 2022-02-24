@@ -2,8 +2,7 @@
 import { useEffect, useState, useContext } from "react";
 import NavBar from "../src/components/Nav/navbar";
 import { AuthContext } from "../context/Auth2Context";
-
-
+import Head from 'next/head';
 
 export async function getStaticProps(context) {
 
