@@ -17,35 +17,37 @@ export default function Sendemail(req, res) {
     }
 
 
-    if (save()) {
-        const client = new SMTPClient({
-            user: process.env.MAIL,
-            password: process.env.MAIL_PASS,
-            host: 'smtp.gmail.com',
-            ssl: true
+
+    const client = new SMTPClient({
+        user: process.env.MAIL,
+        password: process.env.MAIL_PASS,
+        host: 'smtp.gmail.com',
+        ssl: true
+    });
+
+    try {
+        var destinatarios = ['phchortolani@gmail.com', 'psi.daramarques@gmail.com'];
+        async function send(destino) {
+            await client.sendAsync({
+                text: `Olá! Este e-mail: ${email} quer receber conteúdos toda a semana sobre psicologia.`,
+                from: process.env.MAIL,
+                to: destino,
+                subject: 'Solicitação de Newsletter!!',
+            });
+        }
+
+        destinatarios.forEach(destinatario => {
+            send(destinatario);
         });
 
-        try {
-            var destinatarios = ['phchortolani@gmail.com', 'daramarques11@gmail.com'];
-            destinatarios.forEach(destinatario => {
-                client.send(
-                    {
-                        text: `Olá! Este e-mail: ${email} quer receber conteúdos toda a semana sobre psicologia.`,
-                        from: process.env.MAIL,
-                        to: destinatario,
-                        subject: 'Solicitação de Newsletter!!',
-                    }
-                )
-            });
+    }
+    catch (e) {
+        res.status(400).end(JSON.stringify({ message: "Error" }))
+        return;
+    }
 
-        }
-        catch (e) {
-            res.status(400).end(JSON.stringify({ message: "Error" }))
-            return;
-        }
+    res.status(200).end(JSON.stringify({ message: 'Send Mail' }))
 
-        res.status(200).end(JSON.stringify({ message: 'Send Mail' }))
-    } else res.status(400).end(JSON.stringify({ message: "Error" }))
 
 
 
