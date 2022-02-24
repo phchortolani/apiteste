@@ -43,7 +43,7 @@ export default function Ste(props) {
         })
     }, [])
 
-    let ogimage = "https://scontent.cdninstagram.com/https://scontent.cdninstagram.com/v/t51.29350-15/274402002_665590744869027_9148663915898072871_n.webp?stp=dst-jpg&_nc_cat=107&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=TxfdKoFbhXsAX-2Hqmv&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-F_Taj8yr8CGWPWMTNyVW1z_dx_Q32pFjW05yZqE4HIg&oe=621C07A3/t51.29350-15/2…yr8CGWPWMTNyVW1z_dx_Q32pFjW05yZqE4HIg&oe=621C07A3";
+    let ogimage = "https://scontent.cdninstagram.com/v/t51.29350-15/274402002_665590744869027_9148663915898072871_n.webp?stp=dst-jpg&_nc_cat=107&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=TxfdKoFbhXsAX-2Hqmv&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-F_Taj8yr8CGWPWMTNyVW1z_dx_Q32pFjW05yZqE4HIg&oe=621C07A3/t51.29350-15/2…yr8CGWPWMTNyVW1z_dx_Q32pFjW05yZqE4HIg&oe=621C07A3";
 
 
     return (
