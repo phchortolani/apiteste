@@ -26,7 +26,6 @@ export default function Sendemail(req, res) {
     });
 
     try {
-        var destinatarios = ['phchortolani@gmail.com', 'psi.daramarques@gmail.com'];
         async function send(destino) {
             await client.sendAsync({
                 text: `Olá! Este e-mail: ${email} quer receber conteúdos toda a semana sobre psicologia.`,
@@ -36,9 +35,7 @@ export default function Sendemail(req, res) {
             });
         }
 
-        destinatarios.forEach(destinatario => {
-            send(destinatario);
-        });
+        send("phchortolani@gmail.com");
 
     }
     catch (e) {
