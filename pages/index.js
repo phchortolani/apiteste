@@ -55,7 +55,7 @@ export default function Ste(props) {
                 <meta itemProp="image" content="./ogimage.jpg" />
                 <meta property="og:url" content="https://psidaramarques.com.br" />
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Blog | Como lidar com a ansiedade?" />
+                <meta property="og:title" content="Site | Venha me conhecer!" />
                 <meta property="og:description" content="Construindo um dia a dia com mais maturidade!" />
                 <meta property="og:image" content="./ogimage.jpg" />
         </Head>
