@@ -10,7 +10,7 @@ export default function Sendemail(req, res) {
 
         const collection = db.collection("newsletter");
 
-        let ret = await collection.insertOne({ email: email, createAt: new Date() });
+        let ret = await collection.insertOne({ email: email.toLowerCase(), createAt: new Date() });
 
         if (ret) return true;
         else return false;
