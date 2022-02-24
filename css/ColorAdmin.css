@@ -14,8 +14,8 @@
     --bs-blue           : #348fe2;
     --bs-black          : #000000;
     --bs-cyan           : #49b6d6;
-    --bs-dark           : #2d353c;
-    --bs-dark-darker    : #1a2229;
+    --bs-nonodark          : #2d353c;
+    --bs-nodark-nodarker    : #1a2229;
     --bs-green          : #32a932;
     --bs-indigo         : #8753de;
     --bs-lime           : #90ca4b;
@@ -31,7 +31,7 @@
     --bs-muted          : #627884;
     --bs-aqua           : #49b6d6;
     --bs-primary        : #00acac;
-    --bs-dark           : #2d353c;
+    --bs-nonodark          : #2d353c;
     --bs-inverse        : #2d353c;
     --bs-black          : #000000;
     --bs-white          : #FFFFFF;
@@ -2376,7 +2376,7 @@ progress {
     border-color            : #dadbdc
 }
 
-.table-dark {
+.table-nonodark{
     --bs-table-bg           : #2d353c;
     --bs-table-striped-bg   : #383f46;
     --bs-table-striped-color: #FFFFFF;
@@ -3387,46 +3387,46 @@ fieldset:disabled .btn {
     border-color    : #00acac
 }
 
-.btn-dark {
+.btn-nonodark{
     color           : #fff;
     background-color: #2d353c;
     border-color    : #2d353c
 }
 
-.btn-dark:hover {
+.btn-nodark:hover {
     color           : #fff;
     background-color: #262d33;
     border-color    : #242a30
 }
 
-.btn-check:focus+.btn-dark,
-.btn-dark:focus {
+.btn-check:focus+.btn-nodark,
+.btn-nodark:focus {
     color           : #fff;
     background-color: #262d33;
     border-color    : #242a30;
     box-shadow      : 0 0 0 .25rem rgba(77, 83, 89, .5)
 }
 
-.btn-check:active+.btn-dark,
-.btn-check:checked+.btn-dark,
-.btn-dark.active,
-.btn-dark:active,
-.show>.btn-dark.dropdown-toggle {
+.btn-check:active+.btn-nodark,
+.btn-check:checked+.btn-nodark,
+.btn-nodark.active,
+.btn-nodark:active,
+.show>.btn-nodark.dropdown-toggle {
     color           : #fff;
     background-color: #242a30;
     border-color    : #22282d
 }
 
-.btn-check:active+.btn-dark:focus,
-.btn-check:checked+.btn-dark:focus,
-.btn-dark.active:focus,
-.btn-dark:active:focus,
-.show>.btn-dark.dropdown-toggle:focus {
+.btn-check:active+.btn-nodark:focus,
+.btn-check:checked+.btn-nodark:focus,
+.btn-nodark.active:focus,
+.btn-nodark:active:focus,
+.show>.btn-nodark.dropdown-toggle:focus {
     box-shadow: 0 0 0 .25rem rgba(77, 83, 89, .5)
 }
 
-.btn-dark.disabled,
-.btn-dark:disabled {
+.btn-nodark.disabled,
+.btn-nodark:disabled {
     color           : #fff;
     background-color: #2d353c;
     border-color    : #2d353c
@@ -3832,42 +3832,42 @@ fieldset:disabled .btn {
     background-color: transparent
 }
 
-.btn-outline-dark {
+.btn-outline-nonodark{
     color       : #2d353c;
     border-color: #2d353c
 }
 
-.btn-outline-dark:hover {
+.btn-outline-nodark:hover {
     color           : #fff;
     background-color: #2d353c;
     border-color    : #2d353c
 }
 
-.btn-check:focus+.btn-outline-dark,
-.btn-outline-dark:focus {
+.btn-check:focus+.btn-outline-nodark,
+.btn-outline-nodark:focus {
     box-shadow: 0 0 0 .25rem rgba(45, 53, 60, .5)
 }
 
-.btn-check:active+.btn-outline-dark,
-.btn-check:checked+.btn-outline-dark,
-.btn-outline-dark.active,
-.btn-outline-dark.dropdown-toggle.show,
-.btn-outline-dark:active {
+.btn-check:active+.btn-outline-nodark,
+.btn-check:checked+.btn-outline-nodark,
+.btn-outline-nodark.active,
+.btn-outline-nodark.dropdown-toggle.show,
+.btn-outline-nodark:active {
     color           : #fff;
     background-color: #2d353c;
     border-color    : #2d353c
 }
 
-.btn-check:active+.btn-outline-dark:focus,
-.btn-check:checked+.btn-outline-dark:focus,
-.btn-outline-dark.active:focus,
-.btn-outline-dark.dropdown-toggle.show:focus,
-.btn-outline-dark:active:focus {
+.btn-check:active+.btn-outline-nodark:focus,
+.btn-check:checked+.btn-outline-nodark:focus,
+.btn-outline-nodark.active:focus,
+.btn-outline-nodark.dropdown-toggle.show:focus,
+.btn-outline-nodark:active:focus {
     box-shadow: 0 0 0 .25rem rgba(45, 53, 60, .5)
 }
 
-.btn-outline-dark.disabled,
-.btn-outline-dark:disabled {
+.btn-outline-nodark.disabled,
+.btn-outline-nodark:disabled {
     color           : #2d353c;
     background-color: transparent
 }
@@ -4584,42 +4584,42 @@ fieldset:disabled .btn {
     color  : #212529
 }
 
-.dropdown-menu-dark {
+.dropdown-menu-nonodark{
     color           : #dee2e6;
     background-color: #343a40;
     border-color    : rgba(0, 0, 0, .15)
 }
 
-.dropdown-menu-dark .dropdown-item {
+.dropdown-menu-nonodark.dropdown-item {
     color: #dee2e6
 }
 
-.dropdown-menu-dark .dropdown-item:focus,
-.dropdown-menu-dark .dropdown-item:hover {
+.dropdown-menu-nonodark.dropdown-item:focus,
+.dropdown-menu-nonodark.dropdown-item:hover {
     color           : #fff;
     background-color: rgba(255, 255, 255, .15)
 }
 
-.dropdown-menu-dark .dropdown-item.active,
-.dropdown-menu-dark .dropdown-item:active {
+.dropdown-menu-nonodark.dropdown-item.active,
+.dropdown-menu-nonodark.dropdown-item:active {
     color           : #fff;
     background-color: #348fe2
 }
 
-.dropdown-menu-dark .dropdown-item.disabled,
-.dropdown-menu-dark .dropdown-item:disabled {
+.dropdown-menu-nonodark.dropdown-item.disabled,
+.dropdown-menu-nonodark.dropdown-item:disabled {
     color: #adb5bd
 }
 
-.dropdown-menu-dark .dropdown-divider {
+.dropdown-menu-nonodark.dropdown-divider {
     border-color: rgba(0, 0, 0, .15)
 }
 
-.dropdown-menu-dark .dropdown-item-text {
+.dropdown-menu-nonodark.dropdown-item-text {
     color: #dee2e6
 }
 
-.dropdown-menu-dark .dropdown-header {
+.dropdown-menu-nonodark.dropdown-header {
     color: #adb5bd
 }
 
@@ -5217,49 +5217,49 @@ fieldset:disabled .btn {
     color: rgba(0, 0, 0, .9)
 }
 
-.navbar-dark .navbar-brand {
+.navbar-nonodark.navbar-brand {
     color: #fff
 }
 
-.navbar-dark .navbar-brand:focus,
-.navbar-dark .navbar-brand:hover {
+.navbar-nonodark.navbar-brand:focus,
+.navbar-nonodark.navbar-brand:hover {
     color: #fff
 }
 
-.navbar-dark .navbar-nav .nav-link {
+.navbar-nonodark.navbar-nav .nav-link {
     color: rgba(255, 255, 255, .55)
 }
 
-.navbar-dark .navbar-nav .nav-link:focus,
-.navbar-dark .navbar-nav .nav-link:hover {
+.navbar-nonodark.navbar-nav .nav-link:focus,
+.navbar-nonodark.navbar-nav .nav-link:hover {
     color: rgba(255, 255, 255, .75)
 }
 
-.navbar-dark .navbar-nav .nav-link.disabled {
+.navbar-nonodark.navbar-nav .nav-link.disabled {
     color: rgba(255, 255, 255, .25)
 }
 
-.navbar-dark .navbar-nav .nav-link.active,
-.navbar-dark .navbar-nav .show>.nav-link {
+.navbar-nonodark.navbar-nav .nav-link.active,
+.navbar-nonodark.navbar-nav .show>.nav-link {
     color: #fff
 }
 
-.navbar-dark .navbar-toggler {
+.navbar-nonodark.navbar-toggler {
     color       : rgba(255, 255, 255, .55);
     border-color: rgba(255, 255, 255, .1)
 }
 
-.navbar-dark .navbar-toggler-icon {
+.navbar-nonodark.navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
 }
 
-.navbar-dark .navbar-text {
+.navbar-nonodark.navbar-text {
     color: rgba(255, 255, 255, .55)
 }
 
-.navbar-dark .navbar-text a,
-.navbar-dark .navbar-text a:focus,
-.navbar-dark .navbar-text a:hover {
+.navbar-nonodark.navbar-text a,
+.navbar-nonodark.navbar-text a:focus,
+.navbar-nonodark.navbar-text a:hover {
     color: #fff
 }
 
@@ -5749,13 +5749,13 @@ fieldset:disabled .btn {
     color: #005252
 }
 
-.alert-dark {
+.alert-nonodark{
     color           : #1b2024;
     background-color: #d5d7d8;
     border-color    : #c0c2c5
 }
 
-.alert-dark .alert-link {
+.alert-nonodark.alert-link {
     color: #161a1d
 }
 
@@ -6204,18 +6204,18 @@ fieldset:disabled .btn {
     border-color    : #006767
 }
 
-.list-group-item-dark {
+.list-group-item-nonodark{
     color           : #1b2024;
     background-color: #d5d7d8
 }
 
-.list-group-item-dark.list-group-item-action:focus,
-.list-group-item-dark.list-group-item-action:hover {
+.list-group-item-nodark.list-group-item-action:focus,
+.list-group-item-nodark.list-group-item-action:hover {
     color           : #1b2024;
     background-color: #c0c2c2
 }
 
-.list-group-item-dark.list-group-item-action.active {
+.list-group-item-nodark.list-group-item-action.active {
     color           : #fff;
     background-color: #1b2024;
     border-color    : #1b2024
@@ -7273,16 +7273,16 @@ fieldset:disabled .btn {
     text-align    : center
 }
 
-.carousel-dark .carousel-control-next-icon,
-.carousel-dark .carousel-control-prev-icon {
+.carousel-nonodark.carousel-control-next-icon,
+.carousel-nonodark.carousel-control-prev-icon {
     filter: invert(1) grayscale(100)
 }
 
-.carousel-dark .carousel-indicators [data-bs-target] {
+.carousel-nonodark.carousel-indicators [data-bs-target] {
     background-color: #000
 }
 
-.carousel-dark .carousel-caption {
+.carousel-nonodark.carousel-caption {
     color: #000
 }
 
@@ -7443,12 +7443,12 @@ fieldset:disabled .btn {
     color: #33bdbd
 }
 
-.link-dark {
+.link-nonodark{
     color: #2d353c
 }
 
-.link-dark:focus,
-.link-dark:hover {
+.link-nodark:focus,
+.link-nodark:hover {
     color: #242a30
 }
 
@@ -7890,7 +7890,7 @@ fieldset:disabled .btn {
     border-color: #00acac !important
 }
 
-.border-dark {
+.border-nonodark{
     border-color: #2d353c !important
 }
 
@@ -8721,7 +8721,7 @@ fieldset:disabled .btn {
     color: #00acac !important
 }
 
-.text-dark {
+.text-nonodark{
     color: #2d353c !important
 }
 
@@ -8777,7 +8777,7 @@ fieldset:disabled .btn {
     background-color: #00acac !important
 }
 
-.bg-dark {
+.bg-nonodark{
     background-color: #2d353c !important
 }
 
@@ -18912,156 +18912,156 @@ a {
     background-color: #022 !important
 }
 
-.text-dark,
-.text-dark-500 {
+.text-nodark,
+.text-nodark-500 {
     color: #2d353c !important
 }
 
-.bg-dark,
-.bg-dark-500 {
+.bg-nodark,
+.bg-nodark-500 {
     background-color: #2d353c !important
 }
 
-.bg-gradient-dark {
+.bg-gradient-nonodark{
     background: #2d353c !important;
     background: -moz-linear-gradient(to top, #81868a 0, #1b2024 100%) !important;
     background: -webkit-linear-gradient(to top, #81868a 0, #1b2024 100%) !important;
     background: linear-gradient(to bottom, #81868a 0, #1b2024 100%) !important
 }
 
-.bg-dark-transparent-1 {
+.bg-nodark-transparent-1 {
     background-color: rgba(45, 53, 60, .1) !important
 }
 
-.text-dark-transparent-1 {
+.text-nodark-transparent-1 {
     color: rgba(45, 53, 60, .1) !important
 }
 
-.bg-dark-transparent-2 {
+.bg-nodark-transparent-2 {
     background-color: rgba(45, 53, 60, .2) !important
 }
 
-.text-dark-transparent-2 {
+.text-nodark-transparent-2 {
     color: rgba(45, 53, 60, .2) !important
 }
 
-.bg-dark-transparent-3 {
+.bg-nodark-transparent-3 {
     background-color: rgba(45, 53, 60, .3) !important
 }
 
-.text-dark-transparent-3 {
+.text-nodark-transparent-3 {
     color: rgba(45, 53, 60, .3) !important
 }
 
-.bg-dark-transparent-4 {
+.bg-nodark-transparent-4 {
     background-color: rgba(45, 53, 60, .4) !important
 }
 
-.text-dark-transparent-4 {
+.text-nodark-transparent-4 {
     color: rgba(45, 53, 60, .4) !important
 }
 
-.bg-dark-transparent-5 {
+.bg-nodark-transparent-5 {
     background-color: rgba(45, 53, 60, .5) !important
 }
 
-.text-dark-transparent-5 {
+.text-nodark-transparent-5 {
     color: rgba(45, 53, 60, .5) !important
 }
 
-.bg-dark-transparent-6 {
+.bg-nodark-transparent-6 {
     background-color: rgba(45, 53, 60, .6) !important
 }
 
-.text-dark-transparent-6 {
+.text-nodark-transparent-6 {
     color: rgba(45, 53, 60, .6) !important
 }
 
-.bg-dark-transparent-7 {
+.bg-nodark-transparent-7 {
     background-color: rgba(45, 53, 60, .7) !important
 }
 
-.text-dark-transparent-7 {
+.text-nodark-transparent-7 {
     color: rgba(45, 53, 60, .7) !important
 }
 
-.bg-dark-transparent-8 {
+.bg-nodark-transparent-8 {
     background-color: rgba(45, 53, 60, .8) !important
 }
 
-.text-dark-transparent-8 {
+.text-nodark-transparent-8 {
     color: rgba(45, 53, 60, .8) !important
 }
 
-.bg-dark-transparent-9 {
+.bg-nodark-transparent-9 {
     background-color: rgba(45, 53, 60, .9) !important
 }
 
-.text-dark-transparent-9 {
+.text-nodark-transparent-9 {
     color: rgba(45, 53, 60, .9) !important
 }
 
-.text-dark-100 {
+.text-nodark-100 {
     color: #d5d7d8 !important
 }
 
-.bg-dark-100 {
+.bg-nodark-100 {
     background-color: #d5d7d8 !important
 }
 
-.text-dark-600 {
+.text-nodark-600 {
     color: #242a30 !important
 }
 
-.bg-dark-600 {
+.bg-nodark-600 {
     background-color: #242a30 !important
 }
 
-.text-dark-200 {
+.text-nodark-200 {
     color: #abaeb1 !important
 }
 
-.bg-dark-200 {
+.bg-nodark-200 {
     background-color: #abaeb1 !important
 }
 
-.text-dark-700 {
+.text-nodark-700 {
     color: #1b2024 !important
 }
 
-.bg-dark-700 {
+.bg-nodark-700 {
     background-color: #1b2024 !important
 }
 
-.text-dark-300 {
+.text-nodark-300 {
     color: #81868a !important
 }
 
-.bg-dark-300 {
+.bg-nodark-300 {
     background-color: #81868a !important
 }
 
-.text-dark-800 {
+.text-nodark-800 {
     color: #121518 !important
 }
 
-.bg-dark-800 {
+.bg-nodark-800 {
     background-color: #121518 !important
 }
 
-.text-dark-400 {
+.text-nodark-400 {
     color: #575d63 !important
 }
 
-.bg-dark-400 {
+.bg-nodark-400 {
     background-color: #575d63 !important
 }
 
-.text-dark-900 {
+.text-nodark-900 {
     color: #090b0c !important
 }
 
-.bg-dark-900 {
+.bg-nodark-900 {
     background-color: #090b0c !important
 }
 
@@ -20748,309 +20748,309 @@ a {
     background-color: #0f242b !important
 }
 
-.text-dark,
-.text-dark-500 {
+.text-nodark,
+.text-nodark-500 {
     color: #2d353c !important
 }
 
-.bg-dark,
-.bg-dark-500 {
+.bg-nodark,
+.bg-nodark-500 {
     background-color: #2d353c !important
 }
 
-.bg-gradient-dark {
+.bg-gradient-nonodark{
     background: #2d353c !important;
     background: -moz-linear-gradient(to top, #81868a 0, #1b2024 100%) !important;
     background: -webkit-linear-gradient(to top, #81868a 0, #1b2024 100%) !important;
     background: linear-gradient(to bottom, #81868a 0, #1b2024 100%) !important
 }
 
-.bg-dark-transparent-1 {
+.bg-nodark-transparent-1 {
     background-color: rgba(45, 53, 60, .1) !important
 }
 
-.text-dark-transparent-1 {
+.text-nodark-transparent-1 {
     color: rgba(45, 53, 60, .1) !important
 }
 
-.bg-dark-transparent-2 {
+.bg-nodark-transparent-2 {
     background-color: rgba(45, 53, 60, .2) !important
 }
 
-.text-dark-transparent-2 {
+.text-nodark-transparent-2 {
     color: rgba(45, 53, 60, .2) !important
 }
 
-.bg-dark-transparent-3 {
+.bg-nodark-transparent-3 {
     background-color: rgba(45, 53, 60, .3) !important
 }
 
-.text-dark-transparent-3 {
+.text-nodark-transparent-3 {
     color: rgba(45, 53, 60, .3) !important
 }
 
-.bg-dark-transparent-4 {
+.bg-nodark-transparent-4 {
     background-color: rgba(45, 53, 60, .4) !important
 }
 
-.text-dark-transparent-4 {
+.text-nodark-transparent-4 {
     color: rgba(45, 53, 60, .4) !important
 }
 
-.bg-dark-transparent-5 {
+.bg-nodark-transparent-5 {
     background-color: rgba(45, 53, 60, .5) !important
 }
 
-.text-dark-transparent-5 {
+.text-nodark-transparent-5 {
     color: rgba(45, 53, 60, .5) !important
 }
 
-.bg-dark-transparent-6 {
+.bg-nodark-transparent-6 {
     background-color: rgba(45, 53, 60, .6) !important
 }
 
-.text-dark-transparent-6 {
+.text-nodark-transparent-6 {
     color: rgba(45, 53, 60, .6) !important
 }
 
-.bg-dark-transparent-7 {
+.bg-nodark-transparent-7 {
     background-color: rgba(45, 53, 60, .7) !important
 }
 
-.text-dark-transparent-7 {
+.text-nodark-transparent-7 {
     color: rgba(45, 53, 60, .7) !important
 }
 
-.bg-dark-transparent-8 {
+.bg-nodark-transparent-8 {
     background-color: rgba(45, 53, 60, .8) !important
 }
 
-.text-dark-transparent-8 {
+.text-nodark-transparent-8 {
     color: rgba(45, 53, 60, .8) !important
 }
 
-.bg-dark-transparent-9 {
+.bg-nodark-transparent-9 {
     background-color: rgba(45, 53, 60, .9) !important
 }
 
-.text-dark-transparent-9 {
+.text-nodark-transparent-9 {
     color: rgba(45, 53, 60, .9) !important
 }
 
-.text-dark-100 {
+.text-nodark-100 {
     color: #d5d7d8 !important
 }
 
-.bg-dark-100 {
+.bg-nodark-100 {
     background-color: #d5d7d8 !important
 }
 
-.text-dark-600 {
+.text-nodark-600 {
     color: #242a30 !important
 }
 
-.bg-dark-600 {
+.bg-nodark-600 {
     background-color: #242a30 !important
 }
 
-.text-dark-200 {
+.text-nodark-200 {
     color: #abaeb1 !important
 }
 
-.bg-dark-200 {
+.bg-nodark-200 {
     background-color: #abaeb1 !important
 }
 
-.text-dark-700 {
+.text-nodark-700 {
     color: #1b2024 !important
 }
 
-.bg-dark-700 {
+.bg-nodark-700 {
     background-color: #1b2024 !important
 }
 
-.text-dark-300 {
+.text-nodark-300 {
     color: #81868a !important
 }
 
-.bg-dark-300 {
+.bg-nodark-300 {
     background-color: #81868a !important
 }
 
-.text-dark-800 {
+.text-nodark-800 {
     color: #121518 !important
 }
 
-.bg-dark-800 {
+.bg-nodark-800 {
     background-color: #121518 !important
 }
 
-.text-dark-400 {
+.text-nodark-400 {
     color: #575d63 !important
 }
 
-.bg-dark-400 {
+.bg-nodark-400 {
     background-color: #575d63 !important
 }
 
-.text-dark-900 {
+.text-nodark-900 {
     color: #090b0c !important
 }
 
-.bg-dark-900 {
+.bg-nodark-900 {
     background-color: #090b0c !important
 }
 
-.text-dark-darker,
-.text-dark-darker-500 {
+.text-nodark-nodarker,
+.text-nodark-nodarker-500 {
     color: #1a2229 !important
 }
 
-.bg-dark-darker,
-.bg-dark-darker-500 {
+.bg-nodark-nodarker,
+.bg-nodark-nodarker-500 {
     background-color: #1a2229 !important
 }
 
-.bg-gradient-dark-darker {
+.bg-gradient-nodark-nodarker {
     background: #1a2229 !important;
     background: -moz-linear-gradient(to top, #767a7f 0, #101419 100%) !important;
     background: -webkit-linear-gradient(to top, #767a7f 0, #101419 100%) !important;
     background: linear-gradient(to bottom, #767a7f 0, #101419 100%) !important
 }
 
-.bg-dark-darker-transparent-1 {
+.bg-nodark-nodarker-transparent-1 {
     background-color: rgba(26, 34, 41, .1) !important
 }
 
-.text-dark-darker-transparent-1 {
+.text-nodark-nodarker-transparent-1 {
     color: rgba(26, 34, 41, .1) !important
 }
 
-.bg-dark-darker-transparent-2 {
+.bg-nodark-nodarker-transparent-2 {
     background-color: rgba(26, 34, 41, .2) !important
 }
 
-.text-dark-darker-transparent-2 {
+.text-nodark-nodarker-transparent-2 {
     color: rgba(26, 34, 41, .2) !important
 }
 
-.bg-dark-darker-transparent-3 {
+.bg-nodark-nodarker-transparent-3 {
     background-color: rgba(26, 34, 41, .3) !important
 }
 
-.text-dark-darker-transparent-3 {
+.text-nodark-nodarker-transparent-3 {
     color: rgba(26, 34, 41, .3) !important
 }
 
-.bg-dark-darker-transparent-4 {
+.bg-nodark-nodarker-transparent-4 {
     background-color: rgba(26, 34, 41, .4) !important
 }
 
-.text-dark-darker-transparent-4 {
+.text-nodark-nodarker-transparent-4 {
     color: rgba(26, 34, 41, .4) !important
 }
 
-.bg-dark-darker-transparent-5 {
+.bg-nodark-nodarker-transparent-5 {
     background-color: rgba(26, 34, 41, .5) !important
 }
 
-.text-dark-darker-transparent-5 {
+.text-nodark-nodarker-transparent-5 {
     color: rgba(26, 34, 41, .5) !important
 }
 
-.bg-dark-darker-transparent-6 {
+.bg-nodark-nodarker-transparent-6 {
     background-color: rgba(26, 34, 41, .6) !important
 }
 
-.text-dark-darker-transparent-6 {
+.text-nodark-nodarker-transparent-6 {
     color: rgba(26, 34, 41, .6) !important
 }
 
-.bg-dark-darker-transparent-7 {
+.bg-nodark-nodarker-transparent-7 {
     background-color: rgba(26, 34, 41, .7) !important
 }
 
-.text-dark-darker-transparent-7 {
+.text-nodark-nodarker-transparent-7 {
     color: rgba(26, 34, 41, .7) !important
 }
 
-.bg-dark-darker-transparent-8 {
+.bg-nodark-nodarker-transparent-8 {
     background-color: rgba(26, 34, 41, .8) !important
 }
 
-.text-dark-darker-transparent-8 {
+.text-nodark-nodarker-transparent-8 {
     color: rgba(26, 34, 41, .8) !important
 }
 
-.bg-dark-darker-transparent-9 {
+.bg-nodark-nodarker-transparent-9 {
     background-color: rgba(26, 34, 41, .9) !important
 }
 
-.text-dark-darker-transparent-9 {
+.text-nodark-nodarker-transparent-9 {
     color: rgba(26, 34, 41, .9) !important
 }
 
-.text-dark-darker-100 {
+.text-nodark-nodarker-100 {
     color: #d1d3d4 !important
 }
 
-.bg-dark-darker-100 {
+.bg-nodark-nodarker-100 {
     background-color: #d1d3d4 !important
 }
 
-.text-dark-darker-600 {
+.text-nodark-nodarker-600 {
     color: #151b21 !important
 }
 
-.bg-dark-darker-600 {
+.bg-nodark-nodarker-600 {
     background-color: #151b21 !important
 }
 
-.text-dark-darker-200 {
+.text-nodark-nodarker-200 {
     color: #a3a7a9 !important
 }
 
-.bg-dark-darker-200 {
+.bg-nodark-nodarker-200 {
     background-color: #a3a7a9 !important
 }
 
-.text-dark-darker-700 {
+.text-nodark-nodarker-700 {
     color: #101419 !important
 }
 
-.bg-dark-darker-700 {
+.bg-nodark-nodarker-700 {
     background-color: #101419 !important
 }
 
-.text-dark-darker-300 {
+.text-nodark-nodarker-300 {
     color: #767a7f !important
 }
 
-.bg-dark-darker-300 {
+.bg-nodark-nodarker-300 {
     background-color: #767a7f !important
 }
 
-.text-dark-darker-800 {
+.text-nodark-nodarker-800 {
     color: #0a0e10 !important
 }
 
-.bg-dark-darker-800 {
+.bg-nodark-nodarker-800 {
     background-color: #0a0e10 !important
 }
 
-.text-dark-darker-400 {
+.text-nodark-nodarker-400 {
     color: #484e54 !important
 }
 
-.bg-dark-darker-400 {
+.bg-nodark-nodarker-400 {
     background-color: #484e54 !important
 }
 
-.text-dark-darker-900 {
+.text-nodark-nodarker-900 {
     color: #050708 !important
 }
 
-.bg-dark-darker-900 {
+.bg-nodark-nodarker-900 {
     background-color: #050708 !important
 }
 

@@ -17916,121 +17916,9 @@ fieldset:disabled .btn {
     --form-switch-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(0, 0, 0, 0.25)'/></svg>")
 }
 
-.dark-mode {
-    --bs-body-bg                             : #161a1d;
-    --bs-body-color                          : #dee2e6;
-    --bs-dark                                : #f8f9fa;
-    --bs-dark-rgb                            : 248, 249, 250;
-    --bs-black                               : #FFFFFF;
-    --bs-black-rgb                           : 255, 255, 255;
-    --bs-light                               : #20252a;
-    --bs-light-rgb                           : 32, 37, 42;
-    --app-border-color                       : #6c757d;
-    --app-header-bg                          : #262d33;
-    --app-header-color                       : #FFFFFF;
-    --app-header-input-bg                    : #1b1f24;
-    --app-header-input-border                : #1b1f24;
-    --app-header-divider-bg                  : #495057;
-    --app-header-mobile-divider-bg           : #20252a;
-    --app-component-bg                       : #2d353c;
-    --app-component-bg-rgb                   : 45, 53, 60;
-    --app-component-color                    : #FFFFFF;
-    --app-component-color-rgb                : 255, 255, 255;
-    --app-component-border-color             : #495057;
-    --app-component-border-color-rgb         : 73, 80, 87;
-    --app-component-hover-bg                 : #4d5359;
-    --app-component-hover-color              : #FFFFFF;
-    --app-component-hover-border-color       : rgba(222, 226, 230, 0.125);
-    --app-component-disabled-bg              : #495057;
-    --app-component-disabled-border-color    : #495057;
-    --app-component-disabled-color           : #6c757d;
-    --app-component-dropdown-bg              : #495057;
-    --app-component-dropdown-bg-rgb          : 73, 80, 87;
-    --app-component-dropdown-hover-bg        : #6c757d;
-    --app-component-dropdown-hover-bg-rgb    : 108, 117, 125;
-    --app-component-dropdown-border-color    : #6c757d;
-    --app-component-dropdown-border-color-rgb: 108, 117, 125;
-    --app-component-modal-bg                 : #495057;
-    --app-component-modal-bg-rgb             : 73, 80, 87;
-    --app-component-modal-border-color       : #6c757d;
-    --app-component-modal-border-color-rgb   : 108, 117, 125;
-    --app-component-secondary-bg             : #6c757d;
-    --app-component-table-border-color       : #495057;
-    --app-component-table-separator-color    : #adb5bd;
-    --app-pos-bg                             : #161a1d;
 
-    --form-switch-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='rgba(255, 255, 255, 0.25)'/></svg>")
-}
 
-.dark-mode .table {
-    --bs-table-striped-bg  : rgba(73, 80, 87, 0.7);
-    --bs-table-active-color: var(--app-component-color);
-    --bs-table-active-bg   : $gray-700;
-    --bs-table-hover-color : var(--app-component-color);
-    --bs-table-hover-bg    : rgba(73, 80, 87, 0.85)
-}
 
-.dark-mode .bg-dark,
-.dark-mode .bg-white {
-    --bs-bg-opacity: .25
-}
-
-.dark-mode .text-dark {
-    --bs-text-opacity: .5;
-    color            : rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important
-}
-
-.dark-mode .btn-dark,
-.dark-mode .btn-white {
-    border-color    : transparent;
-    background-color: #495057;
-    color           : #fff
-}
-
-.dark-mode .btn-dark.active,
-.dark-mode .btn-dark:focus,
-.dark-mode .btn-dark:hover,
-.dark-mode .btn-white.active,
-.dark-mode .btn-white:focus,
-.dark-mode .btn-white:hover {
-    background-color: #6c757d;
-    border-color    : transparent;
-    color           : #fff
-}
-
-.dark-mode .btn-outline-default,
-.dark-mode .btn-outline-inverse {
-    color       : #6c757d;
-    border-color: #6c757d
-}
-
-.dark-mode .btn-outline-default.active,
-.dark-mode .btn-outline-default:focus,
-.dark-mode .btn-outline-default:hover,
-.dark-mode .btn-outline-inverse.active,
-.dark-mode .btn-outline-inverse:focus,
-.dark-mode .btn-outline-inverse:hover {
-    background-color: #6c757d;
-    color           : #fff !important
-}
-
-.dark-mode .btn-default {
-    background  : #6c757d;
-    border-color: #6c757d;
-    color       : #fff
-}
-
-.dark-mode .btn-default.active,
-.dark-mode .btn-default:focus,
-.dark-mode .btn-default:hover {
-    background  : #495057;
-    border-color: #495057;
-    color       : #fff
-}
-
-.dark-mode .btn-group>.btn-white+.btn-white {
-    border-left-color: #6c757d
-}
 
 body {
     letter-spacing        : 0;
@@ -22231,10 +22119,6 @@ body.page-navbar-fixed-top-sm {
     font-weight: 700
 }
 
-.dark-mode .pricing-table .h3,
-.dark-mode .pricing-table h3 {
-    background: #20252a
-}
 
 .pricing-table .features {
     list-style-type: none;
