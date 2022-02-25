@@ -1,12 +1,10 @@
-import saibamaispicture from '../public/saibamaispicture.png';
-
 export default function SaibaMais() {
 
     return (
 
         <div className="containerSaibaMAis text-center text-primary">
             <div className='pb-20px'>
-                <img className='saibamaispic' src="/saibamaispicture.png"></img>
+                <img className='saibamaispic' src="./saibamaispicture.png"></img>
             </div>
             <h6><b>CRP </b>06/164999</h6>
             <div className='shrik'>
