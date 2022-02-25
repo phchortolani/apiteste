@@ -13,7 +13,7 @@ export async function getStaticProps(context) {
 
     const url = "https://graph.instagram.com/me/media?access_token="
         + process.env.INSTA_TOKEN +
-        "&fields=media_url,media_type,caption,permalink,timestamp,thumbnail_url,id,username,children{media_url}";
+        "&fields=media_url,media_type,caption,permalink,timestamp,thumbnail_url,id,username,children{media_url}&limit=300";
 
     var data = await fetch(url)
         .then(async function (response) {
@@ -33,7 +33,7 @@ export default function Blog(props) {
 
     const [dados, setDados] = useState([]);
 
-    let postporpagina = 5;
+    let postporpagina = 10;
 
     const [pagination, SetPagination] = useState({
         page: 1,

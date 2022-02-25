@@ -13,13 +13,15 @@ export async function getStaticProps(context) {
 
     const url = "https://graph.instagram.com/me/media?access_token="
         + process.env.INSTA_TOKEN +
-        "&fields=media_url,media_type,caption,permalink,timestamp,thumbnail_url,id,username,children{media_url}";
+        "&fields=media_url,media_type,caption,permalink,timestamp,thumbnail_url,id,username,children{media_url}&limit=8";
 
+        
     var data = await fetch(url)
         .then(async function (response) {
             return await response.json();
         });
 
+       
     if (data != null) {
         return {
             props: { dados: data ?? null },
@@ -35,7 +37,6 @@ export default function Ste(props) {
     const [topScreen, setTopScreen] = useState(true);
     const [email, setEmail] = useState("");
     const { isMobile } = useContext(AuthContext);
-
 
     async function registerNews() {
 
