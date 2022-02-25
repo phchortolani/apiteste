@@ -30,7 +30,7 @@
     "jsonwebtoken": "^8.5.1",
     "md5": "^2.3.0",
     "mongodb": "^4.0.0",
-    "next": "^11.0.1",
+    "next": "^12.1.1-canary.3",
     "next-images": "^1.8.1",
     "nookies": "^2.5.2",
     "npm": "^8.5.2",
