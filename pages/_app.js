@@ -1,8 +1,8 @@
 import Head from "next/head";
 import "../css/landingpage.css";
 import "../css/ColorAdmin.css";
-
 import "../css/customcss.css";
+import "../css/material-ui.scss";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
 
@@ -37,6 +37,11 @@ function MyApp({ Component, pageProps }) {
                     crossOrigin="anonymous"
                 />
                 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossOrigin="anonymous" />
+
+               {/*  <link rel="stylesheet" href="@sweetalert2/theme-material-ui/material-ui.css" /> */}
+
+                <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
                 <script
                     src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"

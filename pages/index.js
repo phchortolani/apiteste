@@ -8,20 +8,20 @@ import axios from "axios";
 export async function getStaticProps(context) {
 
     // const dev = process.env.NODE_ENV !== 'production';
-    //context.req.connection.remoteAddress; ip de quem solicita
+    //const ip = context.req.connection.remoteAddress; //ip de quem solicita
     //const server = dev ? 'http://localhost:3000' : 'https://psidaramarques.com.br';
 
     const url = "https://graph.instagram.com/me/media?access_token="
         + process.env.INSTA_TOKEN +
         "&fields=media_url,media_type,caption,permalink,timestamp,thumbnail_url,id,username,children{media_url}&limit=8";
 
-        
+
     var data = await fetch(url)
         .then(async function (response) {
             return await response.json();
         });
 
-       
+
     if (data != null) {
         return {
             props: { dados: data ?? null },
@@ -30,7 +30,6 @@ export async function getStaticProps(context) {
     }
 
 }
-
 export default function Ste(props) {
 
     const [dados, setDados] = useState(props.dados?.data);
@@ -40,15 +39,20 @@ export default function Ste(props) {
 
     async function registerNews() {
 
-        var existe = await axios.post('/api/findone', { obj: { email: email.toLowerCase() }, table: "newsletter" });
+        var regex = new RegExp("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$");
+        if (!regex.test(email)) Swal.fire("E-mail não cadastrado", 'Por favor, insira um e-mail válido!', "error");
+        else {
+            var existe = await axios.post('/api/findone', { obj: { email: email.toLowerCase() }, table: "newsletter" });
 
-        if (existe.data.result) {
-            alert("Email já cadastrado!")
-        } else {
-            var ret = await axios.post('/api/sendemail', { email });
-            if (ret) alert("Email Cadastrado com sucesso!")
+            if (existe.data.result) {
+                Swal.fire('Email já cadastrado!');
+
+            } else {
+                var ret = await axios.post('/api/sendemail', { email });
+                if (ret) Swal.fire("Muito Obrigada!", 'Seu e-mail foi cadastrado com sucesso!', "success");
+            }
         }
-
+        setEmail("");
     }
 
     useEffect(() => {
@@ -362,7 +366,7 @@ export default function Ste(props) {
                                         Receba conteúdos por e-mail toda semana!
                                     </p>
                                     <div className="text-center">
-                                        <input type="text" onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="Seu e-mail" />
+                                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-control" placeholder="Seu e-mail" />
                                         <button type="button" onClick={() => registerNews()} className="btn btn-theme btn-primary btn-block">Inscrever-se</button>
                                     </div>
 

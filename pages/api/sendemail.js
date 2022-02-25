@@ -5,7 +5,10 @@ export default async function Sendemail(req, res) {
 
     const { email } = req.body;
 
+    const dev = process.env.NODE_ENV !== 'production';
+
     async function save() {
+
         const db = await connectToDataBase(process.env.MONGODB_URI);
 
         const collection = db.collection("newsletter");
@@ -26,10 +29,13 @@ export default async function Sendemail(req, res) {
 
         try {
 
+
+            const toSendList = dev ? "phchortolani@gmail.com" : "phchortolani@gmail.com,psi.daramarques@gmail.com";
+
             const message = await client.sendAsync({
-                text: `Olá!, Este e-mail: ${email} quer receber conteúdos toda a semana sobre psicologia.`,
+                text: `Olá!, Este e-mail: ${email.toLowerCase()} quer receber conteúdos toda a semana sobre psicologia.`,
                 from: process.env.MAIL,
-                to: "phchortolani@gmail.com,psi.daramarques@gmail.com",
+                to: toSendList,
                 subject: 'Solicitação de Newsletter!!'
             });
 
