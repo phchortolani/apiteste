@@ -1,5 +1,6 @@
 import Carousel from "./carousel";
 import ImgStatic from "./imgstatica";
+import VideoBlog from "./VideoBlog";
 import { RetornaMes } from "./formatarmes";
 
 export default function postagens(props) {
@@ -34,7 +35,8 @@ export default function postagens(props) {
                     }
                     let post;
                     if (e.media_type == "CAROUSEL_ALBUM") post = <Carousel titulo={title} element={e} tags={tags} caption={paragrafos} />;
-                    else post = <ImgStatic titulo={title} element={e} tags={tags} caption={paragrafos} />;
+                    else if(e.media_type == "IMAGE") post = <ImgStatic titulo={title} element={e} tags={tags} caption={paragrafos} />;
+                    else post = <VideoBlog titulo={title} element={e} tags={tags} caption={paragrafos}></VideoBlog>
 
                     return <li className="p-md-5 pt-md-0 pb-md-0" key={i + e.id}>
                         <div className="post-left-info " data-aos="fade-right">
