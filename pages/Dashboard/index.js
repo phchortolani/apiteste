@@ -2,7 +2,7 @@ import { parseCookies } from 'nookies';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/Auth2Context';
 import Image from 'next/image';
-import logo from '../../src/assets/images/dmlogo.png';
+
 import Dash from '../../src/components/Dashboard/dash';
 import Inscrever from '../../src/components/Inscrever/inscrever';
 import jwt from "jsonwebtoken";
@@ -22,7 +22,7 @@ export default function Dashboard(props) {
                 <div className="sidebar">
                     <div className="logo">
                         <a style={{ filter: "invert(1)" }} className="simple-text logo-mini p-0">
-                            <Image height="100%" width="100%" className="rounded-0" src={logo} />
+                        {/*    // <Image height="100%" width="100%" className="rounded-0" src={logo} /> */}
                         </a>
                         <a className="simple-text logo-normal">
                             {login}
