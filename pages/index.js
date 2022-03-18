@@ -70,9 +70,10 @@ export default function Ste(props) {
     return (
         <>
             <Head>
-                <meta itemProp="name" content="Home | Psicóloga Dara Marques" />
+                <meta itemProp="name" content="Home | Psicóloga Online - Dara Marques" />
                 <meta itemProp="description" content="Construindo um dia a dia com mais maturidade!" />
                 <meta itemProp="image" content={ogimage} />
+                <meta name="description" content="Construindo um dia a dia com mais maturidade! - Psicóloga Online" />
                 <meta property="og:url" content="https://psidaramarques.com.br/" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Psicologia efetiva através da Terapia Cognitivo Comportamental, agende uma consulta! " />
@@ -88,7 +89,7 @@ export default function Ste(props) {
                     <div className="container home-content">
                         <h1 data-aos="zoom-in-down" data-aos-duration="3000" >Dara Marques</h1>
                         <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Construindo um dia a dia com mais maturidade!</h3>
-
+                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Atendimento on-line!</h3>
                         {/*    <button className="btn  btn-theme btn-primary" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> Autoagendamento</button> */}
 
                         <a href="https://api.whatsapp.com/send?phone=5511978493885" target="_blank" className="btn btn-theme btn-success" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> <i className="fab fa-whatsapp fa-lg fa-fw"></i> Agende direto pelo WhatsApp</a>
@@ -308,7 +309,7 @@ export default function Ste(props) {
                                 return <div key={i} className="col-lg-3 col-md-4 ">
                                     <div className="work">
                                         <div className="image">
-                                            <a href={e.permalink}><img src={e.media_url} /></a>
+                                            <a href={e.permalink}><img src={e.media_url} alt={title} /></a>
                                         </div>
                                         <div className="desc">
                                             <span className="desc-title">{title}</span>
