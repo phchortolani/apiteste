@@ -122,7 +122,7 @@ export default function Blog(props) {
         <div className="pace-done">
             <Head>
                 <title>Blog | Dara Marques - Psicóloga clínica</title>
-                <meta itemProp="name" content="Blog | Psicóloga Dara Marques - Ansiedade" />
+                <meta itemProp="name" content="Blog | Psicóloga On-line Dara Marques" />
                 <meta itemProp="description" content="Te ajudo a lidar com a ansiedade e ter uma vida mais leve!" />
                 <meta itemProp="image" content={ogimage} />
                 <meta property="og:url" content="https://psidaramarques.com.br/Blog" />
@@ -140,8 +140,8 @@ export default function Blog(props) {
             <div id="page-title" data-aos="fade-down" className="page-title has-bg">
                 <div className="bg-cover blogCover" data-paroller="true" data-paroller-factor="0.5" data-paroller-factor-xs="0.2" ></div>
                 <div className="container">
-                    {/*                     <h2 className="title">Construindo um dia a dia com mais maturidade</h2>
- */}                </div>
+                    {/*                     <h2 className="title">Construindo um dia a dia com mais maturidade</h2>*/}
+                </div>
             </div>
 
             <div id="content" className="content">

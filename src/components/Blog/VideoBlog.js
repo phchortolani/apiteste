@@ -9,7 +9,7 @@ export default function VideoBlog(props) {
             <div data-aos="fade-up" className="post-content">
                 <div className="post-image">
                     <a target="_blank" href={props.element.permalink}>
-                        <video controls controlsList="nodownload" poster={props.element.thumbnail_url} className="d-block w-100 shadow-sm" src={props.element.media_url} alt="" />
+                        <video controls controlsList="nodownload" poster={props.element.thumbnail_url} className="d-block w-100 shadow-sm" src={props.element.media_url} alt={props.titulo} />
                     </a>
                 </div>
                 <div className="post-info" data-aos="fade-up">

@@ -27,7 +27,7 @@ export default function Carousel(props) {
                         {imgsChildrens.length > 0 ? imgsChildrens.map((e, i) => {
                             return <div key={e.id} id={e.id} className={"carousel-item " + (e.id == IdimgActive ? "active" : "")}>
                                 <a target="_blank" href={props.element.permalink}>
-                                    <img className="d-block w-100" src={e.media_url} alt="" />
+                                    <img className="d-block w-100" src={e.media_url} alt={props.titulo} />
                                 </a>
                                 <div style={{ color: "#d8c3ae" }} className="name"><span className="text-primary"></span>
                                     {imgsChildrens.length == i + 1 ? <></> : <div className="d-none">Veja mais <i className="fa-angle-double-right fas"></i></div>}
