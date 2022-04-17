@@ -22,7 +22,7 @@ export default function Dashboard(props) {
                 <div className="sidebar">
                     <div className="logo">
                         <a style={{ filter: "invert(1)" }} className="simple-text logo-mini p-0">
-                        {/*    // <Image height="100%" width="100%" className="rounded-0" src={logo} /> */}
+                            {/*    // <Image height="100%" width="100%" className="rounded-0" src={logo} /> */}
                         </a>
                         <a className="simple-text logo-normal">
                             {login}
@@ -87,15 +87,8 @@ export default function Dashboard(props) {
                     <div className="panel-header panel-header-lg">
                     </div>
                     {componente.componente}
-                    <footer className="footer">
-                        <div className=" container-fluid ">
-                            <nav>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </footer>
+                 
+
                 </div>
             </div>
         </div>
