@@ -19,7 +19,6 @@ export default function NavBar(props) {
                 <span className="icon-bar"></span>
             </button>
 
-
             <div className="collapse navbar-collapse" id="header-navbar">
                 <ul className="nav navbar-nav navbar-right">
                     <li data-aos="zoom-in" >
