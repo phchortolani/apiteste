@@ -31,6 +31,13 @@ export default function login() {
             <button onClick={() => handleSignIn()} type="button" className="btn btn-primary btn-block btn-large w-100">Logar</button>
             <p className="text-danger">{authError}</p>
         </form>
+        <footer className="pt-5 mt-5" style={{ color: "black", textAlign: "center" }}>
+            <hr className="mt-0"></hr>
+            <span className="text-center ">
+                Powered by{' '}
+                <a href="./"> <img src="/lani-5andar1.svg" width={120}></img></a>
+            </span>
+        </footer>
     </div>
     )
 
