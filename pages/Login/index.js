@@ -35,7 +35,7 @@ export default function login() {
             <hr className="mt-0"></hr>
             <span className="text-center ">
                 Powered by{' '}
-                <a href="./"> <img src="/lani-5andar1.svg" width={120}></img></a>
+                <a href="https://lanisystems.vercel.app/"> <img src="/lani-5andar1.svg" width={120}></img></a>
             </span>
         </footer>
     </div>
