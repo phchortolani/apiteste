@@ -401,9 +401,9 @@ export default function Ste(props) {
 
                 <footer className="pb-2 mb-2" style={{ background: "#d0b3b5", color: "black", textAlign: "center" }}>
                     <hr className="mt-0"></hr>
-                    <span className="text-center">
+                    <span className="text-muted small">
                         Powered by{' '} 
-                        <a target={'_blank'} href="https://lanisystems.vercel.app"><b className="text-black text-decoration-none" >Lani Systems</b> <img width={12} src='./lani-Icon.svg'></img></a>
+                        <a target={'_blank'} href="https://lanisystems.vercel.app"><img width={110} src='./lani-5andar2.svg'></img></a>
                     </span>
                 </footer>
             </div>
