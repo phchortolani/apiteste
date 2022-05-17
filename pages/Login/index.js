@@ -2,7 +2,9 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/Auth2Context";
 import { parseCookies } from "nookies";
 
-export default function login() {
+export default function Index() {
+    const { isMobile } = useContext(AuthContext);
+
     const [usuario, setUsuario] = useState('');
     const [senha, setSenha] = useState('');
     const [authError, setAuthError] = useState('');
@@ -17,31 +19,73 @@ export default function login() {
         }
 
     }
-    let sizelogo = 100;
 
-    return (<div className="login">
-        <div className="">
-            <img width={sizelogo} height={sizelogo} src="/logoDara.svg" className="w-100"></img>
-        </div>
-        <hr></hr>
-        <form >
-            <input onChange={(e) => setUsuario(e.target.value)} className="loginbtns" type="text" name="u" placeholder="Usuário" required="required" />
-            <input onChange={(e) => setSenha(e.target.value)} className="loginbtns" type="password" name="p" placeholder="Senha" required="required" />
-            <hr></hr>
-            <button onClick={() => handleSignIn()} type="button" className="btn btn-primary btn-block btn-large w-100">Logar</button>
-            <p className="text-danger">{authError}</p>
-        </form>
-        <footer className="pt-5 mt-5" style={{ color: "black", textAlign: "center" }}>
-            <hr className="mt-0"></hr>
-            <span className="text-center ">
-                Powered by{' '}
-                <a href="https://lanisystems.vercel.app/"> <img src="/lani-5andar1.svg" width={120}></img></a>
-            </span>
-        </footer>
-    </div>
-    )
+
+
+    let bg = isMobile ? "white" : "#ddc4c0"
+    const sizelogo = 80;
+    return (<>
+
+        <section className="vh-100" style={{ backgroundColor: bg }}>
+            <div className="container py-5 h-100">
+                <div className="row d-flex justify-content-center align-items-center h-100">
+                    <div className="col col-xl-10">
+                        <div className={"card " + (isMobile ? "shadow-none rounded-0" : "")} style={{ borderRadius: "1rem" }}>
+                            <div className="row g-0">
+                                <div className="col-md-6 col-lg-5 d-none d-md-block">
+                                    <img src="/loginBrand.png"
+                                        alt="login form" className="img-fluid" style={{ borderRadius: "1rem 0 0 1rem" }} />
+                                </div>
+                                <div className="col-md-6 col-lg-7 d-flex align-items-center">
+                                    <div className="card-body px-0 px-md-5 text-black">
+
+                                        <form>
+
+                                            <div className="text-center mb-3 pb-1">
+                                                <img src="/logoDara.svg" width={sizelogo} height={sizelogo} />
+
+                                            </div>
+
+                                            <div className="divider d-flex align-items-center my-4">
+                                                <p className="text-center fw-bold mx-3 mb-0 text-muted">Área do Paciente</p>
+                                            </div>
+
+                                            <div className="form-outline mb-4">
+                                                <label className="form-label" htmlFor="usu">Usuário</label>
+                                                <input onChange={(e) => setUsuario(e.target.value)} type="email" id="usu" className="form-control form-control-lg" />
+
+                                            </div>
+
+                                            <div className="form-outline mb-4">
+                                                <label className="form-label" htmlFor="senha">Senha</label>
+                                                <input onChange={(e) => setSenha(e.target.value)} type="password" id="senha" className="form-control form-control-lg" />
+
+                                            </div>
+
+                                            <div className="pt-1 mb-4">
+
+                                                <button onClick={() => handleSignIn()} className="btn  fw-bold w-100 btn-primary btn-lg btn-block" type="button">Acessar</button>
+                                                <p className="text-danger small">{authError}</p>
+                                            </div>
+
+
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </>)
 
 }
+
 
 export async function getServerSideProps(ctx) {
 
@@ -55,7 +99,6 @@ export async function getServerSideProps(ctx) {
             }
         }
     }
-
 
     return {
         props: {}, // will be passed to the page component as props
