@@ -15,7 +15,6 @@ export async function getStaticProps(context) {
         + process.env.INSTA_TOKEN +
         "&fields=media_url,media_type,caption,permalink,timestamp,thumbnail_url,id,username,children{media_url}&limit=8";
 
-
     var data = await fetch(url)
         .then(async function (response) {
             return await response.json();
