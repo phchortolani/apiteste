@@ -1858,7 +1858,7 @@ h6,
 .h6 {
   font-size: 1em;
   font-weight: 700;
-  text-transform: uppercase;
+ 
 }
 
 p.description {
@@ -5874,7 +5874,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
   display: grid;
   place-content: center;
   height: 100vh;
-  background: white !important;
+  background: linear-gradient(180deg, #b3807d, #dfc3bf);
 }
 
 .saibamaispic {
@@ -5883,9 +5883,10 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
   object-position: top;
   width: 200px;
   height: 200px;
-  border: solid 4px #b3807d;
+  border: solid 4px #ffffff;
 
 }
+
 
 .shrik {
   font-family: "Shrikhand";
@@ -5908,3 +5909,4 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
     height: 100%;
   }
 }
+

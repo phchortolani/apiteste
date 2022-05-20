@@ -20,8 +20,6 @@ export default function Index() {
 
     }
 
-
-
     let bg = isMobile ? "white" : "#ddc4c0"
     const sizelogo = 80;
     return (<>
@@ -33,43 +31,29 @@ export default function Index() {
                         <div className={"card " + (isMobile ? "shadow-none rounded-0" : "")} style={{ borderRadius: "1rem" }}>
                             <div className="row g-0">
                                 <div className="col-md-6 col-lg-5 d-none d-md-block">
-                                    <img src="/loginBrand.png"
-                                        alt="login form" className="img-fluid" style={{ borderRadius: "1rem 0 0 1rem" }} />
+                                    <img src="/loginBrand.png" alt="login form" className="img-fluid" style={{ borderRadius: "1rem 0 0 1rem" }} />
                                 </div>
                                 <div className="col-md-6 col-lg-7 d-flex align-items-center">
                                     <div className="card-body px-0 px-md-5 text-black">
-
                                         <form>
-
                                             <div className="text-center mb-3 pb-1">
                                                 <img src="/logoDara.svg" width={sizelogo} height={sizelogo} />
-
                                             </div>
-
                                             <div className="divider d-flex align-items-center my-4">
                                                 <p className="text-center fw-bold mx-3 mb-0 text-muted">Área do Paciente</p>
                                             </div>
-
                                             <div className="form-outline mb-4">
                                                 <label className="form-label" htmlFor="usu">Usuário</label>
                                                 <input onChange={(e) => setUsuario(e.target.value)} type="email" id="usu" className="form-control form-control-lg" />
-
                                             </div>
-
                                             <div className="form-outline mb-4">
                                                 <label className="form-label" htmlFor="senha">Senha</label>
                                                 <input onChange={(e) => setSenha(e.target.value)} type="password" id="senha" className="form-control form-control-lg" />
-
                                             </div>
-
                                             <div className="pt-1 mb-4">
-
                                                 <button onClick={() => handleSignIn()} className="btn  fw-bold w-100 btn-primary btn-lg btn-block" type="button">Acessar</button>
                                                 <p className="text-danger small">{authError}</p>
                                             </div>
-
-
-
                                         </form>
                                     </div>
                                 </div>
