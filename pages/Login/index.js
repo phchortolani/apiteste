@@ -20,15 +20,15 @@ export default function Index() {
 
     }
 
-    let bg = isMobile ? "white" : "#ddc4c0"
+    let bg = isMobile ? "bg-white" : "flowersBackGround"
     const sizelogo = 80;
     return (<>
 
-        <section className="vh-100" style={{ backgroundColor: bg }}>
+        <section className={"vh-100 " + (bg)}>
             <div className="container py-5 h-100">
                 <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col col-xl-10">
-                        <div className={"card " + (isMobile ? "shadow-none rounded-0" : "")} style={{ borderRadius: "1rem" }}>
+                        <div className={"card " + (isMobile ? "shadow-none rounded-0" : "shadow-lg")} style={{ borderRadius: "1rem" }}>
                             <div className="row g-0">
                                 <div className="col-md-6 col-lg-5 d-none d-md-block">
                                     <img src="/loginBrand.png" alt="login form" className="img-fluid" style={{ borderRadius: "1rem 0 0 1rem" }} />
@@ -51,7 +51,7 @@ export default function Index() {
                                                 <input onChange={(e) => setSenha(e.target.value)} type="password" id="senha" className="form-control form-control-lg" />
                                             </div>
                                             <div className="pt-1 mb-4">
-                                                <button onClick={() => handleSignIn()} className="btn  fw-bold w-100 btn-primary btn-lg btn-block" type="button">Acessar</button>
+                                                <a onClick={() => handleSignIn()} className="btn btn-primary btn-block btn-large w-100 saibamais-btn fw-bolder">Acessar</a>
                                                 <p className="text-danger small">{authError}</p>
                                             </div>
                                         </form>

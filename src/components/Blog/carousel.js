@@ -20,7 +20,7 @@ export default function Carousel(props) {
 
         <div key={props.element.id} data-aos="fade-up" className="post-content">
             <div className="animate__fadeInUp contentAnimated finishAnimated " data-animation="true" data-animation-type="animate__fadeInUp">
-                <h2 className="content-title"></h2>
+              {/*   <h2 className="content-title">Arraste -></h2> */}
 
                 <div className="carousel caroulselImgs slide " data-ride="carousel" id={"caroulselImgs_" + props.element.id}>
                     <div className="carousel-inner text-center shadow-sm">

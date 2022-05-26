@@ -5898,6 +5898,12 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
   border-color: #ddc4c0;
 }
 
+.btn-primary-dara {
+  box-shadow: 0 3px 8px 0 #b3807d !important;
+  background-color: #f1e7e5 !important; 
+  color: #b3807d !important;
+  border-color: #ddc4c0 !important;
+}
 
 .shrik {
   font-family: "Shrikhand";
