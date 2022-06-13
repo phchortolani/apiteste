@@ -583,12 +583,12 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 .show>.btn-primary.dropdownCustom-toggle:focus,
 .show>.btn-primary.dropdownCustom-toggle:hover {
   background-color: #ffffff;
-  color: #b3807d;
+  color: #3b3b3f;
   
 }
 
 .btn-primary:not([data-action]):not([class*="btn-outline-"]):hover {
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.17);
+  box-shadow: 0 3px 8px 0 #3b3b3f;
 }
 
 .btn-primary.disabled,
@@ -5873,29 +5873,37 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
   display: grid;
   place-content: center;
   height: 100vh;
-  background: linear-gradient(180deg, #b3807d, #dfc3bf);
+  background-color: #dde5e5;
+
 }
+
 
 .text-primary-dara {
 
-  color: #b3807d !important;
+  color: #3b3b3f !important;
 }
 
 .saibamaispic {
+
   border-radius: 100%;
   object-fit: cover;
   object-position: top;
-  width: 200px;
-  height: 200px;
-
-  box-shadow: 0px 0px 5px 3px #b3807d9c;
+  width: 150px;
+  height: 150px;
+  
+  box-shadow: 0px 0px 5px 3px #3b3b3f80;
 }
 
 .saibamais-btn {
-  box-shadow: 0 3px 8px 0 #b3807d;
+  /* box-shadow: 0 3px 8px 0 #b3807d;
   background-color: #f1e7e5;
   color: #b3807d;
-  border-color: #ddc4c0;
+  border-color: #ddc4c0; */
+  width: calc(100vw - 20px) !important;
+  max-width: 700px;
+  padding: 20px 0;
+  border-radius: 20px;
+  background-color: #3b3b3f;
 }
 
 .btn-primary-dara {
