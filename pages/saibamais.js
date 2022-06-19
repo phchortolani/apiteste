@@ -9,7 +9,7 @@ export default function SaibaMais() {
         <div className="containerSaibaMAis p-2 text-center text-primary-dara ">
             <></>
             <div className='pb-50px'>
-                <img className='saibamaispic' src="https://scontent-iad3-2.cdninstagram.com/v/t51.29350-15/281568076_136768788938282_3801196469013006974_n.webp?stp=dst-jpg&_nc_cat=105&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=_Cv8PSvwCXQAX9x_HXQ&_nc_ht=scontent-iad3-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT8OvqiZvADh-5bl1mqfUrEEnB2ldfiPTD0TZE_hTfXKnQ&oe=62AC58E7"></img>
+                <img className='saibamaispic' src="/saibamaispicture2.png"></img>
             </div>
             <h6><b>CRP </b>06/164999</h6>
             <div className="text-center pb-1">

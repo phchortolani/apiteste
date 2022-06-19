@@ -10,7 +10,7 @@ export default function postagens(props) {
             {props.dados.length > 0 ?
                 props.dados.map((e, i) => {
                     let caption = e.caption;
-                    const regextag = /\B(\#[a-zA-Z-ôâÃãõÇçêÊéÉ]+\b)(?!;)/g;
+                    const regextag = /\B(\#[a-zA-Z-ôâÃãõÇçêÊéÉúÚáÁàÀ]+\b)(?!;)/g;
                     const regexTitle = /(.+)((\r?\n.+)*)/gm;
                     let tags = caption.match(regextag);
                     let title = caption.match(regexTitle)[0];

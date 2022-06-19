@@ -33,9 +33,9 @@ export default function Index() {
                                 <div className="col-md-6 col-lg-5 d-none d-md-block">
                                     <img src="/loginBrand.png" alt="login form" className="img-fluid" style={{ borderRadius: "1rem 0 0 1rem" }} />
                                 </div>
-                                <div className="col-md-6 col-lg-7 d-flex align-items-center">
-                                    <div className="card-body px-0 px-md-5 text-black">
-                                        <form>
+                                <div className="col-md-6 col-lg-7 d-flex align-items-center ">
+                                    <div className="card-body px-0 px-md-5 text-black w-100">
+                                        <form className="">
                                             <div className="text-center mb-3 pb-1">
                                                 <img src="/logoDara.svg" width={sizelogo} height={sizelogo} />
                                             </div>
@@ -51,7 +51,7 @@ export default function Index() {
                                                 <input onChange={(e) => setSenha(e.target.value)} type="password" id="senha" className="form-control form-control-lg" />
                                             </div>
                                             <div className="pt-1 mb-4">
-                                                <a onClick={() => handleSignIn()} className="btn btn-primary btn-block btn-large w-100 saibamais-btn fw-bolder">Acessar</a>
+                                                <a onClick={() => handleSignIn()} className="btn btn-primary btn-block btn-large w-100 ">Acessar</a>
                                                 <p className="text-danger small">{authError}</p>
                                             </div>
                                         </form>
