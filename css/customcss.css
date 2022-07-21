@@ -3854,7 +3854,8 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 
 .sidebar .nav li.active>a,
 .off-canvas-sidebar .nav li.active>a {
-  background-color: #9caba0;
+  background-color: #ddc4c0;
+  color: black;
   box-shadow: 0 1px 15px 1px rgba(39, 39, 39, 0.1);
 }
 
@@ -4002,7 +4003,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 .sidebar:after,
 .off-canvas-sidebar:after {
 
-  background: linear-gradient(#9caba0 0%, #7b8c81 80%);
+  background: #b3807d;
   z-index: 3;
 }
 
@@ -4029,8 +4030,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
   position: relative;
   float: right;
   width: calc(100% - 260px);
-  background-color: #E3E3E3;
-  background-color: #ebecf1;
+  background-color: #ddc4c0;
   -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -4061,7 +4061,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 @media (min-width: 991px) {
   .sidebar {
     display: block;
-    box-shadow: 0px 2px 22px 0 rgba(0, 0, 0, 0.2), 0px 2px 30px 0 rgba(0, 0, 0, 0.35);
+    
   }
 }
 
@@ -4069,10 +4069,9 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
   height: 0px;
   padding-top: 50px;
   padding-bottom: 45px;
-  background: #f4a191;
+  background: #b3807d;
   /* fallback for old browsers */
-  background: -webkit-gradient(linear, left top, right top, from(#f4a191), color-stop(60%, #f1beaf), to(#f4a191));
-  background: linear-gradient(to right, #f4a191 0%, #f1beaf 60%, #f4a191 100%);
+
   position: relative;
   overflow: hidden;
 }

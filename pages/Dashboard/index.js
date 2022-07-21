@@ -8,6 +8,7 @@ import Inscrever from '../../src/components/Inscrever/inscrever';
 import jwt from "jsonwebtoken";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAddressBook, faUsers } from "@fortawesome/free-solid-svg-icons";
+import Pacientes from '../../src/components/Pacientes/Pacientes';
 
 
 export default function Dashboard(props) {
@@ -41,6 +42,12 @@ export default function Dashboard(props) {
                                     <a onClick={() => setComponente({ componente: <Inscrever />, desc: "Inscrever" })}>
                                         <span><FontAwesomeIcon icon={faUsers}></FontAwesomeIcon></span>
                                         <span> Usuários</span>
+                                    </a>
+                                </li>
+                                <li className={(componente.desc == "Pacientes" ? "active" : "")}>
+                                    <a onClick={() => setComponente({ componente: <Pacientes />, desc: "Pacientes" })}>
+                                        <span><FontAwesomeIcon icon={faUsers}></FontAwesomeIcon></span>
+                                        <span> Pacientes</span>
                                     </a>
                                 </li>
                             </> : ""}
@@ -87,7 +94,6 @@ export default function Dashboard(props) {
                     <div className="panel-header panel-header-lg">
                     </div>
                     {componente.componente}
-                 
 
                 </div>
             </div>

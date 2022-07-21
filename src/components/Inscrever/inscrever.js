@@ -46,7 +46,7 @@ export default function Inscrever() {
     }
 
     return (
-        <div className={"container mt-2 " + (isMobile ? "w-100" : "w-50")}>
+        <div className={"container card p-3 mt-2 " + (isMobile ? "w-100" : "w-50")}>
             <form>
                 <div className="mb-3">
                     <label htmlFor="usuario" className="form-label">Nome de Usuário</label>
