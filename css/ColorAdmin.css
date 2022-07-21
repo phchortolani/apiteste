@@ -12884,7 +12884,12 @@ a {
 .content {
     padding-top: 45px;
     position   : relative;
-    z-index    : 1020
+    z-index    : 1020;
+}
+.content100Vh{
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
 }
 
 @media (max-width:767.98px) {

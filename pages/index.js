@@ -13,7 +13,7 @@ export async function getStaticProps(context) {
 
     const url = "https://graph.instagram.com/me/media?access_token="
         + process.env.INSTA_TOKEN +
-        "&fields=media_url,media_type,caption,permalink,timestamp,thumbnail_url,id,username,children{media_url}&limit=8";
+        "&fields=media_url,media_type,caption,permalink,timestamp,thumbnail_url,id,username,children{media_url}&limit=16";
 
     var data = await fetch(url)
         .then(async function (response) {
@@ -100,7 +100,7 @@ export default function Ste(props) {
                 </div>
 
 
-                <div id="about" className="content" data-scrollview="true" data-aos="fade-up">
+                <div id="about" className="content content100Vh" data-scrollview="true" data-aos="fade-up">
                     <div className="bg"></div>
                     <div className={isMobile ? "" : "container"} data-animation="true" data-animation-type="animate__fadeInDown">
                         <h2 className="content-title">Sobre mim</h2>
@@ -202,7 +202,7 @@ export default function Ste(props) {
                 </div>
 
 
-                <div id="service" className="content" data-scrollview="true">
+                <div id="service" className="content content100Vh" data-scrollview="true">
                     <div className="bg"></div>
                     <div className={isMobile ? "" : "container"}>
 
@@ -298,14 +298,15 @@ export default function Ste(props) {
 
                         <div className="row row-space-10">
 
-                            {dados ? dados.map((e, i) => {
+                            {dados ? dados.filter((element) => element.media_type == "IMAGE" ||element.media_type == "CAROUSEL_ALBUM").map((e, i) => {
 
                                 const regexTitle = /(.+)((\r?\n.+)*)/gm;
                                 let title = e.caption.match(regexTitle)[0];
 
                                 if (i >= 8) return "";
+                                
 
-                                return <div key={i} className="col-lg-3 col-md-4 ">
+                                return <div key={i} className="col-lg-3 col-md-4 align-self-center ">
                                     <div className="work">
                                         <div className="image">
                                             <a href={e.permalink}><img src={e.media_url} alt={title} /></a>
@@ -330,7 +331,7 @@ export default function Ste(props) {
 
 
 
-                <div id="contact" className="content" data-scrollview="true">
+                <div id="contact" className="content content100Vh" data-scrollview="true">
 
                     <div className={isMobile ? "" : "container"}>
                         <h2 className="content-title text-white">Conteúdos</h2>
@@ -398,13 +399,13 @@ export default function Ste(props) {
                 </div> */}
 
 
-                <footer className="pb-2 mb-2" style={{ background: "#d0b3b5", color: "black", textAlign: "center" }}>
+              {/*   <footer className="pb-2 mb-2" style={{ background: "#d0b3b5", color: "black", textAlign: "center" }}>
                     <hr className="mt-0"></hr>
                     <span className="text-muted small">
                         Powered by{' '} 
                         <a target={'_blank'} href="https://lanisystems.vercel.app"><img width={110} src='./lani-5andar2.svg'></img></a>
                     </span>
-                </footer>
+                </footer> */}
             </div>
 
         </>
