@@ -109,7 +109,7 @@ export default function Ste(props) {
 
                             <div className="col-lg-6" data-aos="zoom-in-up">
 
-                                <div className="about">
+                                <div className="about fs-18px">
                                     <h3 className="mb-3"></h3>
                                     <p>
                                         Sou psicóloga formada pela Universidade Metodista de São Paulo (UMESP), formada em Terapia Cognitivo Comportamental.
@@ -356,12 +356,16 @@ export default function Ste(props) {
                                             <a href="https://www.linkedin.com/in/daramarques/" target={"_blank"}><i className="fab fa-linkedin fa-lg fa-fw text-white"></i></a>
                                         </div>
                                     </div>
+                                    <hr></hr>
+                                    <a href="https://api.whatsapp.com/send?phone=5511978493885" target="_blank" className="btn btn-theme btn-success "> <i className="fab fa-whatsapp fa-lg fa-fw"></i> Agende direto pelo WhatsApp</a>
                                 </div>
                             </div>
 
 
                             <div className="col-md-6 form-col" data-animation="true" data-animation-type="animate__fadeInRight">
+                            
                                 <form className="form-horizontal">
+                                {isMobile && <hr></hr>}
                                     <h3 className="text-center mb-1">Newsletter</h3>
                                     <p className="text-center">
                                         Receba conteúdos por e-mail toda semana!
