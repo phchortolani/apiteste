@@ -341,7 +341,7 @@ export default function Ste(props) {
 
                         <div className="row">
 
-                            <div className="col-md-6">
+                            <div className="col">
 
 
                                 <div className="team">
@@ -362,7 +362,7 @@ export default function Ste(props) {
                             </div>
 
 
-                            <div className="col-md-6 form-col" data-animation="true" data-animation-type="animate__fadeInRight">
+                   {/*          <div className="col-md-6 form-col" data-animation="true" data-animation-type="animate__fadeInRight">
                             
                                 <form className="form-horizontal">
                                 {isMobile && <hr></hr>}
@@ -383,7 +383,7 @@ export default function Ste(props) {
                                         </div>
                                     </div>
                                 </form>
-                            </div>
+                            </div> */}
 
                         </div>
 
