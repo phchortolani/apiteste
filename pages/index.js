@@ -336,7 +336,7 @@ export default function Ste(props) {
                     <div className={isMobile ? "" : "container"}>
                         <h2 className="content-title text-white">Conteúdos</h2>
                         <p className="text-center" >
-                            Caso tenha interesse de receber conteúdos sobre psicologia toda semana, me siga nas redes sociais e se inscreva na minha newsletter.
+                            Caso tenha interesse de receber conteúdos sobre psicologia toda semana, me siga nas redes sociais e agende sua consulta!
                         </p>
 
                         <div className="row">

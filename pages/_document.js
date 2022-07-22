@@ -1,6 +1,16 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+var dataLayer =  dataLayer || []
 
 export default function Document() {
+  
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'AW-10929408149');
+
+  gtag('event', 'conversion', { 'send_to': 'AW-10929408149/zuxBCNiBss8DEJWRxtso' });
+
+
   return (
     <Html>
       <Head>
@@ -26,8 +36,16 @@ export default function Document() {
           crossOrigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Shrikhand" />
         <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet"></link>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10929408149"></script>
+
+        <script>
+
+        </script>
+
+
       </Head>
       <body>
+
         <Main />
         <NextScript />
       </body>
