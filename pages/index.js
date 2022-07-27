@@ -4,11 +4,14 @@ import NavBar from "../src/components/Nav/navbar";
 import { AuthContext } from "../context/Auth2Context";
 import Head from 'next/head';
 import axios from "axios";
+import xhr from 'xmlhttprequest';
 
 export async function getStaticProps(context) {
 
+    global.XMLHttpRequest = xhr.XMLHttpRequest;  
+
     const dev = process.env.NODE_ENV !== 'production';
-   // const ip = context.request.headers['x-forwarded-for'] || context.req.connection.remoteAddress  //ip de quem solicita
+    // const ip = context.request.headers['x-forwarded-for'] || context.req.connection.remoteAddress  //ip de quem solicita
     const server = dev ? 'http://localhost:3000' : 'https://psidaramarques.com.br';
 
     const url = "https://graph.instagram.com/me/media?access_token="
@@ -19,10 +22,12 @@ export async function getStaticProps(context) {
         .then(async function (response) {
             return await response.json();
         });
-  
+
+
+
     if (data != null) {
         return {
-            props: { dados: data ?? null , server},
+            props: { dados: data ?? null, server, dev },
             revalidate: 60
         }
     }
@@ -35,6 +40,7 @@ export default function Ste(props) {
     const [email, setEmail] = useState("");
     const { isMobile } = useContext(AuthContext);
 
+    var ip = "";
 
     async function registerNews() {
 
@@ -56,14 +62,32 @@ export default function Ste(props) {
 
     useEffect(() => {
 
-        if(typeof window.sessionStorage.counterpsi == typeof undefined){
-            (async () => await axios.post('/api/saveone', { obj: {page: "index.js", date: new Date(), link: props.server}, table: "counter" }))();
+
+
+
+        if (typeof window.sessionStorage.counterpsi == typeof undefined && !props.dev) {
+
+        
+
+            (async () => {
+                
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET", 'http://meuip.com/api/meuip.php');
+                xmlhttp.send();
+                xmlhttp.onload = function (e) {
+                    ip = xmlhttp.response;
+                    console.log("aq")
+                     saveIp();
+                }
+               
+                async  function saveIp(){
+                  await  axios.post('/api/saveone', { obj: { page: "index.js", date: new Date(), link: props.server,ip: ip }, table: "counter" })
+                }
+        
+        
+        })();
             window.sessionStorage.counterpsi = "true";
         }
-     
-       
-
-
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100 && topScreen) {
@@ -308,13 +332,13 @@ export default function Ste(props) {
 
                         <div className="row row-space-10">
 
-                            {dados ? dados.filter((element) => element.media_type == "IMAGE" ||element.media_type == "CAROUSEL_ALBUM").map((e, i) => {
+                            {dados ? dados.filter((element) => element.media_type == "IMAGE" || element.media_type == "CAROUSEL_ALBUM").map((e, i) => {
 
                                 const regexTitle = /(.+)((\r?\n.+)*)/gm;
                                 let title = e.caption.match(regexTitle)[0];
 
                                 if (i >= 8) return "";
-                                
+
 
                                 return <div key={i} className="col-lg-3 col-md-4 align-self-center ">
                                     <div className="work">
@@ -372,7 +396,7 @@ export default function Ste(props) {
                             </div>
 
 
-                   {/*          <div className="col-md-6 form-col" data-animation="true" data-animation-type="animate__fadeInRight">
+                            {/*          <div className="col-md-6 form-col" data-animation="true" data-animation-type="animate__fadeInRight">
                             
                                 <form className="form-horizontal">
                                 {isMobile && <hr></hr>}
@@ -413,7 +437,7 @@ export default function Ste(props) {
                 </div> */}
 
 
-              {/*   <footer className="pb-2 mb-2" style={{ background: "#d0b3b5", color: "black", textAlign: "center" }}>
+                {/*   <footer className="pb-2 mb-2" style={{ background: "#d0b3b5", color: "black", textAlign: "center" }}>
                     <hr className="mt-0"></hr>
                     <span className="text-muted small">
                         Powered by{' '} 
