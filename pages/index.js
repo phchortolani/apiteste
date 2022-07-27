@@ -59,25 +59,31 @@ export default function Ste(props) {
 
     useEffect(() => {
 
-
-
-
-        if (typeof window.sessionStorage.counterpsi == typeof undefined) {
+        if (typeof window.sessionStorage.counterpsi == typeof undefined && !props.dev) {
             (async () => {
-                
-                var ip = "";
-                 ip = await fetch("https://api.ipify.org?format=json")
-                .then(async function (response) {
-                    var res = await response.json()
-                    if(res){
-                        return  res.ip;
-                    }
-                });
 
-	
-                 await axios.post('/api/saveone', { obj: { page: "index.js", date: new Date(), link: props.server,ip: ip }, table: "counter" })
-                
-        })();
+                var ip = "";
+                var local = "";
+                ip = await fetch("https://api.ipify.org?format=json")
+                    .then(async function (response) {
+                        var res = await response.json()
+                        if (res) {
+                            return res.ip;
+                        }
+                    });
+
+                local = await fetch("http://ip-api.com/json/" + ip)
+                    .then(async function (response) {
+                        var res = await response.json()
+                        if (res) {
+                            return `País:  ${res.country} - Região: ${res.regionName} - ${res.region} - Cidade: ${res.city}`
+                        }
+                    });
+
+
+                await axios.post('/api/saveone', { obj: { page: "index.js", date: new Date(), link: props.server, ip: ip, local: local }, table: "counter" })
+            })();
+
             window.sessionStorage.counterpsi = "true";
         }
 
@@ -96,13 +102,13 @@ export default function Ste(props) {
         <>
             <Head>
                 <meta itemProp="name" content="Home | Psicóloga Online - Dara Marques" />
-                <meta itemProp="description" content="Construindo um dia a dia com mais maturidade!" />
+                <meta itemProp="description" content="Te ajudo a lidar melhor com a sua ansiedade para uma vida mais leve." />
                 <meta itemProp="image" content={ogimage} />
-                <meta name="description" content="Construindo um dia a dia com mais maturidade! - Psicóloga Online" />
+                <meta name="description" content="Te ajudo a lidar melhor com a sua ansiedade para uma vida mais leve. - Psicóloga Online" />
                 <meta property="og:url" content="https://psidaramarques.com.br/" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Psicologia efetiva através da Terapia Cognitivo Comportamental, agende uma consulta! " />
-                <meta property="og:description" content="Construindo um dia a dia com mais maturidade!" />
+                <meta property="og:description" content="Te ajudo a lidar melhor com a sua ansiedade para uma vida mais leve." />
                 <meta property="og:image" content={ogimage} />
             </Head>
 
@@ -113,8 +119,8 @@ export default function Ste(props) {
                     </div>
                     <div className="container home-content">
                         <h1 data-aos="zoom-in-down" data-aos-duration="3000" >Dara Marques</h1>
-                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Construindo um dia a dia com mais maturidade!</h3>
-                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Atendimento on-line!</h3>
+                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Te ajudo a lidar melhor com a sua ansiedade para uma vida mais leve</h3>
+                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Psicóloga on-line</h3>
                         {/*    <button className="btn  btn-theme btn-primary" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> Autoagendamento</button> */}
 
                         <a href="https://api.whatsapp.com/send?phone=5511978493885" target="_blank" className="btn btn-theme btn-success btn-lg" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> <i className="fab fa-whatsapp fa-lg fa-fw"></i> Agende direto pelo WhatsApp</a>
@@ -417,7 +423,9 @@ export default function Ste(props) {
 
                 </div>
 
-
+                <a href="https://api.whatsapp.com/send?phone=5511978493885" target="_blank" style={{ position: 'fixed', bottom: '20px', right: '30px', zIndex: '9999' }}>
+                  <img src="/whatsapp.svg" style={{filter: 'drop-shadow(0px 0px 10px white)'}}/>
+                </a>
                 {/*   <div id="footer" className="footer">
                     <div className={isMobile ? "" : "container"}>
                         <div className="footer-brand">
