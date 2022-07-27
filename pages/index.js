@@ -4,11 +4,9 @@ import NavBar from "../src/components/Nav/navbar";
 import { AuthContext } from "../context/Auth2Context";
 import Head from 'next/head';
 import axios from "axios";
-import xhr from 'xmlhttprequest';
+
 
 export async function getStaticProps(context) {
-
-    global.XMLHttpRequest = xhr.XMLHttpRequest;  
 
     const dev = process.env.NODE_ENV !== 'production';
     // const ip = context.request.headers['x-forwarded-for'] || context.req.connection.remoteAddress  //ip de quem solicita
@@ -40,7 +38,6 @@ export default function Ste(props) {
     const [email, setEmail] = useState("");
     const { isMobile } = useContext(AuthContext);
 
-    var ip = "";
 
     async function registerNews() {
 
@@ -65,26 +62,21 @@ export default function Ste(props) {
 
 
 
-        if (typeof window.sessionStorage.counterpsi == typeof undefined && !props.dev) {
-
-        
-
+        if (typeof window.sessionStorage.counterpsi == typeof undefined) {
             (async () => {
                 
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET", 'http://meuip.com/api/meuip.php');
-                xmlhttp.send();
-                xmlhttp.onload = function (e) {
-                    ip = xmlhttp.response;
-                    console.log("aq")
-                     saveIp();
-                }
-               
-                async  function saveIp(){
-                  await  axios.post('/api/saveone', { obj: { page: "index.js", date: new Date(), link: props.server,ip: ip }, table: "counter" })
-                }
-        
-        
+                var ip = "";
+                 ip = await fetch("https://api.ipify.org?format=json")
+                .then(async function (response) {
+                    var res = await response.json()
+                    if(res){
+                        return  res.ip;
+                    }
+                });
+
+	
+                 await axios.post('/api/saveone', { obj: { page: "index.js", date: new Date(), link: props.server,ip: ip }, table: "counter" })
+                
         })();
             window.sessionStorage.counterpsi = "true";
         }
