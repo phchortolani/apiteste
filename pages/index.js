@@ -7,9 +7,9 @@ import axios from "axios";
 
 export async function getStaticProps(context) {
 
-    // const dev = process.env.NODE_ENV !== 'production';
-    //const ip = context.req.connection.remoteAddress; //ip de quem solicita
-    //const server = dev ? 'http://localhost:3000' : 'https://psidaramarques.com.br';
+    const dev = process.env.NODE_ENV !== 'production';
+   // const ip = context.request.headers['x-forwarded-for'] || context.req.connection.remoteAddress  //ip de quem solicita
+    const server = dev ? 'http://localhost:3000' : 'https://psidaramarques.com.br';
 
     const url = "https://graph.instagram.com/me/media?access_token="
         + process.env.INSTA_TOKEN +
@@ -19,11 +19,10 @@ export async function getStaticProps(context) {
         .then(async function (response) {
             return await response.json();
         });
-
-
+  
     if (data != null) {
         return {
-            props: { dados: data ?? null },
+            props: { dados: data ?? null , server},
             revalidate: 60
         }
     }
@@ -35,6 +34,7 @@ export default function Ste(props) {
     const [topScreen, setTopScreen] = useState(true);
     const [email, setEmail] = useState("");
     const { isMobile } = useContext(AuthContext);
+
 
     async function registerNews() {
 
@@ -55,6 +55,16 @@ export default function Ste(props) {
     }
 
     useEffect(() => {
+
+        if(typeof window.sessionStorage.counterpsi == typeof undefined){
+            (async () => await axios.post('/api/saveone', { obj: {page: "index.js", date: new Date(), link: props.server}, table: "counter" }))();
+            window.sessionStorage.counterpsi = "true";
+        }
+     
+       
+
+
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100 && topScreen) {
                 setTopScreen(false);

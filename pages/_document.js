@@ -1,14 +1,9 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-var dataLayer =  dataLayer || []
+
 
 export default function Document() {
   
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'AW-10929408149');
-
-  gtag('event', 'conversion', { 'send_to': 'AW-10929408149/zuxBCNiBss8DEJWRxtso' });
+  
 
 
   return (
