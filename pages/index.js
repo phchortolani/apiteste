@@ -59,7 +59,7 @@ export default function Ste(props) {
 
     useEffect(() => {
 
-        if (typeof window.sessionStorage.counterpsi == typeof undefined ) {
+        if (typeof window.sessionStorage.counterpsi == typeof undefined && !props.dev) {
             (async () => {
 
                 var ip = "";
@@ -72,9 +72,9 @@ export default function Ste(props) {
                         }
                     });
 
-                local =  await axios.post('/api/ip', {ipString: ip} )
+                local = await axios.post('/api/ip', { ipString: ip })
 
-                
+
                 await axios.post('/api/saveone', { obj: { page: "index.js", date: new Date(), link: props.server, ip: ip, local: (local.data || "") }, table: "counter" })
             })();
 
@@ -108,18 +108,17 @@ export default function Ste(props) {
 
             <NavBar topScreen={topScreen} />
             <div id="page-container" className="bg-background-land" /* className="fade" */>
-                <div id="home" className={"content has-bg home " + (isMobile ? "" : "gradientar")} data-aos={(!isMobile ? "fade-in" : "")}>
+                <div id="home" className={"content has-bg home " + (isMobile ? "" : "gradientar")} data-aos={(!isMobile ? "" : "")}>
                     <div className="content-bg">
                     </div>
                     <div className="container home-content">
                         <h1 data-aos="zoom-in-down" data-aos-duration="3000" >Dara Marques</h1>
-                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Te ajudo a lidar melhor com a sua ansiedade para uma vida mais leve</h3>
-                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Psicóloga on-line</h3>
+                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Te ajudo a lidar melhor com a sua ansiedade para uma vida mais leve!</h3>
+                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Atendimento on-line. Agende seu horário!</h3>
                         {/*    <button className="btn  btn-theme btn-primary" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> Autoagendamento</button> */}
 
-                        <a href="https://api.whatsapp.com/send?phone=5511978493885" target="_blank" className="btn btn-theme btn-success btn-lg" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> <i className="fab fa-whatsapp fa-lg fa-fw"></i> Agende direto pelo WhatsApp</a>
-
-
+                        <a href="https://wa.me/message/OQPASIZH7O75G1" target="_blank" className="btn btn-theme btn-success btn-lg" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000">
+                            <i className="fab fa-whatsapp fa-lg fa-fw"></i> Agende direto pelo WhatsApp</a>
                         {/* <a href="#" className="btn btn-theme btn-outline-white">Redes Sociais</a><br /> */}
                     </div>
 
@@ -214,7 +213,7 @@ export default function Ste(props) {
                                         </p>
                                         <p>
 
-                                            Ajuda a compreender que a ansiedade faz parte de nós,  que é possível viver com ela com mais leveza,  não a vendo como uma inimiga, entenderem melhor a si mesmas com a psicoterapia e a partir disso, ir fazendo mudanças saudáveis e duradouras. É gratificante vê-las se descobrindo, sabendo lidar de uma forma mais saudável com seus sentimentos, mudando hábitos de comportamento e tendo uma vida mais leve!
+                                            Ajudar a compreender que a ansiedade faz parte de nós,  que é possível viver com ela com mais leveza,  não a vendo como uma inimiga, entenderem melhor a si mesmas com a psicoterapia e a partir disso, ir fazendo mudanças saudáveis e duradouras. É gratificante vê-las se descobrindo, sabendo lidar de uma forma mais saudável com seus sentimentos, mudando hábitos de comportamento e tendo uma vida mais leve!
                                         </p>
 
                                     </div>
@@ -418,7 +417,7 @@ export default function Ste(props) {
                 </div>
 
                 <a href="https://wa.me/message/OQPASIZH7O75G1" target="_blank" style={{ position: 'fixed', bottom: '20px', right: '30px', zIndex: '9999' }}>
-                  <img src="/whatsapp.svg" style={{filter: 'drop-shadow(0px 0px 10px white)'}}/>
+                    <img src="/whatsapp.svg" style={{ filter: 'drop-shadow(0px 0px 10px white)' }} />
                 </a>
                 {/*   <div id="footer" className="footer">
                     <div className={isMobile ? "" : "container"}>

@@ -9,7 +9,7 @@ export default function SaibaMais() {
         <div className="containerSaibaMAis p-2 text-center text-primary-dara ">
             <></>
             <div className='pb-50px'>
-                <img className='saibamaispic' src="/saibamaispicture2.png"></img>
+                <img className='saibamaispic' src="/saibamaispicture2.jpg"></img>
             </div>
             <h6><b>CRP </b>06/164999</h6>
             <div className="text-center pb-1">

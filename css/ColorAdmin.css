@@ -13202,7 +13202,7 @@ a {
 }
 
 .blogCover {
-    background-image: url('../public/BlogCover.jpg');
+    background-image: url('../public/BlogCover2.jpg');
 }
 
 .page-title .title {
@@ -23850,13 +23850,13 @@ a {
         transition         : 3s ease;
     }
 
-    50% {
+    100% {
         background-position: 100% 25%;
         background-size    : 150%;
         transition         : 3s;
     }
 
-    60% {
+  /*   60% {
         background-position: 80% 85%;
         background-size    : 140%;
         transition         : 3s ease;
@@ -23872,5 +23872,5 @@ a {
         background-position: 100% 0%;
         background-size    : 100%;
         transition         : 3s ease;
-    }
+    } */
 }

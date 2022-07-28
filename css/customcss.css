@@ -648,10 +648,10 @@ fieldset[disabled] .btn-primary.active {
 .show>.btn-success.dropdownCustom-toggle,
 .show>.btn-success.dropdownCustom-toggle:focus,
 .show>.btn-success.dropdownCustom-toggle:hover {
-  background-color: #1beb11;
+  background-color: #4caf50;
   color: #FFFFFF;
   box-shadow: none;
-  border-color: #1beb11;
+  border-color: #4caf50;
 }
 
 .btn-success:not([data-action]):not([class*="btn-outline-"]):hover {
@@ -5935,5 +5935,5 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 }
 
 .flowersBackGround {
-  background-image: url('../public/flowersback.png');
+  background-image: url('../public/flowersback.jpg');
 }
