@@ -11,7 +11,7 @@ export default async function ip(request,response){
     .then(async function (data) {
         var res = await data.json()
         if (res) {
-            response.send(`País:  ${res.country} - Região: ${res.regionName} - ${res.region} - Cidade: ${res.city}`) 
+            response.send(`País:${res.country} - Região: ${res.regionName} - ${res.region} - Cidade: ${res.city} - mobile:`+res.mobile) 
         }
     });
 
