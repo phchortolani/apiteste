@@ -7,7 +7,7 @@ export default async function ip(request,response){
    
     const { ipString } = request.body;
 
-    await fetch("http://ip-api.com/json/" + ipString)
+    await fetch("http://ip-api.com/json/"+ipString+"?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,offset,currency,isp,org,as,asname,reverse,hosting,query")
     .then(async function (data) {
         var res = await data.json()
         if (res) {
