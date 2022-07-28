@@ -72,7 +72,7 @@ export default function Ste(props) {
                         }
                     });
 
-                local =  await axios.post('/api/ip', {ipString: ip} )
+                local =  await axios.post('/api/ip', {ipString: ip, Mobile: isMobile} )
 
                 
                 await axios.post('/api/saveone', { obj: { page: "index.js", date: new Date(), link: props.server, ip: ip, local: (local.data || "") }, table: "counter" })
