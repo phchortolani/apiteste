@@ -417,7 +417,7 @@ export default function Ste(props) {
 
                 </div>
 
-                <a href="https://api.whatsapp.com/send?phone=5511978493885" target="_blank" style={{ position: 'fixed', bottom: '20px', right: '30px', zIndex: '9999' }}>
+                <a href="https://wa.me/message/OQPASIZH7O75G1" target="_blank" style={{ position: 'fixed', bottom: '20px', right: '30px', zIndex: '9999' }}>
                   <img src="/whatsapp.svg" style={{filter: 'drop-shadow(0px 0px 10px white)'}}/>
                 </a>
                 {/*   <div id="footer" className="footer">
