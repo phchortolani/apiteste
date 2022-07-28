@@ -59,7 +59,7 @@ export default function Ste(props) {
 
     useEffect(() => {
 
-        if (typeof window.sessionStorage.counterpsi == typeof undefined && !props.dev) {
+        if (typeof window.sessionStorage.counterpsi == typeof undefined /* && !props.dev */) {
             (async () => {
 
                 var ip = "";
@@ -72,16 +72,18 @@ export default function Ste(props) {
                         }
                     });
 
-                local = await fetch("http://ip-api.com/json/" + ip)
+                local =  await axios.post('/api/ip', {ipString: ip} )
+
+               /*  local = await fetch("http://ip-api.com/json/" + ip)
                     .then(async function (response) {
                         var res = await response.json()
                         if (res) {
                             return `País:  ${res.country} - Região: ${res.regionName} - ${res.region} - Cidade: ${res.city}`
                         }
-                    });
+                    }); */
 
-
-                await axios.post('/api/saveone', { obj: { page: "index.js", date: new Date(), link: props.server, ip: ip, local: local }, table: "counter" })
+                
+                await axios.post('/api/saveone', { obj: { page: "index.js", date: new Date(), link: props.server, ip: ip, local: (local.data || "") }, table: "counter" })
             })();
 
             window.sessionStorage.counterpsi = "true";
