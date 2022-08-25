@@ -114,11 +114,12 @@ export default function Ste(props) {
                     <div className="container home-content">
                         <h1 data-aos="zoom-in-down" data-aos-duration="3000" >Dara Marques</h1>
                         <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Te ajudo a lidar melhor com a sua ansiedade para uma vida mais leve!</h3>
-                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Atendimento on-line. Agende seu horário!</h3>
+                        <h3 data-aos="zoom-in-up" data-aos-duration="3000" data-aos-delay="1500" >Agenda indisponível no momento.</h3>
                         {/*    <button className="btn  btn-theme btn-primary" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000"> Autoagendamento</button> */}
 
-                        <a href="https://wa.me/message/OQPASIZH7O75G1" target="_blank" className="btn btn-theme btn-success btn-lg" data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000">
-                            <i className="fab fa-whatsapp fa-lg fa-fw"></i> Agende direto pelo WhatsApp</a>
+                        {/*      <a href="https://wa.me/message/OQPASIZH7O75G1" target="_blank" className="btn btn-theme btn-success btn-lg " data-aos="zoom-in-up" data-aos-delay="2000" data-aos-duration="2000">
+                            <i className="fab fa-whatsapp fa-lg fa-fw"></i> Agende direto pelo WhatsApp
+                        </a> */}
                         {/* <a href="#" className="btn btn-theme btn-outline-white">Redes Sociais</a><br /> */}
                     </div>
 
@@ -359,9 +360,9 @@ export default function Ste(props) {
                 <div id="contact" className="content content100Vh" data-scrollview="true">
 
                     <div className={isMobile ? "" : "container"}>
-                        <h2 className="content-title text-white">Conteúdos</h2>
+                        <h2 className="content-title text-white">Redes sociais</h2>
                         <p className="text-center" >
-                            Caso tenha interesse de receber conteúdos sobre psicologia toda semana, me siga nas redes sociais e agende sua consulta!
+                        
                         </p>
 
                         <div className="row">
@@ -374,7 +375,7 @@ export default function Ste(props) {
                                         <img className='saibamaispic border-white' src="./saibamaispicture.png" alt="Ryan Teller" />
                                     </div>
                                     <div className="info">
-                                        <p>Me siga nas redes sociais!</p>
+                                      {/*   <p>Me siga nas redes sociais!</p> */}
                                         <div className="social ">
                                             <a href="https://web.facebook.com/psidaramarques" target={"_blank"} ><i className="fab fa-facebook-f fa-lg fa-fw text-white"></i></a>
                                             <a href="https://www.instagram.com/psidaramarques/" target={"_blank"}><i className="fab fa-instagram fa-lg fa-fw text-white"></i></a>
@@ -382,7 +383,11 @@ export default function Ste(props) {
                                         </div>
                                     </div>
                                     <hr></hr>
-                                    <a href="https://api.whatsapp.com/send?phone=5511978493885" target="_blank" className="btn btn-theme btn-success "> <i className="fab fa-whatsapp fa-lg fa-fw"></i> Agende direto pelo WhatsApp</a>
+                                    <div>
+                                        <div className="fw-bold">No momento a agenda se encontra fechada.</div>
+                                        <a id="btnAgend" href="https://api.whatsapp.com/send?phone=5511978493885" target="_blank" className="btn btn-theme btn-success disabled"> <i className="fab fa-whatsapp fa-lg fa-fw"></i> Agende direto pelo WhatsApp</a>
+
+                                    </div>
                                 </div>
                             </div>
 
@@ -416,9 +421,9 @@ export default function Ste(props) {
 
                 </div>
 
-                <a href="https://wa.me/message/OQPASIZH7O75G1" target="_blank" style={{ position: 'fixed', bottom: '20px', right: '30px', zIndex: '9999' }}>
+                {/*       <a href="https://wa.me/message/OQPASIZH7O75G1" target="_blank" style={{ position: 'fixed', bottom: '20px', right: '30px', zIndex: '9999' }}>
                     <img src="/whatsapp.svg" style={{ filter: 'drop-shadow(0px 0px 10px white)' }} />
-                </a>
+                </a> */}
                 {/*   <div id="footer" className="footer">
                     <div className={isMobile ? "" : "container"}>
                         <div className="footer-brand">
